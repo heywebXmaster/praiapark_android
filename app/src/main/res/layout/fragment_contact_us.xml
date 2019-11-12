@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPageBg"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/layoutHeader"
+            layout="@layout/layout_common_header" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
+
+
+            <LinearLayout
+                android:id="@+id/layoutContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/page_margin"
+                android:background="@drawable/sp_page_bg"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/page_margin"
+                    android:paddingRight="@dimen/page_margin">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/text_contact_us_title"
+                        android:textColor="@color/colorHint"
+                        android:textSize="14sp" />
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/etTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:hint="@string/text_contact_us_title_hint"
+                        android:singleLine="true"
+                        android:textColor="@color/colorText"
+                        android:textColorHint="@color/colorHint"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="@dimen/page_margin"
+                    android:layout_marginRight="@dimen/page_margin"
+                    android:background="@color/colorDivider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/page_margin"
+                    android:paddingTop="15dp"
+                    android:paddingRight="@dimen/page_margin"
+                    android:paddingBottom="15dp">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_contact_us_content"
+                        android:textColor="@color/colorHint"
+                        android:textSize="14sp" />
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/etContent"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:gravity="top|left"
+                        android:hint="@string/text_contact_us_content_hint"
+                        android:minLines="7"
+                        android:textColor="@color/colorText"
+                        android:textColorHint="@color/colorHint"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="@dimen/page_margin"
+                    android:layout_marginRight="@dimen/page_margin"
+                    android:background="@color/colorDivider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/page_margin"
+                    android:paddingRight="@dimen/page_margin">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/text_contact_us_name"
+                        android:textColor="@color/colorHint"
+                        android:textSize="14sp" />
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/etName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:singleLine="true"
+                        android:textColor="@color/colorText"
+                        android:textColorHint="@color/colorHint"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="@dimen/page_margin"
+                    android:layout_marginRight="@dimen/page_margin"
+                    android:background="@color/colorDivider" />
+
+                <LinearLayout
+                    android:id="@+id/layoutProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/page_margin"
+                    android:paddingRight="@dimen/page_margin">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/text_contact_us_mobile"
+                        android:textColor="@color/colorHint"
+                        android:textSize="14sp" />
+
+                    <android.support.v7.widget.AppCompatEditText
+                        android:id="@+id/etMobile"
+                        android:layout_width="0dp"
+                        android:inputType="phone"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:singleLine="true"
+                        android:textColor="@color/colorText"
+                        android:textColorHint="@color/colorHint"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="@dimen/page_margin"
+                    android:layout_marginRight="@dimen/page_margin"
+                    android:background="@color/colorDivider" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/tvDescDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:lineSpacingExtra="5dp"
+                    android:text="@string/text_contact_us_desc_detail"
+                    android:layout_margin="@dimen/page_margin"
+                    android:textColor="@color/colorDrawable"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.example.building.base.ClickPresenter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPageBg"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/layoutHeader"
+            layout="@layout/layout_common_header" />
+
+        <com.flyco.tablayout.SlidingTabLayout
+            android:id="@+id/slidingTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginLeft="@dimen/page_margin"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="@dimen/page_margin"
+            android:background="@drawable/sp_page_bg"
+            tl:tl_divider_padding="0dp"
+            tl:tl_indicator_color="@color/colorDrawable"
+            tl:tl_indicator_corner_radius="8dp"
+            tl:tl_indicator_margin_bottom="0dp"
+            tl:tl_indicator_margin_top="0dp"
+            tl:tl_indicator_style="BLOCK"
+            tl:tl_tab_space_equal="true"
+            tl:tl_textUnselectColor="@color/colorText"
+            tl:tl_textsize="14sp" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:background="@color/colorPageBg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+</layout>

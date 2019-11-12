@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="version"
+            type="String"/>
+        <variable
+            name="presenter"
+            type="com.example.building.base.ClickPresenter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPageBg"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/layoutHeader"
+            layout="@layout/layout_common_header" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/page_margin"
+            android:background="@drawable/sp_page_bg"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/layoutProfile"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:onClick="@{(v)->presenter.onClick(v)}"
+                android:paddingLeft="@dimen/page_margin"
+                android:paddingRight="@dimen/page_margin">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/text_setting_profile"
+                    android:textColor="@color/colorText"
+                    android:textSize="14sp" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/icon_right" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorDivider" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layoutLang"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:onClick="@{(v)->presenter.onClick(v)}"
+                android:paddingLeft="@dimen/page_margin"
+                android:paddingRight="@dimen/page_margin">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/text_setting_lang"
+                    android:textColor="@color/colorText"
+                    android:textSize="14sp" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/icon_right" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorDivider" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layoutAbout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:onClick="@{(v)->presenter.onClick(v)}"
+                android:paddingLeft="@dimen/page_margin"
+                android:paddingRight="@dimen/page_margin">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/text_setting_about"
+                    android:textColor="@color/colorText"
+                    android:textSize="14sp" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/icon_right" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorDivider" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layoutProvision"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:onClick="@{(v)->presenter.onClick(v)}"
+                android:paddingLeft="@dimen/page_margin"
+                android:paddingRight="@dimen/page_margin">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/text_setting_provision"
+                    android:textColor="@color/colorText"
+                    android:textSize="14sp" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/icon_right" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorDivider" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layoutDeclare"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:onClick="@{(v)->presenter.onClick(v)}"
+                android:paddingLeft="@dimen/page_margin"
+                android:paddingRight="@dimen/page_margin">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/text_setting_declare"
+                    android:textColor="@color/colorText"
+                    android:textSize="14sp" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/icon_right" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorDivider" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layoutVersion"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:onClick="@{(v)->presenter.onClick(v)}"
+                android:paddingLeft="@dimen/page_margin"
+                android:paddingRight="@dimen/page_margin">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/text_setting_version"
+                    android:textColor="@color/colorText"
+                    android:textSize="14sp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:textSize="14sp"
+                    android:text="@{version}"
+                    android:textColor="@color/colorHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true" />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

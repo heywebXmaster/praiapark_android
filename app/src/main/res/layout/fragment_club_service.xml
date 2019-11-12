@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPageBg"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/layoutHeader"
+            layout="@layout/layout_common_header" />
+
+        <!--<com.flyco.tablayout.SlidingTabLayout-->
+        <!--android:id="@+id/slidingTabLayout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="36dp"-->
+        <!--android:layout_marginLeft="@dimen/page_margin"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:layout_marginRight="@dimen/page_margin"-->
+        <!--android:background="@drawable/sp_page_bg"-->
+        <!--tl:tl_divider_padding="0dp"-->
+        <!--tl:tl_indicator_color="@color/colorDrawable"-->
+        <!--tl:tl_indicator_corner_radius="8dp"-->
+        <!--tl:tl_indicator_margin_bottom="0dp"-->
+        <!--tl:tl_indicator_margin_top="0dp"-->
+        <!--tl:tl_indicator_style="BLOCK"-->
+        <!--tl:tl_tab_space_equal="true"-->
+        <!--tl:tl_textUnselectColor="@color/colorText"-->
+        <!--tl:tl_textsize="14sp" />-->
+
+        <!--<android.support.v4.view.ViewPager-->
+        <!--android:id="@+id/viewpager"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_marginTop="12dp"-->
+        <!--android:layout_weight="1" />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/sp_page_bg"
+            android:gravity="center_horizontal"
+            android:layout_margin="@dimen/page_margin"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="105dp"
+                android:src="@mipmap/bg_service_empty" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="@string/text_club_service_hope"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/text_club_service_building"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_nav_header"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHeight_percent=".45"
+        app:layout_constraintHeight_default="percent"
+        android:background="@color/colorPrimary"
+        android:gravity="center">
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/img_nav"
+            android:background="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/bg_logo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintTop_toBottomOf="@id/ll_nav_header"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHeight_percent=".45"
+        app:layout_constraintHeight_default="percent"
+        android:orientation="vertical">
+        <FrameLayout
+            android:id="@+id/layoutNotice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="@dimen/muen_item_padding"
+            android:paddingBottom="@dimen/muen_item_padding">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_nav_notice"
+                android:drawablePadding="10dp"
+                android:text="@string/title_nav_notice"
+                android:textColor="@color/colorText"
+                android:textSize="14sp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/layoutService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingTop="@dimen/muen_item_padding"
+            android:paddingBottom="@dimen/muen_item_padding">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_nav_service"
+                android:drawablePadding="10dp"
+                android:text="@string/title_nav_service"
+                android:textColor="@color/colorText"
+                android:textSize="14sp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/layoutApply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingTop="@dimen/muen_item_padding"
+            android:paddingBottom="@dimen/muen_item_padding">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_nav_apply"
+                android:drawablePadding="10dp"
+                android:text="@string/title_nav_apply"
+                android:textColor="@color/colorText"
+                android:textSize="14sp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/layoutContact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingTop="@dimen/muen_item_padding"
+            android:paddingBottom="@dimen/muen_item_padding">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_nav_contact"
+                android:drawablePadding="10dp"
+                android:text="@string/title_nav_contact"
+                android:textColor="@color/colorText"
+                android:textSize="14sp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/layoutInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingTop="17dp"
+            android:paddingBottom="17dp">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_nav_info"
+                android:drawablePadding="10dp"
+                android:text="@string/title_nav_info"
+                android:textColor="@color/colorText"
+                android:textSize="14sp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/layoutSetting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingTop="@dimen/muen_item_padding"
+            android:paddingBottom="@dimen/muen_item_padding">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_nav_setting"
+                android:drawablePadding="10dp"
+                android:text="@string/title_nav_setting"
+                android:textColor="@color/colorText"
+                android:textSize="14sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/layoutExit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingTop="@dimen/muen_item_padding"
+            android:paddingBottom="@dimen/muen_item_padding">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_nav_exit"
+                android:drawablePadding="10dp"
+                android:text="@string/title_nav_exit"
+                android:textColor="@color/colorText"
+                android:textSize="14sp" />
+
+        </FrameLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
+

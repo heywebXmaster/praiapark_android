@@ -1,0 +1,167 @@
+package com.example.building.ui.user;
+
+import android.Manifest;
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+
+import com.blankj.utilcode.util.StringUtils;
+import com.bumptech.glide.Glide;
+import com.example.building.R;
+import com.example.building.aop.annotation.SingleClick;
+import com.example.building.base.BaseFragment;
+import com.example.building.base.ClickPresenter;
+import com.example.building.bean.ProfileBean;
+import com.example.building.databinding.FragmentUserProfileBinding;
+import com.example.building.mvp.contract.UserInfoContract;
+import com.example.building.mvp.presenter.UserInfoPresenter;
+import com.example.building.util.KeyboardStateObserver;
+import com.example.building.util.LogUtil;
+import com.luck.picture.lib.PictureSelector;
+import com.luck.picture.lib.config.PictureMimeType;
+import com.luck.picture.lib.entity.LocalMedia;
+import com.tbruyelle.rxpermissions2.RxPermissions;
+
+import java.util.List;
+
+public class UserProfileFragment extends BaseFragment<FragmentUserProfileBinding> implements ClickPresenter, UserInfoContract.UserInfoView {
+
+    private UserInfoPresenter infoPresenter;
+    private ProfileBean profileBean;
+    private String pictureSelectPath = "";
+
+    public static UserProfileFragment newInstant() {
+        return new UserProfileFragment();
+    }
+
+    @Override
+    protected int setViewId() {
+        return R.layout.fragment_user_profile;
+    }
+
+    @Override
+    public void onEnterAnimationEnd(Bundle savedInstanceState) {
+        super.onEnterAnimationEnd(savedInstanceState);
+        infoPresenter.getProfile();
+    }
+
+    @Override
+    protected void setTitle() {
+        dataBinding.layoutHeader.setTitle(getString(R.string.text_setting_profile));
+    }
+
+    @Override
+    protected void initView() {
+        infoPresenter = new UserInfoPresenter(this);
+    }
+
+    @Override
+    protected void setListener() {
+        dataBinding.layoutHeader.tvright.setEnabled(false);
+        dataBinding.layoutHeader.tvright.setVisibility(View.VISIBLE);
+        dataBinding.layoutHeader.setPresenter(this);
+        dataBinding.setPresenter(this);
+        KeyboardStateObserver.getKeyboardStateObserver(getActivity()).setKeyboardVisibilityListener(new KeyboardStateObserver.OnKeyboardVisibilityListener() {
+            @Override
+            public void onKeyboardShow() {
+                dataBinding.stview.setVisibility(View.VISIBLE);
+                dataBinding.scrollview.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        dataBinding.scrollview.scrollTo(0, dataBinding.layoutContent.getBottom());
+                    }
+                });
+            }
+
+            @Override
+            public void onKeyboardHide() {
+                dataBinding.stview.setVisibility(View.GONE);
+                dataBinding.scrollview.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        dataBinding.scrollview.scrollTo(0, 0);
+                    }
+                });
+            }
+        });
+    }
+
+    @SingleClick
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.ivBack:
+                hideSoftInput();
+                pop();
+                break;
+            case R.id.tvright:
+                updateProfile();
+                break;
+            case R.id.civHeader:
+                pictureSelector();
+                break;
+            case R.id.layoutChangePwd:
+                startNewFragment(ResetPwdFragment.newInstant());
+        }
+    }
+
+    @SuppressLint("CheckResult")
+    private void pictureSelector() {
+        RxPermissions rxPermissions = new RxPermissions(this);
+        rxPermissions
+                .request(Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.READ_EXTERNAL_STORAGE)
+                .subscribe(granted -> {
+                    if (granted) {
+                        PictureSelector.create(this)
+                                .openGallery(PictureMimeType.ofImage())
+                                .maxSelectNum(1)
+                                .imageSpanCount(4)
+                                .minSelectNum(1)
+                                .previewImage(true)
+                                .imageFormat(PictureMimeType.PNG)
+                                .forResult(99);
+                    }
+                });
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        LogUtil.e("onActivityResult" + requestCode + "," + resultCode);
+        if (requestCode == 99 && resultCode == RESULT_OK) {
+            List<LocalMedia> selectList = PictureSelector.obtainMultipleResult(data);
+            pictureSelectPath = selectList.get(0).getPath();
+            Glide.with(mContext).load(pictureSelectPath).into(dataBinding.civHeader);
+        }
+    }
+
+    private void updateProfile() {
+        LogUtil.e(profileBean.toString());
+        infoPresenter.updateProfile(profileBean.getNickname(), profileBean.getPhoneNumber(), pictureSelectPath);
+    }
+
+    @Override
+    public void showProfile(ProfileBean profileBean) {
+        this.profileBean = profileBean;
+        dataBinding.layoutHeader.tvright.setEnabled(true);
+        dataBinding.setProfile(profileBean);
+        if (!StringUtils.isEmpty(profileBean.getAvatar())) {
+            Glide.with(mContext).load(profileBean.getAvatar()).into(dataBinding.civHeader);
+        }
+
+    }
+
+    @Override
+    public void updateProfileSuccess() {
+        dataBinding.layoutContent.setFocusable(true);
+        dataBinding.layoutContent.setFocusableInTouchMode(true);
+        dataBinding.layoutContent.requestFocus();
+    }
+
+    @Override
+    public void resetPasswordSuccess() {
+
+    }
+}

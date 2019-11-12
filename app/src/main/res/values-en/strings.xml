@@ -1,0 +1,228 @@
+<resources>
+    <!--不能更改的翻译-->
+    <string name="digits_pwd">0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="smart_refresh_pulling"> pull up to load more </string>
+    <string name="smart_refresh_release">release immediate load </string>
+    <string name="smart_refresh_refreshing"> is refreshing...</string>
+    <string name="smart_refresh_loading">Loading...</string>
+    <string name="smart_refresh_finish">Load completed </string>
+    <string name="smart_refresh_failed">Load failed </string>
+    <string name="smart_refresh_nothing">No more data </string>
+
+    <string name="title_nav_notice">Notice</string>
+    <string name="title_nav_service">Clubhouse</string>
+    <string name="title_nav_apply">Download</string>
+    <string name="title_nav_contact">Contact us</string>
+    <string name="title_nav_info">Information</string>
+    <string name="title_nav_setting">Setting</string>
+    <!--不能更改的翻译-->
+
+    <string name="app_name">擎天匯</string>
+    <string name="OtherExpection"> system error </string>
+        
+    <string name="NoRouteToHostException">Unable to connect to the server </string>
+        
+    <string name="SocketTimeoutException"> network connection timeout </string>
+        
+    <string name="ConnectException">Network unavailable</string>
+        
+    <string name="HttpException_500"> connection failed, please try again later </string>
+        
+    <string name="HttpException_504"> request failed, please check the network connection </string>
+        
+    <string name="UnknownHostException">Unable to connect to the host </string>
+        
+    <string name="msg_quite_remind"> press again to exit </string>
+        
+    <string name="msg_dialog_loading">Loading...</string>
+
+        
+    <string name="title_broadcast"> bulletin board </string>
+        
+    <string name="title_edit_name">Set nickname </string>
+        
+    <string name="title_download_table">form download </string>
+        
+    <string name="title_notice">Notification </string>
+        
+    <string name="title_add_order">Add an appointment</string>
+
+        
+
+        
+    <string name="title_nav_exit">Exit </string>
+        
+    <string name="title_scan">scan </string>
+        
+    <string name="title_reset_pwd">Change password</string>
+
+    <string name="text_pdf_share">Share</string>
+
+
+        
+    <string name="text_setting_profile">profile </string>
+        
+    <string name="text_setting_lang">language settings </string>
+        
+    <string name="text_setting_about">About us</string>
+        
+    <string name="text_setting_provision">General Terms and Conditions </string>
+        
+    <string name="text_setting_declare">Privacy Policy Statement</string>
+        
+    <string name="text_setting_version">App version </string>
+
+
+        
+    <string name="text_setting_lang_ch">简体</string>
+        
+    <string name="text_setting_lang_tw">繁體</string>
+        
+    <string name="text_setting_lang_en">English</string>
+        
+    <string name="text_setting_lang_confitm">Complete </string>
+
+        
+    <string name="text_contact_us_title">Title: </string>
+        
+    <string name="text_contact_us_content">Content: </string>
+        
+    <string name="text_contact_us_name">call: </string>
+        
+    <string name="text_contact_us_mobile">Phone: </string>
+        
+    <string name="text_contact_us_title_hint">Please enter the title content</string>
+        
+    <string name="text_contact_us_content_hint">Please enter the content </string>
+        
+    <string name="text_contact_us_desc">Remarks: </string>
+        
+    <string name="text_contact_us_desc_detail">Remarks:
+        \n1.For message information, Praia Park customer service center will reply in office hours or within 24 hours.
+        \n<u>Customer Service Center Office Hours：</u>
+        \n•&#160;Monday to Friday 09:00 – 13:00/14:00 – 17:30
+        \n•&#160;Saturday 09:00 – 13:00
+        \n•&#160;Sunday and Public Holidays Off
+        \n2.In case of emergency, you can contact the service hotline：(853)2883 3232
+    </string>
+        
+    <string name="text_profile_account_hint">account number </string>
+        
+    <string name="text_profile_address_hint">address </string>
+        
+    <string name="text_profile_header_hint">avatar </string>
+        
+    <string name="text_profile_useraccount_hint">user account </string>
+        
+    <string name="text_profile_changepwd_hint"> password modification </string>
+        
+    <string name="text_profile_name_hint">nickname </string>
+        
+    <string name="text_profile_mobile_hint">phone</string>
+        
+    <string name="text_profile_unset_hint"> not set </string>
+
+    <string name="text_download_car_stop">Request parking lot access PDF</string>
+        
+    <string name="text_download_fixtures">Request to decorate PDF</string>
+
+        
+    <string name="text_login_account_hint">Enter account </string>
+        
+    <string name="text_login_pwd_hint">Enter password</string>
+        
+    <string name="text_login_forget_pwd">Forgot your password?</string>
+        
+    <string name="text_login_confirm">login </string>
+        
+    <string name="text_login_register">Register </string>
+        
+    <string name="text_login_declare">Privacy Policy</string>
+
+        
+    <string name="text_register_user_account">Customer ID: </string>
+        
+    <string name="text_register_account_hint">Please enter the account name </string>
+        
+    <string name="text_register_repwd_hint">confirm password </string>
+        
+    <string name="text_register_confirm">submit </string>
+        
+    <string name="text_register_confirm_scan">Click to get the customer number </string>
+        
+    <string name="text_register_pwd_not_same">Inconsistent passwords</string>
+
+        
+    <string name="text_forget_pwd">forgot password </string>
+        
+    <string name="text_forget_new_pwd">Enter a new password</string>
+        
+    <string name="text_forget_confirm_pwd">Confirm new password</string>
+
+        
+    <string name="text_club_service_title_acord">reservation record</string>
+        
+    <string name="text_club_service_title_map">club map </string>
+        
+    <string name="text_club_service_title_rule"> clubhouse code </string>
+    <string name="text_club_service_hope">敬请期待</string>
+    <string name="text_club_service_building">程序正在建设中..</string>
+        
+    <string name="text_add_order_apply">application unit </string>
+        
+    <string name="text_add_order_name">Customer Name</string>
+        
+    <string name="text_add_order_input_name">Enter name</string>
+        
+    <string name="text_add_order_mobile">contact phone </string>
+        
+    <string name="text_add_order_input_mobile">Enter mobile number </string>
+        
+    <string name="text_add_order_devices">club equipment </string>
+        
+    <string name="text_add_order_choose_devices">Select device </string>
+        
+    <string name="text_add_order_price">device price </string>
+        
+    <string name="text_add_order_start_time">reservation start time </string>
+        
+    <string name="text_add_order_end_time">end time </string>
+        
+    <string name="text_add_order_amount">total price </string>
+        
+    <string name="text_add_order_remind">Note: All devices can only be reserved 7 days in advance </string>
+        
+    <string name="text_add_order_add">pre-array </string>
+
+        
+    <string name="text_info_title_unit">unit information </string>
+        
+    <string name="text_info_title_traffic">Traffic information </string>
+        
+    <string name="text_info_title_around"> ​​peripheral information </string>
+
+        
+    <string name="text_order_record_time">reservation time </string>
+        
+    <string name="text_order_record_status">reservation status </string>
+        
+    <string name="text_order_record_status_prepay">Pending payment</string>
+        
+    <string name="text_order_record_status_paid">paid </string>
+        
+    <string name="text_order_record_status_ready">Backup </string>
+        
+    <string name="text_order_record_status_finish"> is completed </string>
+
+        
+    <string name="text_reset_pwd_old"> old password: </string>
+        
+    <string name="text_reset_pwd_new"> new password: </string>
+        
+    <string name="text_reset_pwd_confirm"> confirm password: </string>
+        
+    <string name="text_reset_pwd_old_hint">Enter the old password</string>
+</resources>

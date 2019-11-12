@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.example.building.base.ClickPresenter" />
+
+        <variable
+            name="userCode"
+            type="String" />
+    </data>
+
+
+    <RelativeLayout
+        android:id="@+id/layoutContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@mipmap/bg_login_banner" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.75"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2.25"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="38dp"
+                    android:layout_marginRight="38dp"
+                    android:background="@color/white"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:orientation="vertical"
+                        android:paddingLeft="24dp"
+                        android:paddingTop="40dp"
+                        android:paddingRight="24dp"
+                        android:paddingBottom="40dp">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_horizontal"
+                            android:text="@string/text_login_register"
+                            android:textColor="@color/colorText"
+                            android:textSize="20sp" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/design_register_code_size"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="26dp"
+                            android:layout_marginRight="30dp">
+
+                            <com.example.building.widget.FourRoundView
+                                android:id="@+id/rvAccountNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/design_register_code_size"
+                                android:layout_centerHorizontal="true"
+                                app:lineColor="@color/colorText"
+                                app:lineWidth="12dp"
+                                app:strokeWidth="1dp" />
+
+                            <LinearLayout
+                                android:id="@+id/layoutAccountNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:onClick="@{(v)->presenter.onClick(v)}"
+                                android:orientation="horizontal">
+
+                                <android.support.v7.widget.AppCompatTextView
+                                    android:id="@+id/tvAccountNumHint"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:gravity="center"
+                                    android:text="@string/text_register_confirm_scan"
+                                    android:textColor="@color/colorText"
+                                    android:textSize="18sp" />
+
+                                <android.support.v7.widget.AppCompatTextView
+                                    android:id="@+id/tvAccuntNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:text="@{userCode}"
+                                    android:textColor="@color/colorText"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="32dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <android.support.v7.widget.AppCompatImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@mipmap/icon_logon_account" />
+
+                            <android.support.v7.widget.AppCompatEditText
+                                android:id="@+id/etAccount"
+                                android:layout_width="match_parent"
+                                android:layout_height="24dp"
+                                android:layout_marginLeft="5dp"
+                                android:background="@color/white"
+                                android:gravity="center_vertical"
+                                android:hint="@string/text_register_account_hint"
+                                android:singleLine="true"
+                                android:textColor="@color/colorText"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="15dp"
+                            android:background="@color/colorDrawable" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="36dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <android.support.v7.widget.AppCompatImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@mipmap/icon_logon_pwd" />
+
+                            <android.support.v7.widget.AppCompatEditText
+                                android:id="@+id/etPwd"
+                                android:layout_width="match_parent"
+                                android:layout_height="24dp"
+                                android:layout_marginLeft="5dp"
+                                android:background="@color/white"
+                                android:gravity="center_vertical"
+                                android:hint="@string/text_login_pwd_hint"
+                                android:inputType="textPassword"
+                                android:singleLine="true"
+                                android:textColor="@color/colorText"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="15dp"
+                            android:background="@color/colorDrawable" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="36dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <android.support.v7.widget.AppCompatImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@mipmap/icon_logon_pwd" />
+
+                            <android.support.v7.widget.AppCompatEditText
+                                android:id="@+id/etConfirmPwd"
+                                android:layout_width="match_parent"
+                                android:layout_height="24dp"
+                                android:layout_marginLeft="5dp"
+                                android:background="@color/white"
+                                android:gravity="center_vertical"
+                                android:hint="@string/text_register_repwd_hint"
+                                android:inputType="textPassword"
+                                android:singleLine="true"
+                                android:textColor="@color/colorText"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="15dp"
+                            android:background="@color/colorDrawable" />
+
+                    </LinearLayout>
+
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/tvSubmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cardView"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="67dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="67dp"
+                    android:background="@drawable/sp_login"
+                    android:gravity="center"
+                    android:onClick="@{(v)->presenter.onClick(v)}"
+                    android:padding="10dp"
+                    android:text="@string/text_register_confirm"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="36dp"
+            android:onClick="@{(v)->presenter.onClick(v)}"
+            android:src="@drawable/icon_back_white" />
+    </RelativeLayout>
+
+</layout>

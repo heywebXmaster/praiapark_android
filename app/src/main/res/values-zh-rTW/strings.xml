@@ -1,0 +1,142 @@
+<resources>
+    <!--不能更改的翻译-->
+    <string name="digits_pwd">0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="smart_refresh_pulling">上拉加載更多</string>
+    <string name="smart_refresh_release">釋放立即加載</string>
+    <string name="smart_refresh_refreshing">正在刷新...</string>
+    <string name="smart_refresh_loading">正在加載...</string>
+    <string name="smart_refresh_finish">加載完成</string>
+    <string name="smart_refresh_failed">加載失敗</string>
+    <string name="smart_refresh_nothing">沒有更多數據了</string>
+
+    <string name="title_nav_notice">通告</string>
+    <string name="title_nav_service">會所</string>
+    <string name="title_nav_apply">表格下載</string>
+    <string name="title_nav_contact">聯絡我們</string>
+    <string name="title_nav_info">咨詢</string>
+    <string name="title_nav_setting">設置</string>
+    <!--不能更改的翻译-->
+
+
+    <string name="app_name">擎天匯</string>
+    <string name="OtherExpection">系統錯誤</string>
+    <string name="NoRouteToHostException">無法連接到服務器</string>
+    <string name="SocketTimeoutException">網絡連接超時</string>
+    <string name="HttpException_500">連接失敗，請稍後再試</string>
+    <string name="HttpException_504">請求失敗，請檢查網絡連接</string>
+    <string name="UnknownHostException">無法連接到主機</string>
+    <string name="msg_quite_remind">再按壹次退出</string>
+    <string name="msg_dialog_loading">加載中...</string>
+
+    <string name="ConnectException">網絡連結不可用</string>
+
+    <string name="title_broadcast">公告欄</string>
+    <string name="title_edit_name">設置昵稱</string>
+    <string name="title_download_table">表格下載</string>
+    <string name="title_notice">通知</string>
+    <string name="title_add_order">添加預約</string>
+
+    <string name="title_nav_exit">退出</string>
+    <string name="title_scan">掃描</string>
+    <string name="title_reset_pwd">修改密碼</string>
+    <string name="text_pdf_share">分享</string>
+
+    <string name="text_setting_profile">個人資料</string>
+    <string name="text_setting_lang">語言設置</string>
+    <string name="text_setting_about">關於我們</string>
+    <string name="text_setting_provision">壹般條款與細則</string>
+    <string name="text_setting_declare">隱私政策聲明</string>
+    <string name="text_setting_version">App版本</string>
+
+
+    <string name="text_setting_lang_ch">简体</string>
+    <string name="text_setting_lang_tw">繁體</string>
+    <string name="text_setting_lang_en">English </string>
+    <string name="text_setting_lang_confitm">完成</string>
+
+    <string name="text_contact_us_title">標題：</string>
+    <string name="text_contact_us_content">內容：</string>
+    <string name="text_contact_us_name">稱呼：</string>
+    <string name="text_contact_us_mobile">電話：</string>
+    <string name="text_contact_us_title_hint">請輸入標題內容</string>
+    <string name="text_contact_us_content_hint">請輸入內容</string>
+    <string name="text_contact_us_desc">備註：</string>
+    <string name="text_contact_us_desc_detail">備註:
+        \n1.有關留言信息，客戶服務中心將於辦公時間或24小時內回覆。
+        \n<u>擎天匯客戶服務中心辦公時間：</u>
+        \n•&#160;星期一至星期五09:00 – 13:00 / 14:00 – 17:30
+        \n•&#160;星期六09:00 – 13:00
+        \n•&#160;星期日及公眾假期休息
+        \n2.如遇緊急事件，請即致電服務熱線：(853)2883 3232
+    </string>
+
+    <string name="text_profile_account_hint">賬號編號</string>
+    <string name="text_profile_address_hint">地址</string>
+    <string name="text_profile_header_hint">頭像</string>
+    <string name="text_profile_useraccount_hint">用戶賬號</string>
+    <string name="text_profile_changepwd_hint">密碼修改</string>
+    <string name="text_profile_name_hint">昵稱</string>
+    <string name="text_profile_mobile_hint">電話</string>
+    <string name="text_profile_unset_hint">未設置</string>
+
+    <string name="text_download_car_stop">申請停車場出入PDF</string>
+    <string name="text_download_fixtures">申請裝修PDF</string>
+
+    <string name="text_login_account_hint">輸入賬號</string>
+    <string name="text_login_pwd_hint">輸入密碼</string>
+    <string name="text_login_forget_pwd">忘記密碼?</string>
+    <string name="text_login_confirm">登錄</string>
+    <string name="text_login_register">註冊</string>
+    <string name="text_login_declare">隱私政策</string>
+
+    <string name="text_register_user_account">客戶編號：</string>
+    <string name="text_register_account_hint">請輸入賬號名稱</string>
+    <string name="text_register_repwd_hint">確認密碼</string>
+    <string name="text_register_confirm">提 交</string>
+    <string name="text_register_confirm_scan">點擊獲取客戶編號</string>
+    <string name="text_register_pwd_not_same">密碼不壹致</string>
+
+    <string name="text_forget_pwd">忘記密碼</string>
+    <string name="text_forget_new_pwd">輸入新密碼</string>
+    <string name="text_forget_confirm_pwd">確認新密碼</string>
+
+    <string name="text_club_service_title_acord">預約記錄</string>
+    <string name="text_club_service_title_map">會所地圖</string>
+    <string name="text_club_service_title_rule">會所守則</string>
+    <string name="text_club_service_hope">敬请期待</string>
+    <string name="text_club_service_building">程序正在建设中..</string>
+    <string name="text_add_order_apply">申請單位</string>
+    <string name="text_add_order_name">客戶姓名</string>
+    <string name="text_add_order_input_name">輸入姓名</string>
+    <string name="text_add_order_mobile">聯系電話</string>
+    <string name="text_add_order_input_mobile">輸入手機號碼</string>
+    <string name="text_add_order_devices">會所設備</string>
+    <string name="text_add_order_choose_devices">選擇設備</string>
+    <string name="text_add_order_price">設備價錢</string>
+    <string name="text_add_order_start_time">預約開始時間</string>
+    <string name="text_add_order_end_time">結束時間</string>
+    <string name="text_add_order_amount">總價</string>
+    <string name="text_add_order_remind">註意：所有設備只可以提前7天預約</string>
+    <string name="text_add_order_add">預 約</string>
+
+    <string name="text_info_title_unit">單位資訊</string>
+    <string name="text_info_title_traffic">交通資訊</string>
+    <string name="text_info_title_around">周邊資訊</string>
+
+    <string name="text_order_record_time">預約時間</string>
+    <string name="text_order_record_status">預約狀態</string>
+    <string name="text_order_record_status_prepay">待付款</string>
+    <string name="text_order_record_status_paid">已付款</string>
+    <string name="text_order_record_status_ready">後備中</string>
+    <string name="text_order_record_status_finish">已完成</string>
+
+    <string name="text_reset_pwd_old">舊密碼：</string>
+    <string name="text_reset_pwd_new">新密碼：</string>
+    <string name="text_reset_pwd_confirm">確認密碼：</string>
+    <string name="text_reset_pwd_old_hint">輸入舊密碼</string>
+
+
+</resources>

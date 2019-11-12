@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.example.building.base.ClickPresenter" />
+
+        <variable
+            name="profile"
+            type="com.example.building.bean.ProfileBean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPageBg"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/layoutHeader"
+            layout="@layout/layout_common_header" />
+
+        <ScrollView
+            android:id="@+id/scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/page_margin"
+                    android:background="@drawable/sp_page_bg"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:paddingLeft="@dimen/page_margin"
+                        android:paddingRight="@dimen/page_margin">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/text_profile_account_hint"
+                            android:textColor="@color/colorHint"
+                            android:textSize="14sp" />
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/tvAccuntNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:text="@{profile.householderCode}"
+                            android:textColor="@color/colorText"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/colorDivider" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:paddingLeft="@dimen/page_margin"
+                        android:paddingRight="@dimen/page_margin">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/text_profile_address_hint"
+                            android:textColor="@color/colorHint"
+                            android:textSize="14sp" />
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/tvAddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:text="@{profile.address}"
+                            android:textColor="@color/colorText"
+                            android:textSize="14sp" />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/page_margin"
+                    android:layout_marginRight="@dimen/page_margin"
+                    android:background="@drawable/sp_page_bg"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/layoutUserHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:paddingLeft="@dimen/page_margin"
+                        android:paddingRight="10dp">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/text_profile_header_hint"
+                            android:textColor="@color/colorHint"
+                            android:textSize="14sp" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/civHeader"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="5dp"
+                            android:layout_toLeftOf="@+id/ivHeaderRight"
+                            android:onClick="@{(v)->presenter.onClick(v)}"
+                            android:src="@mipmap/icon_profile_header" />
+
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/ivHeaderRight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@mipmap/icon_right" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/colorDivider" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/layoutUserAccount"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:onClick="@{(v)->presenter.onClick(v)}"
+                        android:paddingLeft="@dimen/page_margin"
+                        android:paddingRight="10dp">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/text_profile_useraccount_hint"
+                            android:textColor="@color/colorHint"
+                            android:textSize="14sp" />
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/tvUserAccount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toLeftOf="@+id/ivUserAccountRight"
+                            android:text="@{profile.username}"
+                            android:textColor="@color/colorText"
+                            android:textSize="14sp" />
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/ivUserAccountRight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@mipmap/icon_right" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/colorDivider" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/layoutChangePwd"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:onClick="@{(v)->presenter.onClick(v)}"
+                        android:paddingLeft="@dimen/page_margin"
+                        android:paddingRight="10dp">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/text_profile_changepwd_hint"
+                            android:textColor="@color/colorHint"
+                            android:textSize="14sp" />
+
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@mipmap/icon_right" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/colorDivider" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/layoutNickName"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:onClick="@{(v)->presenter.onClick(v)}"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/page_margin"
+                        android:paddingRight="10dp">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_weight="1"
+                            android:text="@string/text_profile_name_hint"
+                            android:textColor="@color/colorHint"
+                            android:textSize="14sp" />
+
+
+                        <com.example.building.widget.ClearEditText
+                            android:id="@+id/tvNickName"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:layout_toLeftOf="@+id/ivNameRight"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:drawablePadding="5dp"
+                            android:gravity="end|center_vertical"
+                            android:hint="@string/text_profile_unset_hint"
+                            android:singleLine="true"
+                            android:text="@={profile.nickname}"
+                            android:textColor="@color/colorText"
+                            android:textColorHint="@color/colorHint"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginLeft="@dimen/page_margin"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/colorDivider" />
+
+                    <LinearLayout
+                        android:id="@+id/layoutMobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center_vertical"
+                        android:onClick="@{(v)->presenter.onClick(v)}"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/page_margin"
+                        android:paddingRight="10dp">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_weight="1"
+                            android:text="@string/text_profile_mobile_hint"
+                            android:textColor="@color/colorHint"
+                            android:textSize="14sp" />
+
+                        <com.example.building.widget.ClearEditText
+                            android:id="@+id/tvMobile"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="3dp"
+                            android:layout_toLeftOf="@+id/ivMobileRight"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:drawablePadding="5dp"
+                            android:gravity="right|center_vertical"
+                            android:hint="@string/text_profile_unset_hint"
+                            android:inputType="phone"
+                            android:text="@={profile.phoneNumber}"
+                            android:textColor="@color/colorText"
+                            android:textColorHint="@color/colorHint"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:visibility="gone"
+                    android:id="@+id/stview"
+                    android:layout_width="match_parent"
+                    android:layout_height="330dp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+</layout>

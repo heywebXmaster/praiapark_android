@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FourRoundView">
+        <attr name="lineWidth" format="dimension|reference" />
+        <attr name="strokeWidth" format="dimension|reference" />
+        <attr name="lineColor" format="color|reference" />
+    </declare-styleable>
+</resources>
