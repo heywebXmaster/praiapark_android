@@ -8,8 +8,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-
 import com.blankj.utilcode.util.ScreenUtils;
 import com.example.building.R;
 import com.example.building.aop.annotation.SingleClick;

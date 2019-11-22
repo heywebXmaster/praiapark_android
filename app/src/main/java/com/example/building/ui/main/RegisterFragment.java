@@ -14,6 +14,7 @@ import com.example.building.base.ClickPresenter;
 import com.example.building.databinding.FragmentRegisterBinding;
 import com.example.building.mvp.contract.LoginContract;
 import com.example.building.mvp.presenter.LoginPresenter;
+import com.example.building.util.LogUtil;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 public class RegisterFragment extends BaseFragment<FragmentRegisterBinding> implements ClickPresenter, LoginContract.LoginView {
@@ -25,6 +26,9 @@ public class RegisterFragment extends BaseFragment<FragmentRegisterBinding> impl
     }
 
     private String userCode;
+    private String encodeKey = "R0kP";
+    private String encodeKey2 = "G12Y";
+    private String encodeKey3 = "Ji9m";
 
     @Override
     protected int setViewId() {
@@ -86,9 +90,11 @@ public class RegisterFragment extends BaseFragment<FragmentRegisterBinding> impl
     }
 
     private void setWidgetWidth() {
-        int contentWidth = SizeUtils.getMeasuredWidth(dataBinding.layoutAccountNum);
+        int contentHeight = SizeUtils.getMeasuredHeight(dataBinding.layoutAccountNum);
+        LogUtil.d(contentHeight+"");
         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) dataBinding.rvAccountNum.getLayoutParams();
-        layoutParams.width = contentWidth + ConvertUtils.dp2px(20.0f);
+//        layoutParams.width = contentHeight + ConvertUtils.dp2px(20.0f);
+        layoutParams.height = contentHeight;
         dataBinding.rvAccountNum.setLayoutParams(layoutParams);
         dataBinding.rvAccountNum.postInvalidate();
     }
@@ -98,7 +104,10 @@ public class RegisterFragment extends BaseFragment<FragmentRegisterBinding> impl
         super.onFragmentResult(requestCode, resultCode, data);
         if (requestCode == -1 && resultCode == -1) {
             userCode = data.getString("scanResult");
-            dataBinding.setUserCode(userCode);
+            String scancode = userCode.replace(encodeKey,"-")
+                    .replace(encodeKey2,"-")
+                    .replace(encodeKey3,"-");
+            dataBinding.setUserCode(scancode);
             dataBinding.tvAccountNumHint.setText(R.string.text_register_user_account);
         }
     }

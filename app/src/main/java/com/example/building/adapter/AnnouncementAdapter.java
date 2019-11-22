@@ -48,13 +48,12 @@ public class AnnouncementAdapter extends BaseRecyclerAdapter<AnnouncementBean.An
         @Override
         public void bindData(AnnouncementBean.AnnouncementItemBean itemBean) {
             tvTitle.setText(itemBean.getTitle());
-            tvContent.setVisibility(View.GONE);
-            tvContent.setVisibility(View.GONE);
-            if (itemBean.getIsPdf() != 1 && !StringUtils.isEmpty(itemBean.getContent())) {
-                tvContent.setVisibility(View.VISIBLE);
-                tvContent.setText(Html.fromHtml(itemBean.getContent()));
-            }
-            tvOriginal.setText("第一太平戴維斯物業管理有限公司");
+//            tvContent.setVisibility(View.GONE);
+//            if (itemBean.getIsPdf() != 1 && !StringUtils.isEmpty(itemBean.getContent())) {
+//                tvContent.setVisibility(View.VISIBLE);
+//                tvContent.setText(Html.fromHtml(itemBean.getContent()));
+//            }
+//            tvOriginal.setText("第一太平戴維斯物業管理有限公司");
             tvDate.setText(itemBean.getPublishDate());
             if (StringUtils.isEmpty(itemBean.getThumbnail())) {
                 ivImg.setVisibility(View.GONE);

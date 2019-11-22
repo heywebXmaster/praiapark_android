@@ -14,7 +14,7 @@
 
     <string name="title_nav_notice">Notice</string>
     <string name="title_nav_service">Clubhouse</string>
-    <string name="title_nav_apply">Download</string>
+    <string name="title_nav_apply">Form download</string>
     <string name="title_nav_contact">Contact us</string>
     <string name="title_nav_info">Information</string>
     <string name="title_nav_setting">Setting</string>
@@ -44,7 +44,7 @@
         
     <string name="title_edit_name">Set nickname </string>
         
-    <string name="title_download_table">form download </string>
+    <string name="title_download_table">Form download </string>
         
     <string name="title_notice">Notification </string>
         
@@ -134,9 +134,9 @@
         
     <string name="text_login_pwd_hint">Enter password</string>
         
-    <string name="text_login_forget_pwd">Forgot your password?</string>
+    <string name="text_login_forget_pwd">Forget password</string>
         
-    <string name="text_login_confirm">login </string>
+    <string name="text_login_confirm">Login </string>
         
     <string name="text_login_register">Register </string>
         
@@ -149,14 +149,14 @@
         
     <string name="text_register_repwd_hint">confirm password </string>
         
-    <string name="text_register_confirm">submit </string>
+    <string name="text_register_confirm">Submit</string>
         
     <string name="text_register_confirm_scan">Click to get the customer number </string>
         
     <string name="text_register_pwd_not_same">Inconsistent passwords</string>
 
         
-    <string name="text_forget_pwd">forgot password </string>
+    <string name="text_forget_pwd">Forget password</string>
         
     <string name="text_forget_new_pwd">Enter a new password</string>
         
@@ -168,7 +168,7 @@
     <string name="text_club_service_title_map">club map </string>
         
     <string name="text_club_service_title_rule"> clubhouse code </string>
-    <string name="text_club_service_hope">敬请期待</string>
+    <string name="text_club_service_hope">Coming Soon</string>
     <string name="text_club_service_building">程序正在建设中..</string>
         
     <string name="text_add_order_apply">application unit </string>
@@ -196,14 +196,12 @@
     <string name="text_add_order_remind">Note: All devices can only be reserved 7 days in advance </string>
         
     <string name="text_add_order_add">pre-array </string>
-
         
-    <string name="text_info_title_unit">unit information </string>
+    <string name="text_info_title_unit">Unit</string>
         
-    <string name="text_info_title_traffic">Traffic information </string>
+    <string name="text_info_title_traffic">Traffic</string>
         
-    <string name="text_info_title_around"> ​​peripheral information </string>
-
+    <string name="text_info_title_around">​​Peripheral</string>
         
     <string name="text_order_record_time">reservation time </string>
         
@@ -225,4 +223,6 @@
     <string name="text_reset_pwd_confirm"> confirm password: </string>
         
     <string name="text_reset_pwd_old_hint">Enter the old password</string>
+
+    <string name="text_announcement_company">Savills</string>
 </resources>

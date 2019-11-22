@@ -16,10 +16,9 @@
     <string name="title_nav_service">會所</string>
     <string name="title_nav_apply">表格下載</string>
     <string name="title_nav_contact">聯絡我們</string>
-    <string name="title_nav_info">咨詢</string>
+    <string name="title_nav_info">資訊</string>
     <string name="title_nav_setting">設置</string>
     <!--不能更改的翻译-->
-
 
     <string name="app_name">擎天匯</string>
     <string name="OtherExpection">系統錯誤</string>
@@ -45,9 +44,9 @@
     <string name="text_pdf_share">分享</string>
 
     <string name="text_setting_profile">個人資料</string>
-    <string name="text_setting_lang">語言設置</string>
+    <string name="text_setting_lang">語言設定</string>
     <string name="text_setting_about">關於我們</string>
-    <string name="text_setting_provision">壹般條款與細則</string>
+    <string name="text_setting_provision">一般條款與細則</string>
     <string name="text_setting_declare">隱私政策聲明</string>
     <string name="text_setting_version">App版本</string>
 
@@ -59,7 +58,7 @@
 
     <string name="text_contact_us_title">標題：</string>
     <string name="text_contact_us_content">內容：</string>
-    <string name="text_contact_us_name">稱呼：</string>
+    <string name="text_contact_us_name">單位及稱呼：</string>
     <string name="text_contact_us_mobile">電話：</string>
     <string name="text_contact_us_title_hint">請輸入標題內容</string>
     <string name="text_contact_us_content_hint">請輸入內容</string>
@@ -137,6 +136,7 @@
     <string name="text_reset_pwd_new">新密碼：</string>
     <string name="text_reset_pwd_confirm">確認密碼：</string>
     <string name="text_reset_pwd_old_hint">輸入舊密碼</string>
+    <string name="text_announcement_company">第一太平戴維斯</string>
 
 
 </resources>

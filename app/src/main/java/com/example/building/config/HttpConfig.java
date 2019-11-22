@@ -2,13 +2,14 @@ package com.example.building.config;
 
 public class HttpConfig {
 
-    public static final String GOOGLE_PDF_LINK="https://docs.google.com/viewer?embedded=true&url=";
+    public static final String GOOGLE_PDF_LINK = "https://docs.google.com/viewer?embedded=true&url=";
 
     public static final String APP_ID = "123422343234";
 
     public static final String APP_SECRET = "QWqw123!@#$";
 
-    public static final String BASE_URL = "http://47.74.184.20";
+    public static final String BASE_URL = "https://praiapark-savills.com";
+//    public static final String BASE_URL = "http://47.74.184.20";
 
     //登录
     public static final String LOGIN = "/api/login";

@@ -53,6 +53,7 @@ public class HomeFragment extends BaseFragment<FragmentHomeBinding> implements C
         announcementAdapter = new AnnouncementAdapter();
         dataBinding.recyclerView.setAdapter(announcementAdapter);
         announcementAdapter.setItemClickListener(new ItemClickListener() {
+
             @Override
             public void onClick(int position) {
                 AnnouncementBean.AnnouncementItemBean announcementItemBean = list.get(position);
