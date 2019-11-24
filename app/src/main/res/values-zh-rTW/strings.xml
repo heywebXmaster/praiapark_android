@@ -1,5 +1,5 @@
 <resources>
-    <!--不能更改的翻译-->
+    <!--不能更改的翻譯-->
     <string name="digits_pwd">0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -18,7 +18,7 @@
     <string name="title_nav_contact">聯絡我們</string>
     <string name="title_nav_info">資訊</string>
     <string name="title_nav_setting">設置</string>
-    <!--不能更改的翻译-->
+    <!--不能更改的翻譯-->
 
     <string name="app_name">擎天匯</string>
     <string name="OtherExpection">系統錯誤</string>
@@ -51,7 +51,7 @@
     <string name="text_setting_version">App版本</string>
 
 
-    <string name="text_setting_lang_ch">简体</string>
+    <string name="text_setting_lang_ch">簡體</string>
     <string name="text_setting_lang_tw">繁體</string>
     <string name="text_setting_lang_en">English </string>
     <string name="text_setting_lang_confitm">完成</string>
@@ -60,8 +60,8 @@
     <string name="text_contact_us_content">內容：</string>
     <string name="text_contact_us_name">單位及稱呼：</string>
     <string name="text_contact_us_mobile">電話：</string>
-    <string name="text_contact_us_title_hint">請輸入標題內容</string>
-    <string name="text_contact_us_content_hint">請輸入內容</string>
+    <string name="text_contact_us_title_hint"></string>
+    <string name="text_contact_us_content_hint"></string>
     <string name="text_contact_us_desc">備註：</string>
     <string name="text_contact_us_desc_detail">備註:
         \n1.有關留言信息，客戶服務中心將於辦公時間或24小時內回覆。
@@ -72,7 +72,7 @@
         \n2.如遇緊急事件，請即致電服務熱線：(853)2883 3232
     </string>
 
-    <string name="text_profile_account_hint">賬號編號</string>
+    <string name="text_profile_account_hint">住戶編號</string>
     <string name="text_profile_address_hint">地址</string>
     <string name="text_profile_header_hint">頭像</string>
     <string name="text_profile_useraccount_hint">用戶賬號</string>
@@ -91,24 +91,24 @@
     <string name="text_login_register">註冊</string>
     <string name="text_login_declare">隱私政策</string>
 
-    <string name="text_register_user_account">客戶編號：</string>
-    <string name="text_register_account_hint">請輸入賬號名稱</string>
-    <string name="text_register_repwd_hint">確認密碼</string>
+    <string name="text_register_user_account">住戶編號：</string>
+    <string name="text_register_account_hint">輸入賬號</string>
+    <string name="text_register_repwd_hint">輸入確認密碼</string>
     <string name="text_register_confirm">提 交</string>
-    <string name="text_register_confirm_scan">點擊獲取客戶編號</string>
+    <string name="text_register_confirm_scan">點擊獲取住戶編號</string>
     <string name="text_register_pwd_not_same">密碼不壹致</string>
 
     <string name="text_forget_pwd">忘記密碼</string>
     <string name="text_forget_new_pwd">輸入新密碼</string>
-    <string name="text_forget_confirm_pwd">確認新密碼</string>
+    <string name="text_forget_confirm_pwd">輸入確認新密碼</string>
 
     <string name="text_club_service_title_acord">預約記錄</string>
     <string name="text_club_service_title_map">會所地圖</string>
     <string name="text_club_service_title_rule">會所守則</string>
-    <string name="text_club_service_hope">敬请期待</string>
-    <string name="text_club_service_building">程序正在建设中..</string>
+    <string name="text_club_service_hope">敬請期待</string>
+    <string name="text_club_service_building">程序正在建設中..</string>
     <string name="text_add_order_apply">申請單位</string>
-    <string name="text_add_order_name">客戶姓名</string>
+    <string name="text_add_order_name">住戶姓名</string>
     <string name="text_add_order_input_name">輸入姓名</string>
     <string name="text_add_order_mobile">聯系電話</string>
     <string name="text_add_order_input_mobile">輸入手機號碼</string>
