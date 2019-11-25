@@ -56,10 +56,10 @@ public class SettingFragment extends BaseFragment<FragmentSettingBinding> implem
                 ((MainFragment) getParentFragment()).startBrotherFragment(SettingLangFragment.newInstant());
                 break;
             case R.id.layoutAbout:
-
+                ((MainFragment) getParentFragment()).startBrotherFragment(HtmlFragment.newInstant(AppConfig.ABOUT_US,false));
                 break;
             case R.id.layoutDeclare://隐私政策
-                ((MainFragment) getParentFragment()).startBrotherFragment(HtmlFragment.newInstant(AppConfig.PRIVACY_POLICY));
+//                ((MainFragment) getParentFragment()).startBrotherFragment(HtmlFragment.newInstant(AppConfig.PRIVACY_POLICY,false));
                 break;
             case R.id.layoutProvision://条款细则
 

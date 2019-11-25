@@ -8,6 +8,7 @@ import com.example.building.R;
 import com.example.building.base.BaseFragment;
 import com.example.building.base.ClickPresenter;
 import com.example.building.databinding.FragmentScanBinding;
+import com.gyf.immersionbar.ImmersionBar;
 
 import cn.bingoogolapple.qrcode.core.QRCodeView;
 
@@ -29,7 +30,10 @@ public class ScanFragment extends BaseFragment<FragmentScanBinding> implements Q
 
     @Override
     protected void initView() {
-
+        ImmersionBar.with(getActivity())
+                .statusBarColor(R.color.black)
+                .fitsSystemWindows(true)
+                .init();
     }
 
     @Override
@@ -85,5 +89,11 @@ public class ScanFragment extends BaseFragment<FragmentScanBinding> implements Q
     @Override
     public void onClick(View v) {
         pop();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ImmersionBar.with(this).init();
     }
 }

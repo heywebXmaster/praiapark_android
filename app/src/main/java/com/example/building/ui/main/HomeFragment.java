@@ -5,6 +5,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.View;
 
+import com.blankj.utilcode.util.ConvertUtils;
+import com.blankj.utilcode.util.ScreenUtils;
 import com.example.building.R;
 import com.example.building.adapter.AnnouncementAdapter;
 import com.example.building.adapter.ItemClickListener;
@@ -50,9 +52,11 @@ public class HomeFragment extends BaseFragment<FragmentHomeBinding> implements C
         dataBinding.layoutHeader.ivBack.setImageResource(R.mipmap.icon_menu);
         dataBinding.layoutHeader.ivRight.setVisibility(View.VISIBLE);
         dataBinding.layoutHeader.ivRight.setImageResource(R.mipmap.icon_message);
-        announcementAdapter = new AnnouncementAdapter();
+        int screenWidth = ScreenUtils.getScreenWidth() - ConvertUtils.dp2px(60);
+        announcementAdapter = new AnnouncementAdapter(screenWidth / 3 * 2);
         dataBinding.recyclerView.setAdapter(announcementAdapter);
         announcementAdapter.setItemClickListener(new ItemClickListener() {
+
             @Override
             public void onClick(int position) {
                 AnnouncementBean.AnnouncementItemBean announcementItemBean = list.get(position);

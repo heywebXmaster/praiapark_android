@@ -15,40 +15,38 @@
     <string name="title_nav_notice">通告</string>
     <string name="title_nav_service">会所</string>
     <string name="title_nav_apply">表格下载</string>
-    <string name="title_nav_contact">联系我们</string>
-    <string name="title_nav_info">咨询</string>
+    <string name="title_nav_contact">联络我们</string>
+    <string name="title_nav_info">资讯</string>
     <string name="title_nav_setting">设置</string>
     <!--不能更改的翻译-->
 
-    <string name="app_name">擎天匯</string>
-    <string name="OtherExpection">系統錯誤</string>
-    <string name="NoRouteToHostException">無法連接到服務器</string>
-    <string name="SocketTimeoutException">網絡連接超時</string>
-    <string name="HttpException_500">連接失敗，請稍後再試</string>
-    <string name="HttpException_504">請求失敗，請檢查網絡連接</string>
-    <string name="UnknownHostException">無法連接到主機</string>
+    <string name="app_name">擎天汇</string>
+    <string name="OtherExpection">系统错误</string>
+    <string name="NoRouteToHostException">无法连接到服务器</string>
+    <string name="SocketTimeoutException">网络连接超时</string>
+    <string name="HttpException_500">连接失败，请稍后再试</string>
+    <string name="HttpException_504">请求失败，请检查网络连接</string>
+    <string name="UnknownHostException">无法连接到主机</string>
     <string name="msg_quite_remind">再按一次退出</string>
     <string name="msg_dialog_loading">加载中...</string>
 
-    <string name="ConnectException">网络连接不可用</string>
-
+    <string name="ConnectException">网络连结不可用</string>
 
     <string name="title_broadcast">公告栏</string>
     <string name="title_edit_name">设置昵称</string>
     <string name="title_download_table">表格下载</string>
     <string name="title_notice">通知</string>
     <string name="title_add_order">添加预约</string>
-    <string name="text_pdf_share">分享</string>
-
-
 
     <string name="title_nav_exit">退出</string>
     <string name="title_scan">扫描</string>
     <string name="title_reset_pwd">修改密码</string>
-
+    <string name="title_setting_lang">语言设定</string>
+    <string name="title_profile">个人资料</string>
+    <string name="text_pdf_share">分享</string>
 
     <string name="text_setting_profile">个人资料</string>
-    <string name="text_setting_lang">语言设置</string>
+    <string name="text_setting_lang">语言设定</string>
     <string name="text_setting_about">关于我们</string>
     <string name="text_setting_provision">一般条款与细则</string>
     <string name="text_setting_declare">隐私政策声明</string>
@@ -57,23 +55,23 @@
 
     <string name="text_setting_lang_ch">简体</string>
     <string name="text_setting_lang_tw">繁体</string>
-    <string name="text_setting_lang_en">英文</string>
+    <string name="text_setting_lang_en">English </string>
     <string name="text_setting_lang_confitm">完成</string>
 
     <string name="text_contact_us_title">标题：</string>
     <string name="text_contact_us_content">内容：</string>
-    <string name="text_contact_us_name">称呼：</string>
+    <string name="text_contact_us_name">单位及称呼：</string>
     <string name="text_contact_us_mobile">电话：</string>
     <string name="text_contact_us_title_hint">请输入标题内容</string>
     <string name="text_contact_us_content_hint">请输入内容</string>
     <string name="text_contact_us_desc">备注：</string>
-    <string name="text_contact_us_desc_detail">備註:
-        \n1.有關留言信息，客戶服務中心將於辦公時間或24小時內回覆。
-        \n<u>擎天匯客戶服務中心辦公時間：</u>
+    <string name="text_contact_us_desc_detail">备注:
+        \n1.有关留言信息，客户服务中心将于办公时间或24小时内回覆。
+        \n<u>擎天汇客户服务中心办公时间：</u>
         \n•&#160;星期一至星期五09:00 – 13:00 / 14:00 – 17:30
         \n•&#160;星期六09:00 – 13:00
-        \n•&#160;星期日及公眾假期休息
-        \n2.如遇緊急事件，請即致電服務熱線：(853)2883 3232
+        \n•&#160;星期日及公众假期休息
+        \n2.如遇紧急事件，请即致电服务热线：(853)2883 3232
     </string>
 
     <string name="text_profile_account_hint">账号编号</string>
@@ -111,7 +109,6 @@
     <string name="text_club_service_title_rule">会所守则</string>
     <string name="text_club_service_hope">敬请期待</string>
     <string name="text_club_service_building">程序正在建设中..</string>
-
     <string name="text_add_order_apply">申请单位</string>
     <string name="text_add_order_name">客户姓名</string>
     <string name="text_add_order_input_name">输入姓名</string>
@@ -141,6 +138,7 @@
     <string name="text_reset_pwd_new">新密码：</string>
     <string name="text_reset_pwd_confirm">确认密码：</string>
     <string name="text_reset_pwd_old_hint">输入旧密码</string>
+    <string name="text_announcement_company">第一太平戴维斯</string>
 
 
 </resources>

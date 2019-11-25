@@ -147,7 +147,7 @@ public class PdfFragment extends BaseFragment<FragmentPdfViewBinding> implements
             hideLoading();
             File file = new File(task.getTargetFilePath());
             dataBinding.pdfView.fromFile(file)
-                    .defaultPage(1)
+                    .defaultPage(0)
                     .enableAnnotationRendering(true)
                     .onLoad(new OnLoadCompleteListener() {
                         @Override

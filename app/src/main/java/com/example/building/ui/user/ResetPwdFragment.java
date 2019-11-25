@@ -108,6 +108,6 @@ public class ResetPwdFragment extends BaseFragment<FragmentResetPwdBinding> impl
 
     @Override
     public void resetPasswordSuccess() {
-        startWithPopTo(LoginFragment.newInstant(), MainFragment.class,true);
+        pop();
     }
 }

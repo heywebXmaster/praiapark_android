@@ -8,8 +8,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-
 import com.blankj.utilcode.util.ScreenUtils;
 import com.example.building.R;
 import com.example.building.aop.annotation.SingleClick;
@@ -75,10 +73,6 @@ public class MainFragment extends BaseFragment<FragmentMainBinding> implements V
     @Override
     protected void initView() {
         setSwipeBackEnable(false);
-        ImmersionBar.with(getActivity())
-                .statusBarColor(R.color.black)
-                .fitsSystemWindows(true)
-                .init();
         SupportFragment firstFragment = findChildFragment(HomeFragment.class);
         if (firstFragment == null) {
             fragmentList[FragmentEnum.HomeFragment.value] = HomeFragment.newInstant();

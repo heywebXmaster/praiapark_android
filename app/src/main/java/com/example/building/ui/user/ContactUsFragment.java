@@ -20,12 +20,14 @@ import com.example.building.mvp.contract.SettingContract;
 import com.example.building.mvp.presenter.SettingPresenter;
 import com.example.building.ui.main.MainFragment;
 import com.example.building.ui.main.WebFragment;
+import com.example.building.widget.ImageDialog;
 
 import java.util.List;
 
 public class ContactUsFragment extends BaseFragment<FragmentContactUsBinding> implements ClickPresenter, TextWatcher, SettingContract.SettingView {
 
     private SettingPresenter settingPresenter;
+    private ImageDialog dialog;
 
     public static ContactUsFragment newInstant() {
         return new ContactUsFragment();
@@ -47,25 +49,14 @@ public class ContactUsFragment extends BaseFragment<FragmentContactUsBinding> im
         dataBinding.layoutHeader.ivBack.setImageResource(R.mipmap.icon_menu);
         dataBinding.layoutHeader.tvright.setEnabled(false);
         dataBinding.layoutHeader.tvright.setVisibility(View.VISIBLE);
-//        final SpannableStringBuilder style = new SpannableStringBuilder();
-//        style.append(getString(R.string.text_contact_us_desc_detail));
-//        ClickableSpan clickableSpan = new ClickableSpan() {
-//            @Override
-//            public void onClick(View widget) {
-//                ((MainFragment) getParentFragment()).startBrotherFragment(WebFragment.newInstant("http://baidu.com","百度"));
-//            }
-//        };
-//        style.setSpan(clickableSpan, 37, 51, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-//        dataBinding.tvDescDetail.setText(style);
-//        ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(getResources().getColor(R.color.colorDrawable));
-//        style.setSpan(foregroundColorSpan, 37, 51, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-//        dataBinding.tvDescDetail.setMovementMethod(LinkMovementMethod.getInstance());
-//        dataBinding.tvDescDetail.setText(style);
+        dataBinding.descWeb.getSettings().setDefaultFontSize(12);
+        dataBinding.descWeb.loadUrl("file:///android_asset/index.html");
         settingPresenter = new SettingPresenter(this);
     }
 
     @Override
     protected void setListener() {
+        dataBinding.setPresenter(this);
         dataBinding.layoutHeader.setPresenter(this);
         dataBinding.etTitle.addTextChangedListener(this);
         dataBinding.etContent.addTextChangedListener(this);
@@ -83,6 +74,12 @@ public class ContactUsFragment extends BaseFragment<FragmentContactUsBinding> im
                 break;
             case R.id.tvright:
                 contactUs();
+                break;
+            case R.id.ivMap:
+                if (dialog == null) {
+                    dialog = new ImageDialog();
+                }
+                dialog.show(getFragmentManager(), "image");
                 break;
         }
     }

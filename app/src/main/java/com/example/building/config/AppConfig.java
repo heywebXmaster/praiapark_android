@@ -11,4 +11,6 @@ public class AppConfig {
     }
 
     public static final String PRIVACY_POLICY = "privacy_policy";
+    public static final String ABOUT_US = "about_us";
+
 }

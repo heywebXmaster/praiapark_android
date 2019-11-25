@@ -10,6 +10,7 @@ import com.example.building.config.AppConfig;
 import com.example.building.databinding.FragmentLoginBinding;
 import com.example.building.mvp.contract.LoginContract;
 import com.example.building.mvp.presenter.LoginPresenter;
+import com.example.building.util.LogUtil;
 import com.gyf.immersionbar.ImmersionBar;
 
 import me.yokeyword.fragmentation.anim.DefaultVerticalAnimator;
@@ -60,7 +61,7 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding> implements
                 startNewFragment(RegisterFragment.newInstant());
                 break;
             case R.id.tvDeclare:
-                startNewFragment(HtmlFragment.newInstant(AppConfig.PRIVACY_POLICY));
+//                startNewFragment(HtmlFragment.newInstant(AppConfig.PRIVACY_POLICY,true));
                 break;
         }
     }
@@ -83,6 +84,10 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding> implements
 
     @Override
     public void loginSuccess() {
+        ImmersionBar.with(getActivity())
+                .statusBarColor(R.color.black)
+                .fitsSystemWindows(true)
+                .init();
         startWithPop(MainFragment.newInstant());
     }
 
@@ -90,5 +95,4 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding> implements
     public void forgetSuccess() {
 
     }
-
 }

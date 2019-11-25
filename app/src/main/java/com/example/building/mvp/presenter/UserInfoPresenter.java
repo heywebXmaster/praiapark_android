@@ -58,12 +58,12 @@ public class UserInfoPresenter implements UserInfoContract.UserInfoPresenter {
     @Override
     public void updateProfile(String nickname, String phoneNumber, String avatar) {
         infoView.showLoading();
-        MultipartBody.Part body=null;
-        if(!StringUtils.isEmpty(avatar)){
+        MultipartBody.Part body = null;
+        if (!StringUtils.isEmpty(avatar)) {
             File file = new File(avatar);
             RequestBody requestFile =
                     RequestBody.create(MediaType.parse("image/png"), file);
-            body=MultipartBody.Part.createFormData("avatar", file.getName(), requestFile);
+            body = MultipartBody.Part.createFormData("avatar", file.getName(), requestFile);
         }
         StringBuffer signStr = new StringBuffer();
         signStr.append("appId").append("=").append(HttpConfig.APP_ID);
@@ -85,15 +85,26 @@ public class UserInfoPresenter implements UserInfoContract.UserInfoPresenter {
         LogUtil.e(finalMd5);
         RequestBody body1 = RequestBody.create(MediaType.parse("application/form-data; charset=UTF-8"), HttpConfig.APP_ID);
         RequestBody body2 = RequestBody.create(MediaType.parse("application/form-data; charset=UTF-8"), LocalSaveData.getInstance().getLang());
-        RequestBody body3 = RequestBody.create(MediaType.parse("application/form-data; charset=UTF-8"), nickname);
-        RequestBody body4 = RequestBody.create(MediaType.parse("application/form-data; charset=UTF-8"), phoneNumber);
+        RequestBody body3 = null;
+        if (!StringUtils.isEmpty(nickname)) {
+            body3 = RequestBody.create(MediaType.parse("application/form-data; charset=UTF-8"), nickname);
+        }
+        RequestBody body4 = null;
+        if (!StringUtils.isEmpty(phoneNumber)) {
+            body4 = RequestBody.create(MediaType.parse("application/form-data; charset=UTF-8"), phoneNumber);
+        }
+
         RequestBody body5 = RequestBody.create(MediaType.parse("application/form-data; charset=UTF-8"), LocalSaveData.getInstance().getUserName());
         RequestBody body6 = RequestBody.create(MediaType.parse("application/form-data; charset=UTF-8"), finalMd5);
         Map<String, RequestBody> params = new HashMap<>();
         params.put("appId", body1);
         params.put("lang", body2);
-        params.put("nickname", body3);
-        params.put("phoneNumber", body4);
+        if (!StringUtils.isEmpty(nickname)) {
+            params.put("nickname", body3);
+        }
+        if (!StringUtils.isEmpty(phoneNumber)) {
+            params.put("phoneNumber", body4);
+        }
         params.put("username", body5);
         params.put("sign", body6);
         RetrofitFactory.getInstence().API().updateProfile(params,

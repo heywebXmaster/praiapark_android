@@ -1,6 +1,7 @@
 package com.example.building.base;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.databinding.DataBindingUtil;
@@ -19,6 +20,13 @@ import org.greenrobot.eventbus.EventBus;
 
 import java.util.Locale;
 
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 import me.jessyan.autosize.AutoSizeCompat;
 import me.yokeyword.fragmentation.anim.DefaultHorizontalAnimator;
 import me.yokeyword.fragmentation.anim.FragmentAnimator;
@@ -39,7 +47,7 @@ public abstract class BaseActivity<V extends ViewDataBinding> extends SwipeBackA
         setListener();
     }
 
-    private void initLang() {
+    public void initLang() {
         String lang = LocalSaveData.getInstance().getLang();
         if (StringUtils.isEmpty(lang)) {
             Locale locale;
@@ -85,10 +93,16 @@ public abstract class BaseActivity<V extends ViewDataBinding> extends SwipeBackA
         } else if (lang.equals(LocalSaveData.TAG.LANG_TW)) {
             config.locale = Locale.TAIWAN;
         } else {
-            config.locale = Locale.ENGLISH;
+            config.locale = Locale.UK;
         }
         DisplayMetrics dm = resources.getDisplayMetrics();
         resources.updateConfiguration(config, dm);
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(newBase);
+
     }
 
     @Override

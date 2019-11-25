@@ -4,31 +4,33 @@
 
     <data>
 
+        <variable
+            name="presenter"
+            type="com.example.building.base.ClickPresenter" />
     </data>
 
     <LinearLayout
-        android:focusable="true"
-        android:focusableInTouchMode="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPageBg"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:orientation="vertical">
 
         <include
             android:id="@+id/layoutHeader"
             layout="@layout/layout_common_header" />
 
-        <ScrollView
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:overScrollMode="never">
-
+            android:overScrollMode="never"
+            android:padding="@dimen/page_margin">
 
             <LinearLayout
                 android:id="@+id/layoutContent"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/page_margin"
+                android:layout_height="match_parent"
                 android:background="@drawable/sp_page_bg"
                 android:orientation="vertical">
 
@@ -170,11 +172,11 @@
                     <android.support.v7.widget.AppCompatEditText
                         android:id="@+id/etMobile"
                         android:layout_width="0dp"
-                        android:inputType="phone"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_weight="1"
                         android:background="@color/white"
+                        android:inputType="phone"
                         android:singleLine="true"
                         android:textColor="@color/colorText"
                         android:textColorHint="@color/colorHint"
@@ -190,18 +192,40 @@
                     android:layout_marginRight="@dimen/page_margin"
                     android:background="@color/colorDivider" />
 
+                <WebView
+                    android:overScrollMode="never"
+                    android:id="@+id/descWeb"
+                    android:layout_width="match_parent"
+                    android:scrollbars="none"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/page_margin" />
+
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/tvDescDetail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/page_margin"
                     android:lineSpacingExtra="5dp"
                     android:text="@string/text_contact_us_desc_detail"
-                    android:layout_margin="@dimen/page_margin"
                     android:textColor="@color/colorDrawable"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/ivMap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/page_margin"
+                    android:layout_marginRight="@dimen/page_margin"
+                    android:adjustViewBounds="true"
+                    android:onClick="@{(v)->presenter.onClick(v)}"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/map"
+                    android:visibility="gone" />
             </LinearLayout>
-        </ScrollView>
+        </android.support.v4.widget.NestedScrollView>
     </LinearLayout>
 
 </layout>

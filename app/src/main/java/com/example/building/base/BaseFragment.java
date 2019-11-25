@@ -2,29 +2,38 @@ package com.example.building.base;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.graphics.Color;
 import android.graphics.Rect;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.blankj.utilcode.util.StringUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.example.building.R;
+import com.example.building.config.LocalSaveData;
 import com.example.building.mvp.BaseView;
 import com.example.building.net.RxNetManager;
+import com.example.building.ui.main.MainActivity;
 import com.example.building.util.NetWorkUtil;
 import com.example.building.util.ToastUtil;
 import com.gyf.immersionbar.ImmersionBar;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 
 import org.greenrobot.eventbus.EventBus;
+
+import java.util.Locale;
 
 import me.yokeyword.fragmentation.SupportFragment;
 import me.yokeyword.fragmentation_swipeback.SwipeBackFragment;
@@ -42,9 +51,48 @@ public abstract class BaseFragment<V extends ViewDataBinding> extends SwipeBackF
         super.onActivityCreated(savedInstanceState);
         setParallaxOffset(0.5f);
         mContext = getActivity();
+        MainActivity mainActivity = (MainActivity) getActivity();
+        mainActivity.initLang();
         setTitle();
         initView();
         setListener();
+    }
+
+    private void initLang() {
+        String lang = LocalSaveData.getInstance().getLang();
+        if (StringUtils.isEmpty(lang)) {
+            Locale locale;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                locale = getResources().getConfiguration().getLocales().get(0);
+            } else {
+                locale = getResources().getConfiguration().locale;
+            }
+            String systemLang = locale.getLanguage() + "-" + locale.getCountry();
+            if (systemLang.contains("TW") || systemLang.contains("HK")) {
+                setLang(LocalSaveData.TAG.LANG_TW);
+            } else if (systemLang.contains(LocalSaveData.TAG.LANG_EN)) {
+                setLang(LocalSaveData.TAG.LANG_EN);
+            } else {
+                setLang(LocalSaveData.TAG.LANG_CN);
+            }
+        } else {
+            setLang(lang);
+        }
+    }
+
+    public void setLang(String lang) {
+        LocalSaveData.getInstance().saveLang(lang);
+        Resources resources = getResources();
+        Configuration config = resources.getConfiguration();
+        if (lang.equals(LocalSaveData.TAG.LANG_CN)) {
+            config.locale = Locale.CHINESE;
+        } else if (lang.equals(LocalSaveData.TAG.LANG_TW)) {
+            config.locale = Locale.TAIWAN;
+        } else {
+            config.locale = Locale.UK;
+        }
+        DisplayMetrics dm = resources.getDisplayMetrics();
+        resources.updateConfiguration(config, dm);
     }
 
     @Nullable

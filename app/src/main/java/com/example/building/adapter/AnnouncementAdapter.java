@@ -17,6 +17,12 @@ import com.example.building.bean.AnnouncementBean;
 
 public class AnnouncementAdapter extends BaseRecyclerAdapter<AnnouncementBean.AnnouncementItemBean> {
     private ItemClickListener clickListener;
+    private int height;
+
+    public AnnouncementAdapter(int height) {
+        this.height = height;
+    }
+
 
     public void setItemClickListener(ItemClickListener clickListener) {
         this.clickListener = clickListener;
@@ -43,18 +49,20 @@ public class AnnouncementAdapter extends BaseRecyclerAdapter<AnnouncementBean.An
             ivImg = findView(R.id.ivImg);
             tvOriginal = findView(R.id.tvOriginal);
             tvDate = findView(R.id.tvDate);
+            LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) ivImg.getLayoutParams();
+            layoutParams.height = height;
+            ivImg.setLayoutParams(layoutParams);
         }
 
         @Override
         public void bindData(AnnouncementBean.AnnouncementItemBean itemBean) {
             tvTitle.setText(itemBean.getTitle());
-            tvContent.setVisibility(View.GONE);
-            tvContent.setVisibility(View.GONE);
-            if (itemBean.getIsPdf() != 1 && !StringUtils.isEmpty(itemBean.getContent())) {
-                tvContent.setVisibility(View.VISIBLE);
-                tvContent.setText(Html.fromHtml(itemBean.getContent()));
-            }
-            tvOriginal.setText("第一太平戴維斯物業管理有限公司");
+//            tvContent.setVisibility(View.GONE);
+//            if (itemBean.getIsPdf() != 1 && !StringUtils.isEmpty(itemBean.getContent())) {
+//                tvContent.setVisibility(View.VISIBLE);
+//                tvContent.setText(Html.fromHtml(itemBean.getContent()));
+//            }
+//            tvOriginal.setText("第一太平戴維斯物業管理有限公司");
             tvDate.setText(itemBean.getPublishDate());
             if (StringUtils.isEmpty(itemBean.getThumbnail())) {
                 ivImg.setVisibility(View.GONE);
