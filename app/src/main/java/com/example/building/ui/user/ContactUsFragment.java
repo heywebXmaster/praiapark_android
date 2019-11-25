@@ -49,8 +49,26 @@ public class ContactUsFragment extends BaseFragment<FragmentContactUsBinding> im
         dataBinding.layoutHeader.ivBack.setImageResource(R.mipmap.icon_menu);
         dataBinding.layoutHeader.tvright.setEnabled(false);
         dataBinding.layoutHeader.tvright.setVisibility(View.VISIBLE);
+<<<<<<< HEAD
         dataBinding.descWeb.getSettings().setDefaultFontSize(12);
         dataBinding.descWeb.loadUrl("file:///android_asset/index.html");
+=======
+        dataBinding.descWeb.loadUrl("file:///android_asset/index.html");
+//        final SpannableStringBuilder style = new SpannableStringBuilder();
+//        style.append(getString(R.string.text_contact_us_desc_detail));
+//        ClickableSpan clickableSpan = new ClickableSpan() {
+//            @Override
+//            public void onClick(View widget) {
+//                ((MainFragment) getParentFragment()).startBrotherFragment(WebFragment.newInstant("http://baidu.com","百度"));
+//            }
+//        };
+//        style.setSpan(clickableSpan, 37, 51, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+//        dataBinding.tvDescDetail.setText(style);
+//        ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(getResources().getColor(R.color.colorDrawable));
+//        style.setSpan(foregroundColorSpan, 37, 51, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+//        dataBinding.tvDescDetail.setMovementMethod(LinkMovementMethod.getInstance());
+//        dataBinding.tvDescDetail.setText(style);
+>>>>>>> 97bf0daae216552ac4813a37e530582dc001e2c5
         settingPresenter = new SettingPresenter(this);
     }
 

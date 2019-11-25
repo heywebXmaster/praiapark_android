@@ -15,7 +15,10 @@ import com.example.building.databinding.FragmentRegisterBinding;
 import com.example.building.mvp.contract.LoginContract;
 import com.example.building.mvp.presenter.LoginPresenter;
 import com.example.building.util.LogUtil;
+<<<<<<< HEAD
 import com.gyf.immersionbar.ImmersionBar;
+=======
+>>>>>>> 97bf0daae216552ac4813a37e530582dc001e2c5
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 public class RegisterFragment extends BaseFragment<FragmentRegisterBinding> implements ClickPresenter, LoginContract.LoginView {

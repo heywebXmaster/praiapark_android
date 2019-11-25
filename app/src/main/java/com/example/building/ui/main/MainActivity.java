@@ -15,6 +15,11 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
     @Override
     protected void initView() {
         setSwipeBackEnable(false);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         if (LocalSaveData.getInstance().isLogin()) {
             loadRootFragment(R.id.frameLayout, MainFragment.newInstant());
         } else {

@@ -4,8 +4,8 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="smart_refresh_pulling"> pull up to load more </string>
-    <string name="smart_refresh_release">release immediate load </string>
+    <string name="smart_refresh_pulling"> Pull up to load more </string>
+    <string name="smart_refresh_release">Release immediate load </string>
     <string name="smart_refresh_refreshing"> is refreshing...</string>
     <string name="smart_refresh_loading">Loading...</string>
     <string name="smart_refresh_finish">Load completed </string>
@@ -21,29 +21,37 @@
     <!--不能更改的翻译-->
 
     <string name="app_name">擎天匯</string>
-    <string name="OtherExpection"> system error </string>
+    <string name="OtherExpection"> System error </string>
         
     <string name="NoRouteToHostException">Unable to connect to the server </string>
         
-    <string name="SocketTimeoutException"> network connection timeout </string>
+    <string name="SocketTimeoutException"> Network connection timeout </string>
         
     <string name="ConnectException">Network unavailable</string>
         
-    <string name="HttpException_500"> connection failed, please try again later </string>
+    <string name="HttpException_500"> Connection failed, please try again later </string>
         
-    <string name="HttpException_504"> request failed, please check the network connection </string>
+    <string name="HttpException_504"> Request failed, please check the network connection </string>
         
     <string name="UnknownHostException">Unable to connect to the host </string>
         
-    <string name="msg_quite_remind"> press again to exit </string>
+    <string name="msg_quite_remind"> Press again to exit </string>
         
     <string name="msg_dialog_loading">Loading...</string>
         
+<<<<<<< HEAD
     <string name="title_broadcast">Bulletin board</string>
+=======
+    <string name="title_broadcast"> Bulletin board </string>
+>>>>>>> 97bf0daae216552ac4813a37e530582dc001e2c5
         
     <string name="title_edit_name">Set nickname</string>
         
+<<<<<<< HEAD
     <string name="title_download_table">Form download</string>
+=======
+    <string name="title_download_table">Form download </string>
+>>>>>>> 97bf0daae216552ac4813a37e530582dc001e2c5
         
     <string name="title_notice">Notification</string>
         
@@ -51,7 +59,7 @@
         
     <string name="title_nav_exit">Exit</string>
         
-    <string name="title_scan">scan </string>
+    <string name="title_scan">Scan </string>
         
     <string name="title_reset_pwd">Change password</string>
 
@@ -63,7 +71,13 @@
 
     <string name="text_setting_profile">profile</string>
         
+<<<<<<< HEAD
     <string name="text_setting_lang">language settings</string>
+=======
+    <string name="text_setting_profile">Profile </string>
+        
+    <string name="text_setting_lang">Language settings </string>
+>>>>>>> 97bf0daae216552ac4813a37e530582dc001e2c5
         
     <string name="text_setting_about">About us</string>
         
@@ -88,13 +102,13 @@
         
     <string name="text_contact_us_content">Content: </string>
         
-    <string name="text_contact_us_name">call: </string>
+    <string name="text_contact_us_name">Call: </string>
         
     <string name="text_contact_us_mobile">Phone: </string>
         
-    <string name="text_contact_us_title_hint">Please enter the title content</string>
+    <string name="text_contact_us_title_hint"></string>
         
-    <string name="text_contact_us_content_hint">Please enter the content </string>
+    <string name="text_contact_us_content_hint"></string>
         
     <string name="text_contact_us_desc">Remarks: </string>
         
@@ -107,19 +121,19 @@
         \n2.In case of emergency, you can contact the service hotline：(853)2883 3232
     </string>
         
-    <string name="text_profile_account_hint">account number </string>
+    <string name="text_profile_account_hint">Account number </string>
         
-    <string name="text_profile_address_hint">address </string>
+    <string name="text_profile_address_hint">Address </string>
         
-    <string name="text_profile_header_hint">avatar </string>
+    <string name="text_profile_header_hint">Avatar </string>
         
-    <string name="text_profile_useraccount_hint">user account </string>
+    <string name="text_profile_useraccount_hint">User account </string>
         
-    <string name="text_profile_changepwd_hint"> password modification </string>
+    <string name="text_profile_changepwd_hint">Password modification </string>
         
-    <string name="text_profile_name_hint">nickname </string>
+    <string name="text_profile_name_hint">Nickname </string>
         
-    <string name="text_profile_mobile_hint">phone</string>
+    <string name="text_profile_mobile_hint">Phone</string>
         
     <string name="text_profile_unset_hint"> not set </string>
 
@@ -128,9 +142,9 @@
     <string name="text_download_fixtures">Request to decorate PDF</string>
 
         
-    <string name="text_login_account_hint">Enter account </string>
+    <string name="text_login_account_hint">Account </string>
         
-    <string name="text_login_pwd_hint">Enter password</string>
+    <string name="text_login_pwd_hint">Password</string>
         
     <string name="text_login_forget_pwd">Forget password</string>
         
@@ -143,9 +157,9 @@
         
     <string name="text_register_user_account">Customer ID: </string>
         
-    <string name="text_register_account_hint">Please enter the account name </string>
+    <string name="text_register_account_hint">Account name </string>
         
-    <string name="text_register_repwd_hint">confirm password </string>
+    <string name="text_register_repwd_hint">Confirm password </string>
         
     <string name="text_register_confirm">Submit</string>
         
@@ -156,44 +170,52 @@
         
     <string name="text_forget_pwd">Forget password</string>
         
-    <string name="text_forget_new_pwd">Enter a new password</string>
+    <string name="text_forget_new_pwd">New password</string>
         
     <string name="text_forget_confirm_pwd">Confirm new password</string>
 
         
-    <string name="text_club_service_title_acord">reservation record</string>
+    <string name="text_club_service_title_acord">Reservation record</string>
         
-    <string name="text_club_service_title_map">club map </string>
+    <string name="text_club_service_title_map">Club map </string>
         
+<<<<<<< HEAD
     <string name="text_club_service_title_rule"> clubhouse code </string>
+=======
+    <string name="text_club_service_title_rule"> Clubhouse code </string>
+>>>>>>> 97bf0daae216552ac4813a37e530582dc001e2c5
     <string name="text_club_service_hope">Coming Soon</string>
     <string name="text_club_service_building">程序正在建设中..</string>
         
-    <string name="text_add_order_apply">application unit </string>
+    <string name="text_add_order_apply">Application unit </string>
         
     <string name="text_add_order_name">Customer Name</string>
         
     <string name="text_add_order_input_name">Enter name</string>
         
-    <string name="text_add_order_mobile">contact phone </string>
+    <string name="text_add_order_mobile">Contact phone </string>
         
     <string name="text_add_order_input_mobile">Enter mobile number </string>
         
-    <string name="text_add_order_devices">club equipment </string>
+    <string name="text_add_order_devices">Club equipment </string>
         
     <string name="text_add_order_choose_devices">Select device </string>
         
-    <string name="text_add_order_price">device price </string>
+    <string name="text_add_order_price">Device price </string>
         
-    <string name="text_add_order_start_time">reservation start time </string>
+    <string name="text_add_order_start_time">Reservation start time </string>
         
-    <string name="text_add_order_end_time">end time </string>
+    <string name="text_add_order_end_time">End time </string>
         
-    <string name="text_add_order_amount">total price </string>
+    <string name="text_add_order_amount">Total price </string>
         
     <string name="text_add_order_remind">Note: All devices can only be reserved 7 days in advance </string>
         
+<<<<<<< HEAD
     <string name="text_add_order_add">pre-array </string>
+=======
+    <string name="text_add_order_add">Pre-array </string>
+>>>>>>> 97bf0daae216552ac4813a37e530582dc001e2c5
         
     <string name="text_info_title_unit">Unit</string>
         
@@ -201,24 +223,24 @@
         
     <string name="text_info_title_around">​​Peripheral</string>
         
-    <string name="text_order_record_time">reservation time </string>
+    <string name="text_order_record_time">Reservation time </string>
         
-    <string name="text_order_record_status">reservation status </string>
+    <string name="text_order_record_status">Reservation status </string>
         
     <string name="text_order_record_status_prepay">Pending payment</string>
         
-    <string name="text_order_record_status_paid">paid </string>
+    <string name="text_order_record_status_paid">Paid </string>
         
     <string name="text_order_record_status_ready">Backup </string>
         
     <string name="text_order_record_status_finish"> is completed </string>
 
         
-    <string name="text_reset_pwd_old"> old password: </string>
+    <string name="text_reset_pwd_old"> Pld password: </string>
         
-    <string name="text_reset_pwd_new"> new password: </string>
+    <string name="text_reset_pwd_new"> New password: </string>
         
-    <string name="text_reset_pwd_confirm"> confirm password: </string>
+    <string name="text_reset_pwd_confirm"> Confirm password: </string>
         
     <string name="text_reset_pwd_old_hint">Enter the old password</string>
 
