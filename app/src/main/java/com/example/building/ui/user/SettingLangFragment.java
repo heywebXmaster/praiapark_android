@@ -26,7 +26,7 @@ public class SettingLangFragment extends BaseFragment<FragmentSettingLangBinding
 
     @Override
     protected void setTitle() {
-        dataBinding.layoutHeader.setTitle(getString(R.string.title_setting_lang));
+        dataBinding.layoutHeader.setTitle(getString(R.string.text_setting_lang));
     }
 
     @Override

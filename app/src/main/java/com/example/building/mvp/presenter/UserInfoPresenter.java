@@ -167,7 +167,6 @@ public class UserInfoPresenter implements UserInfoContract.UserInfoPresenter {
 
                     @Override
                     protected void onSuccees(BaseEntity<String> t) {
-                        LocalSaveData.getInstance().setLogin(false);
                         infoView.showToast(t.getErrorMsg());
                         infoView.resetPasswordSuccess();
                     }

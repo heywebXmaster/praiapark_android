@@ -202,7 +202,7 @@ public class PdfFragment extends BaseFragment<FragmentPdfViewBinding> implements
         try {
             Intent intent = new Intent();
             intent.setAction(Intent.ACTION_SEND);
-            intent.putExtra(Intent.EXTRA_TEXT, title + url);
+            intent.putExtra(Intent.EXTRA_TEXT, title +"\n"+ url);
             intent.setType("text/plain");
             startActivity(intent);
         } catch (Exception e) {

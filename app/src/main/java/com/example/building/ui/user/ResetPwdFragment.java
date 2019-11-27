@@ -67,10 +67,10 @@ public class ResetPwdFragment extends BaseFragment<FragmentResetPwdBinding> impl
         String oldPwd = dataBinding.etOldPwd.getText().toString();
         String newPwd = dataBinding.etNewPwd.getText().toString();
         String confirmPwd = dataBinding.etConfirmPwd.getText().toString();
-        if (!newPwd.equals(confirmPwd)) {
-            showToast(getString(R.string.text_register_pwd_not_same));
-            return;
-        }
+//        if (!newPwd.equals(confirmPwd)) {
+//            showToast(getString(R.string.text_register_pwd_not_same));
+//            return;
+//        }
         infoPresenter.resetPassword(oldPwd,confirmPwd);
 
     }

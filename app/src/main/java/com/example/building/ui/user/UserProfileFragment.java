@@ -31,9 +31,6 @@ public class UserProfileFragment extends BaseFragment<FragmentUserProfileBinding
     private UserInfoPresenter infoPresenter;
     private ProfileBean profileBean;
     private String pictureSelectPath = "";
-    private String encodeKey = "R0kP";
-    private String encodeKey2 = "G12Y";
-    private String encodeKey3 = "Ji9m";
 
     public static UserProfileFragment newInstant() {
         return new UserProfileFragment();
@@ -52,7 +49,7 @@ public class UserProfileFragment extends BaseFragment<FragmentUserProfileBinding
 
     @Override
     protected void setTitle() {
-        dataBinding.layoutHeader.setTitle(getString(R.string.title_profile));
+        dataBinding.layoutHeader.setTitle(getString(R.string.text_setting_profile));
     }
 
     @Override
@@ -148,10 +145,6 @@ public class UserProfileFragment extends BaseFragment<FragmentUserProfileBinding
 
     @Override
     public void showProfile(ProfileBean profileBean) {
-        String houseHolderCode = profileBean.getHouseholderCode().replace(encodeKey,"-")
-                .replace(encodeKey2,"-")
-                .replace(encodeKey3,"-");;
-        profileBean.setHouseholderCode(houseHolderCode);
         this.profileBean = profileBean;
         dataBinding.layoutHeader.tvright.setEnabled(true);
         dataBinding.setProfile(profileBean);

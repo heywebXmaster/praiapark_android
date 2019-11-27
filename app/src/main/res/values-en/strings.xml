@@ -38,26 +38,22 @@
     <string name="msg_quite_remind"> Press again to exit </string>
         
     <string name="msg_dialog_loading">Loading...</string>
+
         
-<<<<<<< HEAD
-    <string name="title_broadcast">Bulletin board</string>
-=======
-    <string name="title_broadcast"> Bulletin board </string>
->>>>>>> 97bf0daae216552ac4813a37e530582dc001e2c5
+    <string name="title_broadcast">Notice</string>
         
-    <string name="title_edit_name">Set nickname</string>
+    <string name="title_edit_name">Set nickname </string>
         
-<<<<<<< HEAD
-    <string name="title_download_table">Form download</string>
-=======
     <string name="title_download_table">Form download </string>
->>>>>>> 97bf0daae216552ac4813a37e530582dc001e2c5
         
-    <string name="title_notice">Notification</string>
+    <string name="title_notice">Notification </string>
         
     <string name="title_add_order">Add an appointment</string>
+
         
-    <string name="title_nav_exit">Exit</string>
+
+        
+    <string name="title_nav_exit">Exit </string>
         
     <string name="title_scan">Scan </string>
         
@@ -65,37 +61,29 @@
 
     <string name="title_profile">Profile</string>
 
-    <string name="text_pdf_share">Share</string>
-
     <string name="title_setting_lang">Language settings</string>
 
-    <string name="text_setting_profile">profile</string>
+    <string name="text_pdf_share">Share</string>
         
-<<<<<<< HEAD
-    <string name="text_setting_lang">language settings</string>
-=======
     <string name="text_setting_profile">Profile </string>
         
     <string name="text_setting_lang">Language settings </string>
->>>>>>> 97bf0daae216552ac4813a37e530582dc001e2c5
         
     <string name="text_setting_about">About us</string>
         
-    <string name="text_setting_provision">General Terms and Conditions</string>
+    <string name="text_setting_provision">General Terms and Conditions </string>
         
     <string name="text_setting_declare">Privacy Policy Statement</string>
         
     <string name="text_setting_version">App version </string>
 
-
-        
     <string name="text_setting_lang_ch">简体</string>
         
     <string name="text_setting_lang_tw">繁體</string>
         
     <string name="text_setting_lang_en">English</string>
         
-    <string name="text_setting_lang_confitm">Complete </string>
+    <string name="text_setting_lang_confitm">Finish</string>
 
         
     <string name="text_contact_us_title">Title: </string>
@@ -179,11 +167,7 @@
         
     <string name="text_club_service_title_map">Club map </string>
         
-<<<<<<< HEAD
-    <string name="text_club_service_title_rule"> clubhouse code </string>
-=======
     <string name="text_club_service_title_rule"> Clubhouse code </string>
->>>>>>> 97bf0daae216552ac4813a37e530582dc001e2c5
     <string name="text_club_service_hope">Coming Soon</string>
     <string name="text_club_service_building">程序正在建设中..</string>
         
@@ -211,11 +195,7 @@
         
     <string name="text_add_order_remind">Note: All devices can only be reserved 7 days in advance </string>
         
-<<<<<<< HEAD
-    <string name="text_add_order_add">pre-array </string>
-=======
     <string name="text_add_order_add">Pre-array </string>
->>>>>>> 97bf0daae216552ac4813a37e530582dc001e2c5
         
     <string name="text_info_title_unit">Unit</string>
         

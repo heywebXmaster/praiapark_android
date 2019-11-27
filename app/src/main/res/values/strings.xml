@@ -32,7 +32,7 @@
 
     <string name="ConnectException">网络连结不可用</string>
 
-    <string name="title_broadcast">公告栏</string>
+    <string name="title_broadcast">通告</string>
     <string name="title_edit_name">设置昵称</string>
     <string name="title_download_table">表格下载</string>
     <string name="title_notice">通知</string>
@@ -41,11 +41,8 @@
     <string name="title_nav_exit">退出</string>
     <string name="title_scan">扫描</string>
     <string name="title_reset_pwd">修改密码</string>
-<<<<<<< HEAD
-    <string name="title_setting_lang">语言设定</string>
     <string name="title_profile">个人资料</string>
-=======
->>>>>>> 97bf0daae216552ac4813a37e530582dc001e2c5
+    <string name="title_setting_lang">语言设定</string>
     <string name="text_pdf_share">分享</string>
 
     <string name="text_setting_profile">个人资料</string>
@@ -54,7 +51,6 @@
     <string name="text_setting_provision">一般条款与细则</string>
     <string name="text_setting_declare">隐私政策声明</string>
     <string name="text_setting_version">App版本</string>
-
 
     <string name="text_setting_lang_ch">简体</string>
     <string name="text_setting_lang_tw">繁体</string>
@@ -69,11 +65,7 @@
     <string name="text_contact_us_content_hint"></string>
     <string name="text_contact_us_desc">备注：</string>
     <string name="text_contact_us_desc_detail">备注:
-<<<<<<< HEAD
-        \n1.有关留言信息，客户服务中心将于办公时间或24小时内回覆。
-=======
         \n1.有关留言信息，客户服务中心将于办公时间或24小时内回复。
->>>>>>> 97bf0daae216552ac4813a37e530582dc001e2c5
         \n<u>擎天汇客户服务中心办公时间：</u>
         \n•&#160;星期一至星期五09:00 – 13:00 / 14:00 – 17:30
         \n•&#160;星期六09:00 – 13:00
