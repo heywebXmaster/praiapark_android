@@ -56,5 +56,7 @@ public class HttpConfig {
     //周边资讯
     public static final String GET_TEL = "/api/getTels";
 
+    //上載推送token
+    public static final String INIT_TOKEN = "/api/uploadPushToken";
 
 }

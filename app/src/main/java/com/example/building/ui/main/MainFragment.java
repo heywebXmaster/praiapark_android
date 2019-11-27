@@ -11,16 +11,23 @@ import android.widget.LinearLayout;
 import com.blankj.utilcode.util.ScreenUtils;
 import com.example.building.R;
 import com.example.building.aop.annotation.SingleClick;
+import com.example.building.base.App;
 import com.example.building.base.BaseFragment;
 import com.example.building.bean.ClauseBean;
+import com.example.building.bean.PushTokenEvent;
 import com.example.building.config.LocalSaveData;
 import com.example.building.databinding.FragmentMainBinding;
 import com.example.building.mvp.contract.ClauseContract;
+import com.example.building.mvp.contract.PushTokenInitContract;
 import com.example.building.mvp.presenter.ClausePresenter;
+import com.example.building.mvp.presenter.PushTokenInitPresenter;
 import com.example.building.ui.user.ContactUsFragment;
 import com.example.building.ui.user.SettingFragment;
 import com.example.building.util.LogUtil;
 import com.gyf.immersionbar.ImmersionBar;
+
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.List;
 
@@ -28,7 +35,7 @@ import me.yokeyword.fragmentation.SupportFragment;
 import me.yokeyword.fragmentation.anim.DefaultVerticalAnimator;
 import me.yokeyword.fragmentation.anim.FragmentAnimator;
 
-public class MainFragment extends BaseFragment<FragmentMainBinding> implements View.OnClickListener, ClauseContract.ClauseView {
+public class MainFragment extends BaseFragment<FragmentMainBinding> implements View.OnClickListener {
 
     private SupportFragment[] fragmentList = new SupportFragment[6];
     private int preIndex = 0;
@@ -39,8 +46,9 @@ public class MainFragment extends BaseFragment<FragmentMainBinding> implements V
     private FrameLayout layoutInfo;
     private FrameLayout layoutSetting;
     private FrameLayout layoutExit;
-    private ClausePresenter clausePresenter;
     private LinearLayout ll_nav_header;
+    private PushTokenInitPresenter initPresenter;
+
     public enum FragmentEnum {
         HomeFragment(0),
         ClubServiceFragment(1),
@@ -109,14 +117,12 @@ public class MainFragment extends BaseFragment<FragmentMainBinding> implements V
         layoutInfo = header.findViewById(R.id.layoutInfo);
         layoutSetting = header.findViewById(R.id.layoutSetting);
         layoutExit = header.findViewById(R.id.layoutExit);
-        clausePresenter = new ClausePresenter(this);
     }
 
     @Override
     public void onLazyInitView(@Nullable Bundle savedInstanceState) {
         super.onLazyInitView(savedInstanceState);
-        int screenHeight= ScreenUtils.getScreenHeight();
-        LogUtil.e(screenHeight+"");
+        App.getInstance().initPush();
     }
 
     @Override
@@ -195,14 +201,4 @@ public class MainFragment extends BaseFragment<FragmentMainBinding> implements V
         return new DefaultVerticalAnimator();
     }
 
-
-    @Override
-    public void getKeysOfClauseSuccess(List<ClauseBean> list) {
-
-    }
-
-    @Override
-    public void showClause(ClauseBean clauseBean) {
-
-    }
 }

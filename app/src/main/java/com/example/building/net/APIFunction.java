@@ -79,7 +79,7 @@ public interface APIFunction {
     @FormUrlEncoded
     @POST(HttpConfig.GET_CLAUSE)
     Observable<BaseEntity<ClauseBean>> getClause(@Field("username") String username,
-                                             @Field("key") String key);
+                                                 @Field("key") String key);
 
     @FormUrlEncoded
     @POST(HttpConfig.GET_CLAUSE_KEYS)
@@ -92,8 +92,8 @@ public interface APIFunction {
     @FormUrlEncoded
     @POST(HttpConfig.GET_MESSAGES)
     Call<BaseEntity<NoticeBean>> getMessages(@Field("username") String username,
-                                                         @Field("page") int page,
-                                                         @Field("limit") int limit);
+                                             @Field("page") int page,
+                                             @Field("limit") int limit);
 
     @FormUrlEncoded
     @POST(HttpConfig.ANNOUNCEMENT)
@@ -112,4 +112,10 @@ public interface APIFunction {
     @FormUrlEncoded
     @POST(HttpConfig.GET_TEL)
     Call<BaseEntity<List<AroundInfoBean>>> getTel(@Field("username") String username);
+
+    @FormUrlEncoded
+    @POST(HttpConfig.INIT_TOKEN)
+    Observable<BaseEntity<String>> initToken(@Field("username") String username,
+                                             @Field("pushToken") String regId,
+                                             @Field("deviceType") int deviceType);
 }

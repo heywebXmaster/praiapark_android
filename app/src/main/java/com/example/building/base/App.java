@@ -10,9 +10,11 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatDelegate;
 import android.util.DisplayMetrics;
+import android.util.Log;
 
 import com.blankj.utilcode.util.StringUtils;
 import com.blankj.utilcode.util.Utils;
+import com.example.building.BuildConfig;
 import com.example.building.R;
 import com.example.building.config.LocalSaveData;
 import com.example.building.util.LogUtil;
@@ -23,6 +25,7 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout;
 
 import java.util.Locale;
 
+import cn.jpush.android.api.JPushInterface;
 import me.jessyan.autosize.AutoSizeConfig;
 import me.yokeyword.fragmentation.Fragmentation;
 
@@ -52,6 +55,11 @@ public class App extends Application {
 
     public Context getContext() {
         return context;
+    }
+
+    public void initPush(){
+        JPushInterface.setDebugMode(true);
+        JPushInterface.init(instance);
     }
 
 
