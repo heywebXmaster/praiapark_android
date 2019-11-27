@@ -41,6 +41,8 @@ public class InfomationFragment extends BaseFragment<FragmentInfomationBinding> 
     protected void initView() {
         setSwipeBackEnable(false);
         dataBinding.layoutHeader.ivBack.setImageResource(R.mipmap.icon_menu);
+        dataBinding.layoutHeader.ivRight.setVisibility(View.VISIBLE);
+        dataBinding.layoutHeader.ivRight.setImageResource(R.mipmap.icon_message);
         List<Fragment> fragmentList = new ArrayList<>();
         fragmentList.add(UnitInfoFragment.newInstant());
         fragmentList.add(TrafficInfoFragment.newInstant());
@@ -61,6 +63,9 @@ public class InfomationFragment extends BaseFragment<FragmentInfomationBinding> 
         switch (v.getId()) {
             case R.id.ivBack:
                 ((MainFragment) getParentFragment()).onOpenDrawer();
+                break;
+            case R.id.ivRight:
+                ((MainFragment) getParentFragment()).startBrotherFragment(NoticeFragment.newInstant());
                 break;
         }
     }

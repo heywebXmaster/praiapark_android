@@ -44,6 +44,8 @@ public class DownTableFragment extends BaseFragment<FragmentDownloadTableBinding
     @Override
     protected void initView() {
         setSwipeBackEnable(false);
+        dataBinding.layoutHeader.ivRight.setVisibility(View.VISIBLE);
+        dataBinding.layoutHeader.ivRight.setImageResource(R.mipmap.icon_message);
         dataBinding.layoutHeader.ivBack.setImageResource(R.mipmap.icon_menu);
         pdfAdapter = new PdfAdapter();
         dataBinding.recyclerView.setAdapter(pdfAdapter);
@@ -92,6 +94,9 @@ public class DownTableFragment extends BaseFragment<FragmentDownloadTableBinding
         switch (v.getId()) {
             case R.id.ivBack:
                 ((MainFragment) getParentFragment()).onOpenDrawer();
+                break;
+            case R.id.ivRight:
+                ((MainFragment) getParentFragment()).startBrotherFragment(NoticeFragment.newInstant());
                 break;
         }
     }
