@@ -25,7 +25,7 @@ public class ScanFragment extends BaseFragment<FragmentScanBinding> implements Q
 
     @Override
     protected void setTitle() {
-        dataBinding.layoutHeader.setTitle(getString(R.string.title_scan));
+//        dataBinding.layoutHeader.setTitle(getString(R.string.title_scan));
     }
 
     @Override

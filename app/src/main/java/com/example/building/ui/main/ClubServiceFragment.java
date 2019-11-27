@@ -32,6 +32,8 @@ public class ClubServiceFragment extends BaseFragment<FragmentClubServiceBinding
     @Override
     protected void initView() {
         setSwipeBackEnable(false);
+        dataBinding.layoutHeader.ivRight.setVisibility(View.VISIBLE);
+        dataBinding.layoutHeader.ivRight.setImageResource(R.mipmap.icon_message);
 //        dataBinding.layoutHeader.ivBack.setImageResource(R.mipmap.icon_menu);
 //        dataBinding.layoutHeader.ivRight.setVisibility(View.VISIBLE);
 //        dataBinding.layoutHeader.ivRight.setImageResource(R.mipmap.icon_add);
@@ -55,6 +57,9 @@ public class ClubServiceFragment extends BaseFragment<FragmentClubServiceBinding
         switch (v.getId()) {
             case R.id.ivBack:
                 ((MainFragment) getParentFragment()).onOpenDrawer();
+                break;
+            case R.id.ivRight:
+                ((MainFragment) getParentFragment()).startBrotherFragment(NoticeFragment.newInstant());
                 break;
 //            case R.id.ivRight:
 //                ((MainFragment) getParentFragment()).startBrotherFragment(AddOrderFragment.newInstant());

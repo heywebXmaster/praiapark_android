@@ -28,31 +28,36 @@
             android:textSize="20dp" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <android.support.v7.widget.AppCompatTextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="2"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvFrom"
                 android:textColor="@color/colorText"
+                android:gravity="center"
                 android:textSize="14sp" />
 
             <android.support.v7.widget.AppCompatImageView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/page_margin"
                 android:layout_marginRight="@dimen/page_margin"
                 android:src="@mipmap/icon_traffic_exchange" />
 
             <android.support.v7.widget.AppCompatTextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="2"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvTo"
                 android:textColor="@color/colorText"
+                android:gravity="center"
                 android:textSize="14sp" />
 
         </LinearLayout>

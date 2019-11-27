@@ -22,7 +22,7 @@
 
     <string name="app_name">擎天匯</string>
     <string name="OtherExpection"> System error </string>
-        
+        Ï
     <string name="NoRouteToHostException">Unable to connect to the server </string>
         
     <string name="SocketTimeoutException"> Network connection timeout </string>
@@ -90,7 +90,7 @@
         
     <string name="text_contact_us_content">Content: </string>
         
-    <string name="text_contact_us_name">Call: </string>
+    <string name="text_contact_us_name">Unit and Name: </string>
         
     <string name="text_contact_us_mobile">Phone: </string>
         
@@ -109,7 +109,7 @@
         \n2.In case of emergency, you can contact the service hotline：(853)2883 3232
     </string>
         
-    <string name="text_profile_account_hint">Account number </string>
+    <string name="text_profile_account_hint">Household number </string>
         
     <string name="text_profile_address_hint">Address </string>
         
@@ -117,13 +117,13 @@
         
     <string name="text_profile_useraccount_hint">User account </string>
         
-    <string name="text_profile_changepwd_hint">Password modification </string>
+    <string name="text_profile_changepwd_hint">Password modification</string>
         
     <string name="text_profile_name_hint">Nickname </string>
         
     <string name="text_profile_mobile_hint">Phone</string>
         
-    <string name="text_profile_unset_hint"> not set </string>
+    <string name="text_profile_unset_hint"> Empty </string>
 
     <string name="text_download_car_stop">Request parking lot access PDF</string>
         
@@ -143,15 +143,15 @@
     <string name="text_login_declare">Privacy Policy</string>
 
         
-    <string name="text_register_user_account">Customer ID: </string>
+    <string name="text_register_user_account">No: </string>
         
-    <string name="text_register_account_hint">Account name </string>
+    <string name="text_register_account_hint">Account </string>
         
     <string name="text_register_repwd_hint">Confirm password </string>
         
     <string name="text_register_confirm">Submit</string>
         
-    <string name="text_register_confirm_scan">Click to get the customer number </string>
+    <string name="text_register_confirm_scan">Scan QR Code</string>
         
     <string name="text_register_pwd_not_same">Inconsistent passwords</string>
 

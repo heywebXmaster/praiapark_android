@@ -49,7 +49,7 @@ public class ContactUsFragment extends BaseFragment<FragmentContactUsBinding> im
         dataBinding.layoutHeader.ivBack.setImageResource(R.mipmap.icon_menu);
         dataBinding.layoutHeader.tvright.setEnabled(false);
         dataBinding.layoutHeader.tvright.setVisibility(View.VISIBLE);
-        dataBinding.descWeb.getSettings().setDefaultFontSize(12);
+        dataBinding.descWeb.getSettings().setDefaultFontSize(10);
         dataBinding.descWeb.loadUrl("file:///android_asset/index.html");
         settingPresenter = new SettingPresenter(this);
     }
