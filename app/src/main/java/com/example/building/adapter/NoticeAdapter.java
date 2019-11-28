@@ -27,7 +27,6 @@ public class NoticeAdapter extends BaseRecyclerAdapter<NoticeBean.NoticeItemBean
 
     class NoticeHolder extends CommonHolder<NoticeBean.NoticeItemBean> {
         LinearLayout layoutNotice;
-        AppCompatImageView ivStatus;
         AppCompatTextView tvTitle;
         AppCompatTextView tvDate;
         AppCompatTextView tvContent;
@@ -35,7 +34,6 @@ public class NoticeAdapter extends BaseRecyclerAdapter<NoticeBean.NoticeItemBean
         public NoticeHolder(Context context, ViewGroup root) {
             super(context, root, R.layout.item_notice);
             layoutNotice = findView(R.id.layoutNotice);
-            ivStatus = findView(R.id.ivStatus);
             tvTitle = findView(R.id.tvTitle);
             tvDate = findView(R.id.tvDate);
             tvContent = findView(R.id.tvContent);
@@ -46,7 +44,6 @@ public class NoticeAdapter extends BaseRecyclerAdapter<NoticeBean.NoticeItemBean
             tvTitle.setText(noticeBean.getTitle());
             tvContent.setText(noticeBean.getContent());
             tvDate.setText(noticeBean.getUpdated_at());
-            ivStatus.setImageResource(R.mipmap.icon_notice_yellow);
             layoutNotice.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
