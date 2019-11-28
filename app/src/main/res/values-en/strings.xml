@@ -20,7 +20,7 @@
     <string name="title_nav_setting">Setting</string>
     <!--不能更改的翻译-->
 
-    <string name="app_name">擎天匯</string>
+    <string name="app_name">Praia Park</string>
     <string name="OtherExpection"> System error </string>
         Ï
     <string name="NoRouteToHostException">Unable to connect to the server </string>
