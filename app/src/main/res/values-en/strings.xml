@@ -14,7 +14,7 @@
 
     <string name="title_nav_notice">Notice</string>
     <string name="title_nav_service">Clubhouse</string>
-    <string name="title_nav_apply">Form download</string>
+    <string name="title_nav_apply">Download</string>
     <string name="title_nav_contact">Contact us</string>
     <string name="title_nav_info">Information</string>
     <string name="title_nav_setting">Setting</string>
@@ -44,7 +44,7 @@
         
     <string name="title_edit_name">Set nickname </string>
         
-    <string name="title_download_table">Form download </string>
+    <string name="title_download_table">Download </string>
         
     <string name="title_notice">Notification </string>
         
@@ -61,13 +61,13 @@
 
     <string name="title_profile">Profile</string>
 
-    <string name="title_setting_lang">Language settings</string>
+    <string name="title_setting_lang">Language</string>
 
     <string name="text_pdf_share">Share</string>
         
     <string name="text_setting_profile">Profile </string>
         
-    <string name="text_setting_lang">Language settings </string>
+    <string name="text_setting_lang">Language</string>
         
     <string name="text_setting_about">About us</string>
         
