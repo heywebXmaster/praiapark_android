@@ -15,6 +15,7 @@ import com.example.building.aop.annotation.SingleClick;
 import com.example.building.base.BaseFragment;
 import com.example.building.base.ClickPresenter;
 import com.example.building.bean.PdfBean;
+import com.example.building.config.LocalSaveData;
 import com.example.building.databinding.FragmentContactUsBinding;
 import com.example.building.mvp.contract.SettingContract;
 import com.example.building.mvp.presenter.SettingPresenter;
@@ -50,7 +51,19 @@ public class ContactUsFragment extends BaseFragment<FragmentContactUsBinding> im
         dataBinding.layoutHeader.tvright.setEnabled(false);
         dataBinding.layoutHeader.tvright.setVisibility(View.VISIBLE);
         dataBinding.descWeb.getSettings().setDefaultFontSize(10);
-        dataBinding.descWeb.loadUrl("file:///android_asset/index.html");
+        String lang = LocalSaveData.getInstance().getLang();
+        switch (lang) {
+            case LocalSaveData.TAG.LANG_CN:
+                dataBinding.descWeb.loadUrl("file:///android_asset/index_cn.html");
+                break;
+            case LocalSaveData.TAG.LANG_TW:
+                dataBinding.descWeb.loadUrl("file:///android_asset/index.html");
+                break;
+            case LocalSaveData.TAG.LANG_EN:
+                dataBinding.descWeb.loadUrl("file:///android_asset/index_en.html");
+                break;
+        }
+
         settingPresenter = new SettingPresenter(this);
     }
 

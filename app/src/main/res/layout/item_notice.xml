@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutNotice"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="@dimen/page_margin"
     android:layout_marginTop="@dimen/page_margin"
-    android:id="@+id/layoutNotice"
     android:layout_marginRight="@dimen/page_margin"
     android:background="@drawable/sp_page_bg"
     android:orientation="vertical"
@@ -13,45 +13,19 @@
     android:paddingRight="12dp"
     android:paddingBottom="15dp">
 
-    <LinearLayout
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <android.support.v7.widget.AppCompatImageView
-            android:id="@+id/ivStatus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/icon_notice_red" />
-
-        <android.support.v7.widget.AppCompatTextView
-            android:id="@+id/tvTitle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="5dp"
-            android:layout_weight="1"
-            android:text="管理费缴费通知"
-            android:textColor="@color/colorText"
-            android:textSize="14sp" />
-
-        <android.support.v7.widget.AppCompatTextView
-            android:id="@+id/tvDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="3dp"
-            android:text="10-18 09:00"
-            android:textColor="@color/colorHint"
-            android:textSize="12sp" />
-
-        <android.support.v7.widget.AppCompatImageView
-            android:layout_width="wrap_content"
-            android:layout_height="15dp"
-            android:src="@mipmap/icon_right" />
-
-    </LinearLayout>
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="5dp"
+        android:layout_weight="1"
+        android:drawableLeft="@mipmap/icon_notice_yellow"
+        android:drawablePadding="2dp"
+        android:text="管理费缴费通知"
+        android:textColor="@color/colorText"
+        android:textSize="14sp" />
 
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/tvContent"
@@ -65,5 +39,15 @@
         android:textColor="@color/colorContent"
         android:textSize="14sp" />
 
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tvDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:text="10-18 09:00"
+        android:gravity="right"
+        android:textColor="@color/colorHint"
+        android:textSize="12sp" />
 
 </LinearLayout>

@@ -14,13 +14,13 @@
 
     <string name="title_nav_notice">Notice</string>
     <string name="title_nav_service">Clubhouse</string>
-    <string name="title_nav_apply">Form download</string>
+    <string name="title_nav_apply">Download</string>
     <string name="title_nav_contact">Contact us</string>
     <string name="title_nav_info">Information</string>
     <string name="title_nav_setting">Setting</string>
     <!--不能更改的翻译-->
 
-    <string name="app_name">擎天匯</string>
+    <string name="app_name">Praia Park</string>
     <string name="OtherExpection"> System error </string>
         Ï
     <string name="NoRouteToHostException">Unable to connect to the server </string>
@@ -44,7 +44,7 @@
         
     <string name="title_edit_name">Set nickname </string>
         
-    <string name="title_download_table">Form download </string>
+    <string name="title_download_table">Download </string>
         
     <string name="title_notice">Notification </string>
         
@@ -61,13 +61,13 @@
 
     <string name="title_profile">Profile</string>
 
-    <string name="title_setting_lang">Language settings</string>
+    <string name="title_setting_lang">Language</string>
 
     <string name="text_pdf_share">Share</string>
         
     <string name="text_setting_profile">Profile </string>
         
-    <string name="text_setting_lang">Language settings </string>
+    <string name="text_setting_lang">Language</string>
         
     <string name="text_setting_about">About us</string>
         
@@ -111,15 +111,15 @@
         
     <string name="text_profile_account_hint">Household number </string>
         
-    <string name="text_profile_address_hint">Address</string>
+    <string name="text_profile_address_hint">Address </string>
         
-    <string name="text_profile_header_hint">Avatar</string>
+    <string name="text_profile_header_hint">Avatar </string>
         
-    <string name="text_profile_useraccount_hint">User account</string>
+    <string name="text_profile_useraccount_hint">User account </string>
         
-    <string name="text_profile_changepwd_hint">Password modification</string>
+    <string name="text_profile_changepwd_hint">Change password</string>
         
-    <string name="text_profile_name_hint">Nickname</string>
+    <string name="text_profile_name_hint">Nickname </string>
         
     <string name="text_profile_mobile_hint">Phone</string>
         
@@ -130,15 +130,15 @@
     <string name="text_download_fixtures">Request to decorate PDF</string>
 
         
-    <string name="text_login_account_hint">Account</string>
+    <string name="text_login_account_hint">Account </string>
         
     <string name="text_login_pwd_hint">Password</string>
         
     <string name="text_login_forget_pwd">Forget password</string>
         
-    <string name="text_login_confirm">Login</string>
+    <string name="text_login_confirm">Login </string>
         
-    <string name="text_login_register">Register</string>
+    <string name="text_login_register">Register </string>
         
     <string name="text_login_declare">Privacy Policy</string>
 
