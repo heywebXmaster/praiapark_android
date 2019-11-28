@@ -111,15 +111,15 @@
         
     <string name="text_profile_account_hint">Household number </string>
         
-    <string name="text_profile_address_hint">Address</string>
+    <string name="text_profile_address_hint">Address </string>
         
-    <string name="text_profile_header_hint">Avatar</string>
+    <string name="text_profile_header_hint">Avatar </string>
         
-    <string name="text_profile_useraccount_hint">User account</string>
+    <string name="text_profile_useraccount_hint">User account </string>
         
-    <string name="text_profile_changepwd_hint">Password modification</string>
+    <string name="text_profile_changepwd_hint">Change password</string>
         
-    <string name="text_profile_name_hint">Nickname</string>
+    <string name="text_profile_name_hint">Nickname </string>
         
     <string name="text_profile_mobile_hint">Phone</string>
         
@@ -130,15 +130,15 @@
     <string name="text_download_fixtures">Request to decorate PDF</string>
 
         
-    <string name="text_login_account_hint">Account</string>
+    <string name="text_login_account_hint">Account </string>
         
     <string name="text_login_pwd_hint">Password</string>
         
     <string name="text_login_forget_pwd">Forget password</string>
         
-    <string name="text_login_confirm">Login</string>
+    <string name="text_login_confirm">Login </string>
         
-    <string name="text_login_register">Register</string>
+    <string name="text_login_register">Register </string>
         
     <string name="text_login_declare">Privacy Policy</string>
 
