@@ -6,11 +6,11 @@
 
         <variable
             name="presenter"
-            type="com.example.building.base.ClickPresenter" />
+            type="com.savills.praiapark.base.ClickPresenter" />
 
         <variable
             name="profile"
-            type="com.example.building.bean.ProfileBean" />
+            type="com.savills.praiapark.bean.ProfileBean" />
     </data>
 
     <LinearLayout
@@ -248,7 +248,7 @@
                             android:textSize="14sp" />
 
 
-                        <com.example.building.widget.ClearEditText
+                        <com.savills.praiapark.widget.ClearEditText
                             android:id="@+id/tvNickName"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
@@ -295,7 +295,7 @@
                             android:textColor="@color/colorHint"
                             android:textSize="14sp" />
 
-                        <com.example.building.widget.ClearEditText
+                        <com.savills.praiapark.widget.ClearEditText
                             android:id="@+id/tvMobile"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"

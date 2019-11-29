@@ -6,7 +6,7 @@
 
         <variable
             name="presenter"
-            type="com.example.building.base.ClickPresenter" />
+            type="com.savills.praiapark.base.ClickPresenter" />
 
         <variable
             name="userCode"
@@ -93,7 +93,7 @@
                             android:layout_marginTop="26dp"
                             android:layout_marginRight="30dp">
 
-                            <com.example.building.widget.FourRoundView
+                            <com.savills.praiapark.widget.FourRoundView
                                 android:id="@+id/rvAccountNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="@dimen/design_register_code_size"

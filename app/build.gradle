@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.building"
+        applicationId "com.savills.praiapark"
         minSdkVersion 23
         targetSdkVersion 28
         versionCode 1
@@ -16,7 +16,7 @@ android {
         }
         manifestPlaceholders = [
                 JPUSH_PKGNAME : applicationId,
-                JPUSH_APPKEY : "84cae40205f80752fe950c47", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_APPKEY : "bac5ef5e58aff6ea30ea8b3b", //JPush 上注册的包名对应的 Appkey.
                 JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
         ]
     }

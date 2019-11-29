@@ -6,7 +6,7 @@
 
         <variable
             name="presenter"
-            type="com.example.building.base.ClickPresenter" />
+            type="com.savills.praiapark.base.ClickPresenter" />
     </data>
 
     <LinearLayout
