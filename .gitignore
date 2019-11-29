@@ -84,3 +84,7 @@ lint/outputs/
 lint/tmp/
 # lint/reports/
 
+
+#devin
+local.properties
+app/app.iml
