@@ -99,11 +99,14 @@ public class HtmlFragment extends BaseFragment<FragmengHtmlBinding> implements C
     }
 
     private void loadView(String title, String content) {
+
+        String html="<html><head><style>span,p,strong,a{color:#000000!important;} span,p,strong,a{background-color:transparent!important;}</style></head><body style=\"margin:0 auto; color:black!important; text-align: justify; font-family: arial; font-size:15px;padding:12px;\";>"+content+"</body></html>";
+
         dataBinding.layoutHeader.setTitle(title);
         dataBinding.webview.getSettings().setDefaultFontSize(12);
         dataBinding.webview.loadDataWithBaseURL(
                 null,
-                content,
+                html,
                 "text/html",
                 "UTF-8",
                 null);
