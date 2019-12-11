@@ -30,6 +30,11 @@ android {
             debuggable true
         }
     }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -79,8 +84,10 @@ dependencies {
     implementation 'com.liulishuo.filedownloader:library:1.7.6'
     implementation 'com.github.chrisbanes:PhotoView:2.1.0'
     implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
-    implementation 'cn.jiguang.sdk:jpush:3.4.1'
-    implementation 'cn.jiguang.sdk:jcore:2.2.4'
+//    implementation 'cn.jiguang.sdk:jpush:3.4.1'
+//    implementation 'cn.jiguang.sdk:jcore:2.2.4'
+    implementation files('libs/jcore-android-2.1.2-google_play.jar')
+    implementation files('libs/jpush-android-3.3.4.jar')
 }
 
 
