@@ -78,7 +78,7 @@ public class HtmlFragment extends BaseFragment<FragmengHtmlBinding> implements C
             loadView(title, content);
         } else {
             clausePresenter = new ClausePresenter(this);
-            clausePresenter.getKeysOfClause();
+//            clausePresenter.getKeysOfClause();
             clausePresenter.getClause(key);
         }
     }
