@@ -14,6 +14,7 @@ import android.util.Log;
 
 import com.blankj.utilcode.util.StringUtils;
 import com.blankj.utilcode.util.Utils;
+import com.google.firebase.FirebaseApp;
 import com.savills.praiapark.BuildConfig;
 import com.savills.praiapark.R;
 import com.savills.praiapark.config.LocalSaveData;
@@ -25,7 +26,6 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout;
 
 import java.util.Locale;
 
-import cn.jpush.android.api.JPushInterface;
 import me.jessyan.autosize.AutoSizeConfig;
 import me.yokeyword.fragmentation.Fragmentation;
 
@@ -58,8 +58,9 @@ public class App extends Application {
     }
 
     public void initPush(){
-        JPushInterface.setDebugMode(true);
-        JPushInterface.init(instance);
+        FirebaseApp.initializeApp(context);
+//        JPushInterface.setDebugMode(true);
+//        JPushInterface.init(instance);
     }
 
 

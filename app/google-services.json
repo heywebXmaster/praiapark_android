@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "720807044254",
+    "firebase_url": "https://praia-park.firebaseio.com",
+    "project_id": "praia-park",
+    "storage_bucket": "praia-park.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720807044254:android:a7ebe6201fe105a9e5c78f",
+        "android_client_info": {
+          "package_name": "com.savills.praiapark"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "720807044254-evou6f8hottqompl2qiil37asonvfo7u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.savills.praiapark",
+            "certificate_hash": "a73db8c756e515f56d8fd538c9b3e92e2847c1a9"
+          }
+        },
+        {
+          "client_id": "720807044254-hfej5ma7as9t8t349gtkcdstl05qr1io.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-EXI7feTzGQutFBJk5wBJF3CknGy5ToY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "720807044254-hfej5ma7as9t8t349gtkcdstl05qr1io.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

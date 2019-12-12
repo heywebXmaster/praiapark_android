@@ -8,7 +8,6 @@ import com.savills.praiapark.mvp.contract.PushTokenInitContract;
 import com.savills.praiapark.net.BaseObserver;
 import com.savills.praiapark.net.RetrofitFactory;
 
-import cn.jpush.android.api.JPushInterface;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
