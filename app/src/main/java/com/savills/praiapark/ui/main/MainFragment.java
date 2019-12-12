@@ -1,6 +1,7 @@
 package com.savills.praiapark.ui.main;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.view.GravityCompat;
@@ -9,6 +10,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import com.blankj.utilcode.util.ScreenUtils;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 import com.savills.praiapark.R;
 import com.savills.praiapark.aop.annotation.SingleClick;
 import com.savills.praiapark.base.App;
@@ -122,7 +127,20 @@ public class MainFragment extends BaseFragment<FragmentMainBinding> implements V
     @Override
     public void onLazyInitView(@Nullable Bundle savedInstanceState) {
         super.onLazyInitView(savedInstanceState);
-        App.getInstance().initPush();
+        FirebaseInstanceId.getInstance().getInstanceId()
+                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                        if (!task.isSuccessful()) {
+                            LogUtil.w("fcm getInstanceId failed:" + task.getException());
+                            return;
+                        }
+                        String token = task.getResult().getToken();
+                        LogUtil.w("fcm getInstanceId complete:" + token);
+                        PushTokenInitPresenter initPresenter = new PushTokenInitPresenter();
+                        initPresenter.uploadPushToken(token);
+                    }
+                });
     }
 
     @Override

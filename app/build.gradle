@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 28
@@ -45,7 +46,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+//    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.android.support:support-v4:28.0.0'
@@ -84,10 +85,7 @@ dependencies {
     implementation 'com.liulishuo.filedownloader:library:1.7.6'
     implementation 'com.github.chrisbanes:PhotoView:2.1.0'
     implementation 'com.github.barteksc:android-pdf-viewer:3.2.0-beta.1'
-//    implementation 'cn.jiguang.sdk:jpush:3.4.1'
-//    implementation 'cn.jiguang.sdk:jcore:2.2.4'
-    implementation files('libs/jcore-android-2.1.2-google_play.jar')
-    implementation files('libs/jpush-android-3.3.4.jar')
+    implementation 'com.google.firebase:firebase-messaging:18.0.0'
 }
 
 
