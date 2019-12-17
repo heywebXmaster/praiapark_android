@@ -128,18 +128,15 @@ public class MainFragment extends BaseFragment<FragmentMainBinding> implements V
     public void onLazyInitView(@Nullable Bundle savedInstanceState) {
         super.onLazyInitView(savedInstanceState);
         FirebaseInstanceId.getInstance().getInstanceId()
-                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
-                        if (!task.isSuccessful()) {
-                            LogUtil.w("fcm getInstanceId failed:" + task.getException());
-                            return;
-                        }
-                        String token = task.getResult().getToken();
-                        LogUtil.w("fcm getInstanceId complete:" + token);
-                        PushTokenInitPresenter initPresenter = new PushTokenInitPresenter();
-                        initPresenter.uploadPushToken(token);
+                .addOnCompleteListener(task -> {
+                    if (!task.isSuccessful()) {
+                        LogUtil.w("fcm getInstanceId failed:" + task.getException());
+                        return;
                     }
+                    String token = task.getResult().getToken();
+                    LogUtil.w("fcm getInstanceId complete:" + token);
+                    PushTokenInitPresenter initPresenter = new PushTokenInitPresenter();
+                    initPresenter.uploadPushToken(token);
                 });
     }
 

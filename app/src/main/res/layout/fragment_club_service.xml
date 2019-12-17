@@ -4,6 +4,10 @@
 
     <data>
 
+        <variable
+            name="presenter"
+            type="com.savills.praiapark.base.ClickPresenter" />
+
     </data>
 
     <LinearLayout
@@ -42,11 +46,13 @@
         <!--android:layout_weight="1" />-->
 
         <LinearLayout
+            android:id="@+id/layoutAdd"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="@dimen/page_margin"
             android:background="@drawable/sp_page_bg"
             android:gravity="center_horizontal"
-            android:layout_margin="@dimen/page_margin"
+            android:onClick="@{(v)->presenter.onClick(v)}"
             android:orientation="vertical">
 
             <android.support.v7.widget.AppCompatImageView

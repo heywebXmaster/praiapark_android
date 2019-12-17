@@ -32,6 +32,7 @@ public class ClubServiceFragment extends BaseFragment<FragmentClubServiceBinding
     @Override
     protected void initView() {
         setSwipeBackEnable(false);
+        dataBinding.setPresenter(this);
         dataBinding.layoutHeader.ivRight.setVisibility(View.VISIBLE);
         dataBinding.layoutHeader.ivRight.setImageResource(R.mipmap.icon_message);
 //        dataBinding.layoutHeader.ivBack.setImageResource(R.mipmap.icon_menu);
@@ -64,6 +65,9 @@ public class ClubServiceFragment extends BaseFragment<FragmentClubServiceBinding
 //            case R.id.ivRight:
 //                ((MainFragment) getParentFragment()).startBrotherFragment(AddOrderFragment.newInstant());
 //                break;
+            case R.id.layoutAdd:
+                ((MainFragment) getParentFragment()).startBrotherFragment(OrderCalendarFragment.newInstant());
+                break;
         }
     }
 }
