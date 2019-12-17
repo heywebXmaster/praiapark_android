@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <data>
+
+        <variable
+            name="presenter"
+            type="com.savills.praiapark.base.ClickPresenter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/page_margin"
+        android:background="@drawable/sp_page_bg"
+        android:orientation="vertical"
+        android:paddingTop="5dp"
+        android:paddingBottom="@dimen/page_margin">
+
+
+        <com.prolificinteractive.materialcalendarview.MaterialCalendarView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:mcv_headerTextAppearance="@style/MaterialCalendarTextStyelNormal"
+            app:mcv_leftArrow="@drawable/ic_back_gray"
+            app:mcv_rightArrow="@drawable/ic_next_gray"
+            app:mcv_selectionColor="@color/colorDrawable"
+            app:mcv_tileHeight="45dp"
+            app:mcv_tileWidth="45dp"
+            app:mcv_titleAnimationOrientation="horizontal"
+            app:mcv_weekDayLabels="@array/custom_weekdays"
+            app:mcv_weekDayTextAppearance="@style/MaterialCalendarTextStyelNormal" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/page_margin"
+            android:layout_marginRight="@dimen/page_margin">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:drawableLeft="@drawable/sp_order_point"
+                android:drawablePadding="3dp"
+                android:text="已選"
+                android:textColor="@color/colorDrawable"
+                android:textSize="14sp" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tvSelectTime"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/st_lang_confirm"
+                android:gravity="center"
+                android:minWidth="50dp"
+                android:onClick="@{(v)->presenter.onClick(v)}"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="選擇時間"
+                android:textColor="@drawable/st_lang_confirm_text"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="@dimen/page_margin"
+            android:layout_marginTop="@dimen/page_margin"
+            android:layout_marginRight="@dimen/page_margin"
+            android:background="@color/colorDivider" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="@dimen/page_margin"
+            android:gravity="right"
+            android:text="注意：所有设备只可以提前7天预约"
+            android:textColor="@color/colorDrawable"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+</layout>
