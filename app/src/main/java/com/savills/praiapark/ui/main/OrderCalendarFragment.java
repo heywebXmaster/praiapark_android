@@ -67,7 +67,7 @@ public class OrderCalendarFragment extends BaseFragment<FragmentOrderCalendarBin
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.ivBack:
-
+                pop();
                 break;
             case R.id.tvSelectTime:
 //                TimePickerDialog dialog = new TimePickerDialog();
