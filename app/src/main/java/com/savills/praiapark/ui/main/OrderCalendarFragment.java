@@ -12,14 +12,9 @@ import com.savills.praiapark.base.BaseFragment;
 import com.savills.praiapark.base.ClickPresenter;
 import com.savills.praiapark.bean.OrderBean;
 import com.savills.praiapark.databinding.FragmentOrderCalendarBinding;
-import com.savills.praiapark.widget.TimePickerDialog;
-
 import org.threeten.bp.format.DateTimeFormatter;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import me.shaohui.bottomdialog.BottomDialog;
 
 public class OrderCalendarFragment extends BaseFragment<FragmentOrderCalendarBinding> implements ClickPresenter {
 
@@ -81,8 +76,8 @@ public class OrderCalendarFragment extends BaseFragment<FragmentOrderCalendarBin
         @Override
         public boolean shouldDecorate(CalendarDay day) {
             CalendarDay calendarDay = CalendarDay.today();
-            boolean a = day.isBefore(calendarDay);
-            return a;
+            boolean isBofore = day.isBefore(calendarDay);
+            return isBofore;
         }
 
         @Override
