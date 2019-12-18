@@ -7,7 +7,7 @@ import com.prolificinteractive.materialcalendarview.DayViewDecorator;
 import com.prolificinteractive.materialcalendarview.DayViewFacade;
 import com.prolificinteractive.materialcalendarview.format.DateFormatTitleFormatter;
 import com.savills.praiapark.R;
-import com.savills.praiapark.adapter.OrderAdapter;
+import com.savills.praiapark.adapter.AddOrderAdapter;
 import com.savills.praiapark.base.BaseFragment;
 import com.savills.praiapark.base.ClickPresenter;
 import com.savills.praiapark.bean.OrderBean;
@@ -46,10 +46,10 @@ public class OrderCalendarFragment extends BaseFragment<FragmentOrderCalendarBin
         dataBinding.layoutCalendar.calendarView.addDecorators(
                 new EnableOneToTenDecorator()
         );
-        OrderAdapter orderAdapter = new OrderAdapter();
-        dataBinding.recyclerView.setAdapter(orderAdapter);
-        orderAdapter.setDataList(list);
-        orderAdapter.notifyDataSetChanged();
+        AddOrderAdapter AddOrderAdapter = new AddOrderAdapter();
+        dataBinding.recyclerView.setAdapter(AddOrderAdapter);
+        AddOrderAdapter.setDataList(list);
+        AddOrderAdapter.notifyDataSetChanged();
     }
 
     @Override

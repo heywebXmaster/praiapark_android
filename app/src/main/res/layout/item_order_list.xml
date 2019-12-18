@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutContent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tvOrderType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/ic_next_gray"
+        android:paddingLeft="@dimen/page_margin"
+        android:paddingTop="@dimen/page_margin"
+        android:paddingRight="10dp"
+        android:paddingBottom="@dimen/page_margin"
+        android:text="電影院x1"
+        android:textColor="@color/colorText"
+        android:textSize="16sp" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="@dimen/page_margin"
+        android:layout_marginRight="@dimen/page_margin"
+        android:background="@color/colorDivider" />
+
+
+</LinearLayout>
+
+
