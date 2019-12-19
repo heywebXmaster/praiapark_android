@@ -12,6 +12,8 @@ import com.savills.praiapark.base.BaseFragment;
 import com.savills.praiapark.base.ClickPresenter;
 import com.savills.praiapark.bean.OrderBean;
 import com.savills.praiapark.databinding.FragmentOrderCalendarBinding;
+import com.savills.praiapark.widget.TimePickDialog;
+
 import org.threeten.bp.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -65,8 +67,8 @@ public class OrderCalendarFragment extends BaseFragment<FragmentOrderCalendarBin
                 pop();
                 break;
             case R.id.tvSelectTime:
-//                TimePickerDialog dialog = new TimePickerDialog();
-//                dialog.show(getFragmentManager());
+                TimePickDialog dialog=new TimePickDialog();
+                dialog.show(getFragmentManager(),"pick");
                 break;
         }
     }

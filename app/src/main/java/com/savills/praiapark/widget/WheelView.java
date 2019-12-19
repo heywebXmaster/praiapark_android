@@ -185,7 +185,7 @@ public class WheelView extends ScrollView {
         TextView tv = new TextView(context);
         tv.setLayoutParams(new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         tv.setSingleLine(true);
-        tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+        tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16);
         tv.setText(item);
         tv.setGravity(Gravity.CENTER);
         int padding = dip2px(15);
@@ -281,9 +281,9 @@ public class WheelView extends ScrollView {
                 return;
             }
             if (position == i) {
-                itemView.setTextColor(Color.parseColor("#0288ce"));
+                itemView.setTextColor(Color.parseColor("#666666"));
             } else {
-                itemView.setTextColor(Color.parseColor("#bbbbbb"));
+                itemView.setTextColor(Color.parseColor("#dadada"));
             }
         }
     }
@@ -320,7 +320,7 @@ public class WheelView extends ScrollView {
 
         if (null == paint) {
             paint = new Paint();
-            paint.setColor(Color.parseColor("#83cde6"));
+            paint.setColor(Color.parseColor("#666666"));
             paint.setStrokeWidth(dip2px(1f));
         }
 
