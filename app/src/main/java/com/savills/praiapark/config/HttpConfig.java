@@ -8,8 +8,8 @@ public class HttpConfig {
 
     public static final String APP_SECRET = "QWqw123!@#$";
 
-    public static final String BASE_URL = "https://praiapark-savills.com";
-//    public static final String BASE_URL = "http://47.74.184.20";
+//    public static final String BASE_URL = "https://praiapark-savills.com";
+    public static final String BASE_URL = "http://47.74.184.20";
 
     //登录
     public static final String LOGIN = "/api/login";
@@ -59,4 +59,15 @@ public class HttpConfig {
     //上載推送token
     public static final String INIT_TOKEN = "/api/uploadPushToken";
 
+    //獲取預約設備列表
+    public static final String DEVICES_LIST="/api/getFacilities";
+
+    //上載預約數據
+    public static final String UPLOAD_BOOKING="/api/uploadBooking";
+
+    //獲取會所預約記錄列表
+    public static final String GET_BOOKING="/api/getBookingsByDate";
+
+    //檢查預約日期和預約時間是否正確
+    public static final String CHECK_BOOKING_TIME="/api/checkBookingTime";
 }

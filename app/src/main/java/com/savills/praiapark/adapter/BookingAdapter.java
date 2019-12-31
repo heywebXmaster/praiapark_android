@@ -8,15 +8,16 @@ import android.view.ViewGroup;
 import com.savills.praiapark.R;
 import com.savills.praiapark.adapter.base.BaseRecyclerAdapter;
 import com.savills.praiapark.adapter.base.CommonHolder;
-import com.savills.praiapark.bean.OrderBean;
+import com.savills.praiapark.bean.BookingBean;
 
-public class AddOrderAdapter extends BaseRecyclerAdapter<OrderBean> {
+public class BookingAdapter extends BaseRecyclerAdapter<BookingBean> {
+
     @Override
-    public CommonHolder<OrderBean> setViewHolder(ViewGroup parent) {
+    public CommonHolder<BookingBean> setViewHolder(ViewGroup parent) {
         return new OrderHolder(parent.getContext(), parent);
     }
 
-    class OrderHolder extends CommonHolder<OrderBean> {
+    class OrderHolder extends CommonHolder<BookingBean> {
 
         AppCompatTextView tvTime;
         AppCompatTextView tvState;
@@ -33,7 +34,7 @@ public class AddOrderAdapter extends BaseRecyclerAdapter<OrderBean> {
         }
 
         @Override
-        public void bindData(OrderBean orderBean) {
+        public void bindData(BookingBean bookingBean) {
             divider.setVisibility(getAdapterPosition() == getAllData().size() - 1 ? View.GONE : View.VISIBLE);
         }
     }

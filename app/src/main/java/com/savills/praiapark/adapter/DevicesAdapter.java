@@ -8,13 +8,12 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.blankj.utilcode.util.ConvertUtils;
-import com.blankj.utilcode.util.DeviceUtils;
 import com.savills.praiapark.R;
 import com.savills.praiapark.adapter.base.BaseRecyclerAdapter;
 import com.savills.praiapark.adapter.base.CommonHolder;
-import com.savills.praiapark.bean.OrderBean;
+import com.savills.praiapark.bean.DevicesBean;
 
-public class OrderAdapter extends BaseRecyclerAdapter<OrderBean> {
+public class DevicesAdapter extends BaseRecyclerAdapter<DevicesBean> {
 
     private ItemClickListener clickListener;
 
@@ -23,11 +22,11 @@ public class OrderAdapter extends BaseRecyclerAdapter<OrderBean> {
     }
 
     @Override
-    public CommonHolder<OrderBean> setViewHolder(ViewGroup parent) {
+    public CommonHolder<DevicesBean> setViewHolder(ViewGroup parent) {
         return new OrderHolder(parent.getContext(), parent);
     }
 
-    class OrderHolder extends CommonHolder<OrderBean> {
+    class OrderHolder extends CommonHolder<DevicesBean> {
 
         AppCompatTextView tvOrderType;
         View divider;
@@ -41,7 +40,7 @@ public class OrderAdapter extends BaseRecyclerAdapter<OrderBean> {
         }
 
         @Override
-        public void bindData(OrderBean orderBean) {
+        public void bindData(DevicesBean devicesBean) {
             int position = getAdapterPosition();
             int margin = ConvertUtils.dp2px(15f);
             RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) layoutContent.getLayoutParams();

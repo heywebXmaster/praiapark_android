@@ -4,7 +4,9 @@ package com.savills.praiapark.net;
 import com.savills.praiapark.bean.AnnouncementBean;
 import com.savills.praiapark.bean.AroundInfoBean;
 import com.savills.praiapark.bean.BaseEntity;
+import com.savills.praiapark.bean.BookingBean;
 import com.savills.praiapark.bean.ClauseBean;
+import com.savills.praiapark.bean.DevicesBean;
 import com.savills.praiapark.bean.NoticeBean;
 import com.savills.praiapark.bean.PdfBean;
 import com.savills.praiapark.bean.ProfileBean;
@@ -118,4 +120,33 @@ public interface APIFunction {
     Observable<BaseEntity<String>> initToken(@Field("username") String username,
                                              @Field("pushToken") String regId,
                                              @Field("deviceType") int deviceType);
+
+    @FormUrlEncoded
+    @POST(HttpConfig.DEVICES_LIST)
+    Call<BaseEntity<List<DevicesBean>>> getDevicesList(@Field("username") String username);
+
+    @FormUrlEncoded
+    @POST(HttpConfig.UPLOAD_BOOKING)
+    Observable<BaseEntity<String>> uploadBooking(@Field("username") String username,
+                                                 @Field("nickname") String nickname,
+                                                 @Field("phoneNumber") String phoneNumber,
+                                                 @Field("facilityId") int facilityId,
+                                                 @Field("date") String date,
+                                                 @Field("fromTime") int fromTime,
+                                                 @Field("toTime") int toTime,
+                                                 @Field("amount") String amount);
+
+    @FormUrlEncoded
+    @POST(HttpConfig.GET_BOOKING)
+    Call<BaseEntity<List<BookingBean>>> getBookingByDate(@Field("username") String username,
+                                                         @Field("facilityId") int facilityId,
+                                                         @Field("date") String date);
+
+    @FormUrlEncoded
+    @POST(HttpConfig.CHECK_BOOKING_TIME)
+    Observable<BaseEntity<String>> checkBookingTime(@Field("username") String username,
+                                                 @Field("facilityId") int facilityId,
+                                                 @Field("date") String date,
+                                                 @Field("fromTime") int fromTime,
+                                                 @Field("toTime") int toTime);
 }

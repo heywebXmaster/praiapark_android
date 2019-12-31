@@ -1,5 +1,5 @@
 package com.savills.praiapark.bean;
 
-public class OrderBean {
+public class BookingBean {
 
 }

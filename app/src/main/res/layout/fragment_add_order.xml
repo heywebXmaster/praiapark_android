@@ -12,7 +12,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPageBg"
+        android:background="@mipmap/default_bg"
         android:orientation="vertical">
 
         <include
@@ -27,14 +27,31 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:padding="@dimen/page_margin"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
+                <FrameLayout
+                    android:background="@drawable/sp_page_bg"
+                    android:layout_width="match_parent"
+                    android:paddingLeft="@dimen/page_margin"
+                    android:layout_height="50dp">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/text_add_order_apply"
+                        android:textColor="@color/colorText"/>
+
+                </FrameLayout>
+
 
                 <LinearLayout
+                    android:layout_marginTop="@dimen/page_margin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/page_margin"
                     android:background="@drawable/sp_page_bg"
                     android:orientation="vertical">
 
@@ -58,7 +75,6 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
-                            android:text=""
                             android:textColor="@color/colorText"
                             android:textSize="14sp" />
 
@@ -139,6 +155,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
                             android:layout_weight="1"
+                            android:inputType="phone"
                             android:background="@color/white"
                             android:gravity="right"
                             android:hint="@string/text_add_order_input_mobile"
@@ -156,51 +173,6 @@
                         android:layout_marginLeft="@dimen/page_margin"
                         android:layout_marginRight="@dimen/page_margin"
                         android:background="@color/colorDivider" />
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:gravity="center_vertical"
-                        android:paddingLeft="@dimen/page_margin"
-                        android:paddingRight="10dp">
-
-                        <android.support.v7.widget.AppCompatTextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_weight="1"
-                            android:text="@string/text_add_order_devices"
-                            android:textColor="@color/colorHint"
-                            android:textSize="14sp" />
-
-                        <android.support.v7.widget.AppCompatTextView
-                            android:id="@+id/tvSelectDevices"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
-                            android:gravity="right"
-                            android:text="@string/text_add_order_choose_devices"
-                            android:textColor="@color/colorText"
-                            android:textSize="14sp" />
-
-                        <android.support.v7.widget.AppCompatImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@mipmap/icon_right" />
-
-
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginLeft="@dimen/page_margin"
-                        android:layout_marginRight="@dimen/page_margin"
-                        android:background="@color/colorDivider" />
-
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -255,18 +227,11 @@
                             android:id="@+id/tvStartTime"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
                             android:gravity="right"
                             android:text=""
+                            android:layout_marginRight="10dp"
                             android:textColor="@color/colorText"
                             android:textSize="14sp" />
-
-                        <android.support.v7.widget.AppCompatImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@mipmap/icon_right" />
-
 
                     </LinearLayout>
 
@@ -283,33 +248,17 @@
                         android:layout_height="50dp"
                         android:gravity="center_vertical"
                         android:paddingLeft="@dimen/page_margin"
-                        android:paddingRight="10dp">
-
-                        <android.support.v7.widget.AppCompatTextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_weight="1"
-                            android:text="@string/text_add_order_end_time"
-                            android:textColor="@color/colorHint"
-                            android:textSize="14sp" />
+                        android:paddingRight="15dp">
 
                         <android.support.v7.widget.AppCompatTextView
                             android:id="@+id/tvEndTime"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
                             android:gravity="right"
-                            android:text=""
                             android:textColor="@color/colorText"
                             android:textSize="14sp" />
-
-                        <android.support.v7.widget.AppCompatImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@mipmap/icon_right" />
-
 
                     </LinearLayout>
 
@@ -346,43 +295,9 @@
 
                     </RelativeLayout>
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginLeft="@dimen/page_margin"
-                        android:layout_marginRight="@dimen/page_margin"
-                        android:background="@color/colorDivider" />
-
-                    <android.support.v7.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_margin="@dimen/page_margin"
-                        android:gravity="right"
-                        android:text="@string/text_add_order_remind"
-                        android:textColor="@color/colorDrawable"
-                        android:textSize="12sp" />
-
 
                 </LinearLayout>
 
-                <android.support.v7.widget.AppCompatTextView
-                    android:id="@+id/tvAddOrder"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/layoutImg"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginLeft="70dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="70dp"
-                    android:background="@drawable/sp_login"
-                    android:gravity="center"
-                    android:onClick="@{(v)->presenter.onClick(v)}"
-                    android:padding="10dp"
-                    android:text="@string/text_add_order_add"
-                    android:textColor="@color/white"
-                    android:textSize="18sp" />
             </LinearLayout>
         </ScrollView>
 

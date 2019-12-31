@@ -18,7 +18,6 @@ import com.blankj.utilcode.util.StringUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
-import com.savills.praiapark.BuildConfig;
 import com.savills.praiapark.R;
 import com.savills.praiapark.base.BaseFragment;
 import com.savills.praiapark.base.ClickPresenter;
@@ -44,9 +43,9 @@ public class PdfFragment extends BaseFragment<FragmentPdfViewBinding> implements
         Bundle bundle = new Bundle();
         bundle.putString(COMMON_TITLE, title);
         bundle.putString(COMMON_URL, url);
-        PdfFragment webFragment = new PdfFragment();
-        webFragment.setArguments(bundle);
-        return webFragment;
+        PdfFragment pdfFragment = new PdfFragment();
+        pdfFragment.setArguments(bundle);
+        return pdfFragment;
     }
 
     public static final String COMMON_URL = "common_url";

@@ -14,7 +14,7 @@ public class AroundInfoAdapter extends BaseRecyclerAdapter<AroundInfoBean> {
 
     private ItemClickListener clickListener;
 
-    public void setCallClickListener(ItemClickListener clickListener) {
+    public void setItemClickListener(ItemClickListener clickListener) {
         this.clickListener = clickListener;
     }
 
