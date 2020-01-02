@@ -11,38 +11,37 @@ import com.blankj.utilcode.util.ConvertUtils;
 import com.savills.praiapark.R;
 import com.savills.praiapark.adapter.base.BaseRecyclerAdapter;
 import com.savills.praiapark.adapter.base.CommonHolder;
-import com.savills.praiapark.bean.PdfBean;
+import com.savills.praiapark.bean.DevicesBean;
 
-public class PdfAdapter extends BaseRecyclerAdapter<PdfBean> {
+public class DevicesAdapter extends BaseRecyclerAdapter<DevicesBean> {
+
     private ItemClickListener clickListener;
-
-    @Override
-    public CommonHolder<PdfBean> setViewHolder(ViewGroup parent) {
-        return new UnitInfoHolder(parent.getContext(), parent);
-    }
 
     public void setItemClickListener(ItemClickListener clickListener) {
         this.clickListener = clickListener;
     }
 
-    class UnitInfoHolder extends CommonHolder<PdfBean> {
+    @Override
+    public CommonHolder<DevicesBean> setViewHolder(ViewGroup parent) {
+        return new OrderHolder(parent.getContext(), parent);
+    }
 
-        LinearLayout layoutContent;
+    class OrderHolder extends CommonHolder<DevicesBean> {
+
+        AppCompatTextView tvOrderType;
         View divider;
-        AppCompatTextView tvTitle;
+        LinearLayout layoutContent;
 
-        public UnitInfoHolder(Context context, ViewGroup root) {
-            super(context, root, R.layout.item_info_unit);
-            layoutContent = findView(R.id.layoutContent);
-            tvTitle = findView(R.id.tvTitle);
+        public OrderHolder(Context context, ViewGroup root) {
+            super(context, root, R.layout.item_order_list);
+            tvOrderType = findView(R.id.tvOrderType);
             divider = findView(R.id.divider);
+            layoutContent = findView(R.id.layoutContent);
         }
 
         @Override
-        public void bindData(PdfBean pdfBean) {
+        public void bindData(DevicesBean devicesBean) {
             int position = getAdapterPosition();
-            divider.setVisibility(View.VISIBLE);
-            tvTitle.setText(pdfBean.getTitle());
             int margin = ConvertUtils.dp2px(15f);
             RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) layoutContent.getLayoutParams();
             if (position == 0) {
@@ -51,15 +50,16 @@ public class PdfAdapter extends BaseRecyclerAdapter<PdfBean> {
             } else if (position == getAllData().size() - 1) {
                 layoutContent.setBackgroundResource(R.drawable.sp_info_unit_last);
                 layoutParams.setMargins(margin, 0, margin, margin);
-                divider.setVisibility(View.GONE);
             } else {
                 layoutContent.setBackgroundResource(R.drawable.sp_info_unit_default);
                 layoutParams.setMargins(margin, 0, margin, 0);
             }
+            layoutContent.setLayoutParams(layoutParams);
+            divider.setVisibility(position == getAllData().size() - 1 ? View.GONE : View.VISIBLE);
             layoutContent.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    clickListener.onClick(getAdapterPosition());
+                    clickListener.onClick(position);
                 }
             });
         }

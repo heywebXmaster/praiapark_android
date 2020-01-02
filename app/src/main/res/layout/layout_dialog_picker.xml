@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/sp_dialog_bg"
+    android:orientation="vertical"
+    android:padding="@dimen/page_margin">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="選擇時間"
+        android:textColor="@color/colorText"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.savills.praiapark.widget.WheelView
+            android:id="@+id/wvLeft"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:text="~"
+            android:textSize="14sp" />
+
+        <com.savills.praiapark.widget.WheelView
+            android:id="@+id/wvRight"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/page_margin"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tvCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/st_lang_cancel"
+            android:gravity="center"
+            android:minWidth="50dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="取消"
+            android:textColor="@drawable/st_lang_confirm_text"
+            android:textSize="14sp" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tvConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/st_lang_confirm"
+            android:gravity="center"
+            android:minWidth="50dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="確定"
+            android:textColor="@drawable/st_lang_confirm_text"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+
+</LinearLayout>

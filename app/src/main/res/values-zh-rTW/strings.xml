@@ -104,9 +104,10 @@
     <string name="text_forget_new_pwd">輸入新密碼</string>
     <string name="text_forget_confirm_pwd">輸入確認新密碼</string>
 
-    <string name="text_club_service_title_acord">預約記錄</string>
-    <string name="text_club_service_title_map">會所地圖</string>
+    <string name="text_club_service_title_order">會所預約</string>
     <string name="text_club_service_title_rule">會所守則</string>
+    <string name="text_club_service_title_price_list">價目表</string>
+
     <string name="text_club_service_hope">敬請期待</string>
     <string name="text_club_service_building">程序正在建設中..</string>
     <string name="text_add_order_apply">申請單位</string>
@@ -114,7 +115,7 @@
     <string name="text_add_order_input_name">輸入姓名</string>
     <string name="text_add_order_mobile">聯系電話</string>
     <string name="text_add_order_input_mobile">輸入手機號碼</string>
-    <string name="text_add_order_devices">會所設備</string>
+    <string name="text_add_order_devices">設備價錢</string>
     <string name="text_add_order_choose_devices">選擇設備</string>
     <string name="text_add_order_price">設備價錢</string>
     <string name="text_add_order_start_time">預約開始時間</string>
@@ -139,6 +140,17 @@
     <string name="text_reset_pwd_confirm">確認密碼：</string>
     <string name="text_reset_pwd_old_hint">輸入舊密碼</string>
     <string name="text_announcement_company">第一太平戴維斯</string>
+    <!--第一個版本翻譯結束-->
+    <!--第二個版本翻譯開始-->
+    <string name="text_add_order_appoint_date">預約日期</string>
+    <string name="text_add_order_appoint_date_period">已預約時間段</string>
+    <string name="text_add_order_period">時段</string>
+    <string name="text_add_order_payment_status">支付狀態</string>
+    <string name="text_add_order_apply_date">申請時間</string>
+    <string name="text_add_order_selected">已選</string>
+    <string name="text_add_order_selected_period">選擇時間</string>
+    <!--第二個版本翻譯結束-->
+
 
 
 </resources>

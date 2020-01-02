@@ -163,11 +163,10 @@
     <string name="text_forget_confirm_pwd">Confirm new password</string>
 
         
-    <string name="text_club_service_title_acord">Reservation record</string>
-        
-    <string name="text_club_service_title_map">Club map </string>
-        
-    <string name="text_club_service_title_rule"> Clubhouse code </string>
+    <string name="text_club_service_title_order">会所预约</string>
+    <string name="text_club_service_title_rule">会所守则</string>
+    <string name="text_club_service_title_price_list">价目表</string>
+
     <string name="text_club_service_hope">Coming Soon</string>
     <string name="text_club_service_building">程序正在建设中..</string>
         
@@ -181,7 +180,7 @@
         
     <string name="text_add_order_input_mobile">Enter mobile number </string>
         
-    <string name="text_add_order_devices">Club equipment </string>
+    <string name="text_add_order_devices">Equipment price</string>
         
     <string name="text_add_order_choose_devices">Select device </string>
         
@@ -225,4 +224,16 @@
     <string name="text_reset_pwd_old_hint">Enter the old password</string>
 
     <string name="text_announcement_company">Savills</string>
+
+    <!--第一個版本翻譯結束-->
+    <!--第二個版本翻譯開始-->
+    <string name="text_add_order_appoint_date">Appointment date</string>
+    <string name="text_add_order_appoint_date_period">Appointed time period</string>
+    <string name="text_add_order_period">Period</string>
+    <string name="text_add_order_payment_status">Payment status</string>
+    <string name="text_add_order_apply_date">Application time</string>
+    <string name="text_add_order_selected">selected</string>
+    <string name="text_add_order_selected_period">selection period</string>
+
+    <!--第二個版本翻譯結束-->
 </resources>

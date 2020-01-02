@@ -3,8 +3,6 @@
     android:id="@+id/layoutContent"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="@dimen/page_margin"
-    android:layout_marginRight="@dimen/page_margin"
     android:orientation="vertical"
     android:paddingLeft="@dimen/page_margin"
     android:paddingRight="@dimen/page_margin">

@@ -12,7 +12,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPageBg"
+        android:background="@mipmap/default_bg"
         android:orientation="vertical">
 
         <include
@@ -39,7 +39,7 @@
 
         <android.support.v4.view.ViewPager
             android:id="@+id/viewpager"
-            android:background="@color/colorPageBg"
+            android:background="@color/transparent"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="12dp"

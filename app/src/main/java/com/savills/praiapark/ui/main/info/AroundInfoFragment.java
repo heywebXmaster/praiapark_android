@@ -63,7 +63,7 @@ public class AroundInfoFragment extends BaseFragment<FragmentListBinding> implem
 
     @Override
     protected void setListener() {
-        infoAdapter.setCallClickListener(new ItemClickListener() {
+        infoAdapter.setItemClickListener(new ItemClickListener() {
             @Override
             public void onClick(int position) {
                 callPhoneNumber(position);

@@ -26,9 +26,9 @@
             app:mcv_headerTextAppearance="@style/MaterialCalendarTextStyelNormal"
             app:mcv_leftArrow="@drawable/ic_back_gray"
             app:mcv_rightArrow="@drawable/ic_next_gray"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             app:mcv_selectionColor="@color/colorDrawable"
-            app:mcv_tileHeight="45dp"
-            app:mcv_tileWidth="45dp"
             app:mcv_titleAnimationOrientation="horizontal"
             app:mcv_weekDayLabels="@array/custom_weekdays"
             app:mcv_weekDayTextAppearance="@style/MaterialCalendarTextStyelNormal" />
@@ -45,7 +45,7 @@
                 android:layout_centerVertical="true"
                 android:drawableLeft="@drawable/sp_order_point"
                 android:drawablePadding="3dp"
-                android:text="已選"
+                android:text="@string/text_add_order_selected"
                 android:textColor="@color/colorDrawable"
                 android:textSize="14sp" />
 
@@ -62,7 +62,7 @@
                 android:onClick="@{(v)->presenter.onClick(v)}"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
-                android:text="選擇時間"
+                android:text="@string/text_add_order_selected_period"
                 android:textColor="@drawable/st_lang_confirm_text"
                 android:textSize="14sp" />
 
@@ -77,12 +77,13 @@
             android:background="@color/colorDivider" />
 
         <android.support.v7.widget.AppCompatTextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_gravity="right"
+            android:layout_marginLeft="@dimen/page_margin"
             android:layout_marginRight="@dimen/page_margin"
-            android:gravity="right"
-            android:text="注意：所有设备只可以提前7天预约"
+            android:text="@string/text_add_order_remind"
             android:textColor="@color/colorDrawable"
             android:textSize="14sp" />
 

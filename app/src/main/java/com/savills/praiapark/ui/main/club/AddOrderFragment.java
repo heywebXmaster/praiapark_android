@@ -1,4 +1,4 @@
-package com.savills.praiapark.ui.main;
+package com.savills.praiapark.ui.main.club;
 
 import android.view.View;
 
@@ -6,9 +6,17 @@ import com.savills.praiapark.R;
 import com.savills.praiapark.aop.annotation.SingleClick;
 import com.savills.praiapark.base.BaseFragment;
 import com.savills.praiapark.base.ClickPresenter;
+import com.savills.praiapark.bean.BookingBean;
+import com.savills.praiapark.bean.DevicesBean;
 import com.savills.praiapark.databinding.FragmentAddOrderBinding;
+import com.savills.praiapark.mvp.contract.BookingContract;
+import com.savills.praiapark.mvp.presenter.BookingPresenter;
 
-public class AddOrderFragment extends BaseFragment<FragmentAddOrderBinding> implements ClickPresenter {
+import java.util.List;
+
+public class AddOrderFragment extends BaseFragment<FragmentAddOrderBinding> implements ClickPresenter, BookingContract.OrderView {
+
+    private BookingPresenter bookingPresenter;
 
     public static AddOrderFragment newInstant() {
         return new AddOrderFragment();
@@ -26,7 +34,7 @@ public class AddOrderFragment extends BaseFragment<FragmentAddOrderBinding> impl
 
     @Override
     protected void initView() {
-
+        bookingPresenter = new BookingPresenter(this);
     }
 
     @Override
@@ -42,20 +50,24 @@ public class AddOrderFragment extends BaseFragment<FragmentAddOrderBinding> impl
             case R.id.ivBack:
                 pop();
                 break;
-            case R.id.tvSelectDevices:
-
-                break;
-            case R.id.tvStartTime:
-
-                break;
-            case R.id.tvEndTime:
-
-                break;
-            case R.id.tvAddOrder:
-
-                break;
-
-
+//            case R.id.tvSelectDevices:
+//
+//                break;
         }
+    }
+
+    @Override
+    public void showDevicesList(List<DevicesBean> list) {
+
+    }
+
+    @Override
+    public void uploadBookingSuccess() {
+
+    }
+
+    @Override
+    public void showBookingList(List<BookingBean> list) {
+
     }
 }

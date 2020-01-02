@@ -2,10 +2,12 @@ package com.savills.praiapark.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.AppCompatTextView;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import com.blankj.utilcode.util.ConvertUtils;
 import com.savills.praiapark.R;
 import com.savills.praiapark.adapter.base.BaseRecyclerAdapter;
 import com.savills.praiapark.adapter.base.CommonHolder;
@@ -39,16 +41,22 @@ public class UnitInfoAdapter extends BaseRecyclerAdapter<UnitInfoBean> {
         @Override
         public void bindData(UnitInfoBean unitInfoBean) {
             int position = getAdapterPosition();
+            int margin = ConvertUtils.dp2px(15f);
+            RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) layoutContent.getLayoutParams();
             divider.setVisibility(View.VISIBLE);
             tvTitle.setText(unitInfoBean.getTitle());
             if (position == 0) {
                 layoutContent.setBackgroundResource(R.drawable.sp_info_unit_first);
+                layoutParams.setMargins(margin, 0, margin, 0);
             } else if (position == getAllData().size() - 1) {
                 layoutContent.setBackgroundResource(R.drawable.sp_info_unit_last);
+                layoutParams.setMargins(margin, 0, margin, margin);
                 divider.setVisibility(View.GONE);
             } else {
                 layoutContent.setBackgroundResource(R.drawable.sp_info_unit_default);
+                layoutParams.setMargins(margin, 0, margin, 0);
             }
+            layoutContent.setLayoutParams(layoutParams);
             layoutContent.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

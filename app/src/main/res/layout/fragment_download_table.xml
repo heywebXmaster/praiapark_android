@@ -12,7 +12,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPageBg"
+        android:background="@mipmap/default_bg"
         android:orientation="vertical">
 
         <include
@@ -26,23 +26,22 @@
             app:srlEnableFooterFollowWhenLoadFinished="true"
             app:srlEnableScrollContentWhenLoaded="true">
 
-        <com.scwang.smartrefresh.layout.header.ClassicsHeader
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srlEnableLastTime="false"
-            app:srlTextFailed="@string/smart_refresh_failed"
-            app:srlTextFinish="@string/smart_refresh_finish"
-            app:srlTextLoading="@string/smart_refresh_loading"
-            app:srlTextPulling="@string/smart_refresh_pulling"
-            app:srlTextRefreshing="@string/smart_refresh_refreshing"
-            app:srlTextRelease="@string/smart_refresh_release" />
+            <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srlEnableLastTime="false"
+                app:srlTextFailed="@string/smart_refresh_failed"
+                app:srlTextFinish="@string/smart_refresh_finish"
+                app:srlTextLoading="@string/smart_refresh_loading"
+                app:srlTextPulling="@string/smart_refresh_pulling"
+                app:srlTextRefreshing="@string/smart_refresh_refreshing"
+                app:srlTextRelease="@string/smart_refresh_release" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_marginTop="@dimen/page_margin"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
 
             <com.scwang.smartrefresh.layout.footer.ClassicsFooter
                 android:layout_width="match_parent"
