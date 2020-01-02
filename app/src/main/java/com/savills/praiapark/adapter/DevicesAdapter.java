@@ -28,13 +28,13 @@ public class DevicesAdapter extends BaseRecyclerAdapter<DevicesBean> {
 
     class OrderHolder extends CommonHolder<DevicesBean> {
 
-        AppCompatTextView tvOrderType;
+        AppCompatTextView tvDeviceName;
         View divider;
         LinearLayout layoutContent;
 
         public OrderHolder(Context context, ViewGroup root) {
             super(context, root, R.layout.item_order_list);
-            tvOrderType = findView(R.id.tvOrderType);
+            tvDeviceName = findView(R.id.tvDeviceName);
             divider = findView(R.id.divider);
             layoutContent = findView(R.id.layoutContent);
         }
@@ -43,10 +43,11 @@ public class DevicesAdapter extends BaseRecyclerAdapter<DevicesBean> {
         public void bindData(DevicesBean devicesBean) {
             int position = getAdapterPosition();
             int margin = ConvertUtils.dp2px(15f);
+            tvDeviceName.setText(devicesBean.getName());
             RecyclerView.LayoutParams layoutParams = (RecyclerView.LayoutParams) layoutContent.getLayoutParams();
             if (position == 0) {
                 layoutContent.setBackgroundResource(R.drawable.sp_info_unit_first);
-                layoutParams.setMargins(margin, margin, margin, 0);
+                layoutParams.setMargins(margin, 0, margin, 0);
             } else if (position == getAllData().size() - 1) {
                 layoutContent.setBackgroundResource(R.drawable.sp_info_unit_last);
                 layoutParams.setMargins(margin, 0, margin, margin);

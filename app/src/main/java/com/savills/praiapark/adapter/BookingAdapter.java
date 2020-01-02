@@ -36,6 +36,9 @@ public class BookingAdapter extends BaseRecyclerAdapter<BookingBean> {
         @Override
         public void bindData(BookingBean bookingBean) {
             divider.setVisibility(getAdapterPosition() == getAllData().size() - 1 ? View.GONE : View.VISIBLE);
+            tvTime.setText(bookingBean.getFromTime()+":00 ~ "+bookingBean.getToTime()+":00");
+            tvState.setText(bookingBean.getIsPay()==0?"failed":"success");
+            tvDate.setText(bookingBean.getCreatedAt());
         }
     }
 }

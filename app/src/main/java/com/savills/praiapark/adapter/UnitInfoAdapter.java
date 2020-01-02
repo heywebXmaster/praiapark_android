@@ -48,6 +48,9 @@ public class UnitInfoAdapter extends BaseRecyclerAdapter<UnitInfoBean> {
             if (position == 0) {
                 layoutContent.setBackgroundResource(R.drawable.sp_info_unit_first);
                 layoutParams.setMargins(margin, 0, margin, 0);
+                if(getAllData().size()==1){
+                    divider.setVisibility(View.GONE);
+                }
             } else if (position == getAllData().size() - 1) {
                 layoutContent.setBackgroundResource(R.drawable.sp_info_unit_last);
                 layoutParams.setMargins(margin, 0, margin, margin);

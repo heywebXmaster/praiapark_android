@@ -45,7 +45,7 @@ public class App extends Application {
         FileDownloader.setup(context);
         Fragmentation.builder()
                 .stackViewMode(Fragmentation.BUBBLE)
-                .debug(false)
+                .debug(true)
                 .install();
     }
 

@@ -54,6 +54,7 @@ public class EnhancedCall<T> {
             public void onFailure(Call<T> call, Throwable t) {
                 if (!mUseCache || NetworkUtils.isConnected()) {
                     //不使用缓存 或者网络可用 的情况下直接回调onFailure
+                    t.printStackTrace();
                     enhancedCallback.onFailure(call, t);
                     return;
                 }

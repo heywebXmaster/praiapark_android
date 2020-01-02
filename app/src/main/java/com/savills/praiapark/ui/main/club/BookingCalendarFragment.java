@@ -2,11 +2,15 @@ package com.savills.praiapark.ui.main.club;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.View;
+
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.DayViewDecorator;
 import com.prolificinteractive.materialcalendarview.DayViewFacade;
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
+import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
 import com.prolificinteractive.materialcalendarview.format.DateFormatTitleFormatter;
 import com.savills.praiapark.R;
 import com.savills.praiapark.adapter.BookingAdapter;
@@ -17,17 +21,36 @@ import com.savills.praiapark.bean.DevicesBean;
 import com.savills.praiapark.databinding.FragmentOrderCalendarBinding;
 import com.savills.praiapark.mvp.contract.BookingContract;
 import com.savills.praiapark.mvp.presenter.BookingPresenter;
+import com.savills.praiapark.ui.main.ClubServiceFragment;
+import com.savills.praiapark.ui.main.MainFragment;
+import com.savills.praiapark.ui.user.UserProfileFragment;
+import com.savills.praiapark.util.LogUtil;
+import com.savills.praiapark.util.ToastUtil;
 import com.savills.praiapark.widget.TimePickDialog;
+
+import org.threeten.bp.LocalDate;
 import org.threeten.bp.format.DateTimeFormatter;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookingCalendarFragment extends BaseFragment<FragmentOrderCalendarBinding> implements ClickPresenter, BookingContract.OrderView {
+public class BookingCalendarFragment extends BaseFragment<FragmentOrderCalendarBinding> implements ClickPresenter, BookingContract.OrderView, OnDateSelectedListener {
 
     private BookingPresenter bookingPresenter;
+    public static final String DEVICES_INFO = "devices_info";
+    private DevicesBean devicesBean;
+    private BookingAdapter bookingAdapter;
+    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    private TimePickDialog dialog;
+    private String selectDate;
+    private static final int REQUEST_CODE = 001;
 
-    public static BookingCalendarFragment newInstant() {
-        return new BookingCalendarFragment();
+    public static BookingCalendarFragment newInstant(DevicesBean devicesBean) {
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(DEVICES_INFO, devicesBean);
+        BookingCalendarFragment bookingCalendarFragment = new BookingCalendarFragment();
+        bookingCalendarFragment.setArguments(bundle);
+        return bookingCalendarFragment;
     }
 
     @Override
@@ -37,23 +60,25 @@ public class BookingCalendarFragment extends BaseFragment<FragmentOrderCalendarB
 
     @Override
     protected void setTitle() {
-//        dataBinding.layoutHeader.setTitle("電影院x1");
+        dataBinding.layoutHeader.setTitle(devicesBean.getName());
     }
 
     @Override
     protected void initView() {
         bookingPresenter = new BookingPresenter(this);
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+            devicesBean = (DevicesBean) bundle.getSerializable(DEVICES_INFO);
+            dataBinding.setDevicesName(devicesBean.getName());
+        }
+        bookingAdapter = new BookingAdapter();
+        dataBinding.recyclerView.setAdapter(bookingAdapter);
     }
 
     @SuppressLint("CheckResult")
     @Override
     public void onLazyInitView(@Nullable Bundle savedInstanceState) {
         super.onLazyInitView(savedInstanceState);
-        List<BookingBean> list = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            list.add(new BookingBean());
-        }
-        dataBinding.recyclerView.setNestedScrollingEnabled(false);
         DateFormatTitleFormatter dateFormatTitleFormatter = new DateFormatTitleFormatter(DateTimeFormatter.ofPattern("yyyy/MM"));
         dataBinding.layoutCalendar.calendarView
                 .setTitleFormatter(dateFormatTitleFormatter);
@@ -61,24 +86,56 @@ public class BookingCalendarFragment extends BaseFragment<FragmentOrderCalendarB
         dataBinding.layoutCalendar.calendarView.addDecorators(
                 new EnableOneToTenDecorator()
         );
-        BookingAdapter BookingAdapter = new BookingAdapter();
-        dataBinding.recyclerView.setAdapter(BookingAdapter);
-        BookingAdapter.setDataList(list);
-        BookingAdapter.notifyDataSetChanged();
+        dataBinding.layoutCalendar.calendarView.setOnDateChangedListener(this);
+        LocalDate calendar = LocalDate.now();
+        dataBinding.layoutCalendar.calendarView.setSelectedDate(calendar);
+        getBookingList();
+    }
+
+    @Override
+    public void onDateSelected(@NonNull MaterialCalendarView widget, @NonNull CalendarDay date, boolean selected) {
+        if (selected) {
+            selectDate = FORMATTER.format(date.getDate());
+            bookingAdapter.clearDatas();
+            bookingPresenter.getBookingByDate(devicesBean.getId(), selectDate);
+        }
+    }
+
+    private void getBookingList() {
+        CalendarDay calendarDay = dataBinding.layoutCalendar.calendarView.getSelectedDate();
+        selectDate = FORMATTER.format(calendarDay.getDate());
+        bookingPresenter.getBookingByDate(devicesBean.getId(), selectDate);
     }
 
     @Override
     protected void setListener() {
         dataBinding.layoutCalendar.setPresenter(this);
-//        dataBinding.layoutHeader.setPresenter(this);
+        dataBinding.layoutHeader.setPresenter(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.ivBack:
+                pop();
+                break;
             case R.id.tvSelectTime:
-                TimePickDialog dialog=new TimePickDialog();
-                dialog.show(getFragmentManager(),"pick");
+                dialog = new TimePickDialog();
+                Bundle bundle = new Bundle();
+                bundle.putSerializable(DEVICES_INFO, devicesBean);
+                dialog.setArguments(bundle);
+                dialog.setClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                }, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        bookingPresenter.checkBookingTime(devicesBean.getId(), selectDate, dialog.getFromTime(), dialog.getToTime());
+                    }
+                });
+                dialog.show(getFragmentManager(), "pick");
                 break;
         }
     }
@@ -95,7 +152,20 @@ public class BookingCalendarFragment extends BaseFragment<FragmentOrderCalendarB
 
     @Override
     public void showBookingList(List<BookingBean> list) {
+        if (list.size() == 0) {
+            dataBinding.layoutBottom.setVisibility(View.GONE);
+        } else {
+            dataBinding.layoutBottom.setVisibility(View.VISIBLE);
+            dataBinding.recyclerView.setNestedScrollingEnabled(false);
+            bookingAdapter.setDataList(list);
+            bookingAdapter.notifyDataSetChanged();
+        }
+    }
 
+    @Override
+    public void checkBookingTimeSuccess(DevicesBean devicesBean) {
+        dialog.dismiss();
+        startForResult(AddOrderFragment.newInstant(devicesBean, selectDate, dialog.getFromTime(), dialog.getToTime()),REQUEST_CODE);
     }
 
     private static class EnableOneToTenDecorator implements DayViewDecorator {
@@ -110,6 +180,14 @@ public class BookingCalendarFragment extends BaseFragment<FragmentOrderCalendarB
         @Override
         public void decorate(DayViewFacade view) {
             view.setDaysDisabled(true);
+        }
+    }
+
+    @Override
+    public void onFragmentResult(int requestCode, int resultCode, Bundle data) {
+        super.onFragmentResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
+            bookingPresenter.getBookingByDate(devicesBean.getId(), selectDate);
         }
     }
 }

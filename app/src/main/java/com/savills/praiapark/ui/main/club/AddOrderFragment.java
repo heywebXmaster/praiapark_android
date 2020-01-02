@@ -1,7 +1,11 @@
 package com.savills.praiapark.ui.main.club;
 
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 
+import com.blankj.utilcode.util.StringUtils;
 import com.savills.praiapark.R;
 import com.savills.praiapark.aop.annotation.SingleClick;
 import com.savills.praiapark.base.BaseFragment;
@@ -12,15 +16,36 @@ import com.savills.praiapark.databinding.FragmentAddOrderBinding;
 import com.savills.praiapark.mvp.contract.BookingContract;
 import com.savills.praiapark.mvp.presenter.BookingPresenter;
 
+import java.math.BigDecimal;
 import java.util.List;
 
-public class AddOrderFragment extends BaseFragment<FragmentAddOrderBinding> implements ClickPresenter, BookingContract.OrderView {
+import static com.savills.praiapark.ui.main.club.BookingCalendarFragment.DEVICES_INFO;
+
+public class AddOrderFragment extends BaseFragment<FragmentAddOrderBinding> implements ClickPresenter, BookingContract.OrderView, TextWatcher {
+
+    public static final String FROM_TIME = "from_time";
+    public static final String TO_TIME = "to_time";
+    public static final String SELECT_DATE = "select_date";
+    private DevicesBean devicesBean;
+    private int fromTime = 0;
+    private int toTime = 0;
+    private String selectDate;
+    private String nickName;
+    private String mobile;
+    private String amount;
+
+    public static AddOrderFragment newInstant(DevicesBean devicesBean, String selectDate, int fromTime, int toTime) {
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(DEVICES_INFO, devicesBean);
+        bundle.putInt(FROM_TIME, fromTime);
+        bundle.putInt(TO_TIME, toTime);
+        bundle.putString(SELECT_DATE, selectDate);
+        AddOrderFragment addOrderFragment = new AddOrderFragment();
+        addOrderFragment.setArguments(bundle);
+        return addOrderFragment;
+    }
 
     private BookingPresenter bookingPresenter;
-
-    public static AddOrderFragment newInstant() {
-        return new AddOrderFragment();
-    }
 
     @Override
     protected int setViewId() {
@@ -34,13 +59,38 @@ public class AddOrderFragment extends BaseFragment<FragmentAddOrderBinding> impl
 
     @Override
     protected void initView() {
+        dataBinding.layoutHeader.tvright.setEnabled(false);
+        dataBinding.layoutHeader.tvright.setText(R.string.text_add_order_submit);
+        dataBinding.layoutHeader.tvright.setVisibility(View.VISIBLE);
         bookingPresenter = new BookingPresenter(this);
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+            devicesBean = (DevicesBean) bundle.getSerializable(DEVICES_INFO);
+            selectDate = bundle.getString(SELECT_DATE);
+            fromTime = bundle.getInt(FROM_TIME);
+            toTime = bundle.getInt(TO_TIME);
+            dataBinding.setDevice(devicesBean);
+            dataBinding.setPrice(getString(R.string.text_add_order_submit_price, devicesBean.getPrice().getPrice()));
+            dataBinding.setSelectDate(selectDate);
+            dataBinding.setSelectTime(fromTime + ":00 ~ " + toTime + ":00");
+            amount = String.valueOf(multiply(Double.parseDouble(devicesBean.getPrice().getPrice()), (toTime - fromTime))).replace(".0", "");
+            dataBinding.setAmount("MOP$" + amount);
+        }
+
+    }
+
+    public static double multiply(double v1, double v2) {
+        BigDecimal b1 = new BigDecimal(Double.toString(v1));
+        BigDecimal b2 = new BigDecimal(Double.toString(v2));
+        return b1.multiply(b2).doubleValue();
     }
 
     @Override
     protected void setListener() {
         dataBinding.layoutHeader.setPresenter(this);
         dataBinding.setPresenter(this);
+        dataBinding.etName.addTextChangedListener(this);
+        dataBinding.etMobile.addTextChangedListener(this);
     }
 
     @SingleClick
@@ -50,9 +100,15 @@ public class AddOrderFragment extends BaseFragment<FragmentAddOrderBinding> impl
             case R.id.ivBack:
                 pop();
                 break;
-//            case R.id.tvSelectDevices:
-//
-//                break;
+            case R.id.tvright:
+                bookingPresenter.uploadBooking(nickName,
+                        mobile,
+                        devicesBean.getFacilityId(),
+                        selectDate,
+                        fromTime,
+                        toTime,
+                        amount);
+                break;
         }
     }
 
@@ -63,11 +119,38 @@ public class AddOrderFragment extends BaseFragment<FragmentAddOrderBinding> impl
 
     @Override
     public void uploadBookingSuccess() {
-
+        setResult(RESULT_OK, null);
+        pop();
     }
 
     @Override
     public void showBookingList(List<BookingBean> list) {
 
+    }
+
+    @Override
+    public void checkBookingTimeSuccess(DevicesBean devicesBean) {
+
+    }
+
+    @Override
+    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable editable) {
+        nickName = dataBinding.etName.getText().toString().trim();
+        mobile = dataBinding.etMobile.getText().toString().trim();
+        if (!StringUtils.isEmpty(nickName) && !StringUtils.isEmpty(mobile)) {
+            dataBinding.layoutHeader.tvright.setEnabled(true);
+        } else {
+            dataBinding.layoutHeader.tvright.setEnabled(false);
+        }
     }
 }

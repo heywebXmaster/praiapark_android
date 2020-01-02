@@ -2,16 +2,22 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <variable
+            name="devicesName"
+            type="String" />
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/transparent"
+        android:background="@mipmap/default_bg"
         android:orientation="vertical">
 
 
-        <!--<include-->
-            <!--android:id="@+id/layoutHeader"-->
-            <!--layout="@layout/layout_common_header" />-->
+        <include
+            android:id="@+id/layoutHeader"
+            layout="@layout/layout_common_header" />
 
         <android.support.design.widget.CoordinatorLayout
             android:layout_width="match_parent"
@@ -20,6 +26,7 @@
 
             <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
+                android:id="@+id/layoutScroll"
                 android:layout_height="match_parent"
                 android:overScrollMode="never">
 
@@ -31,14 +38,12 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/tvType"
-                        android:layout_marginBottom="@dimen/page_margin"
-                        android:layout_marginRight="@dimen/page_margin"
-                        android:layout_marginLeft="@dimen/page_margin"
+                        android:layout_margin="@dimen/page_margin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/sp_page_bg"
                         android:padding="@dimen/page_margin"
-                        android:text="電影院x1"
+                        android:text="@{devicesName}"
                         android:textColor="@color/colorText"
                         android:textSize="16sp" />
 
@@ -63,6 +68,7 @@
                         android:textSize="16sp" />
 
                     <LinearLayout
+                        android:id="@+id/layout_bottom"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/page_margin"
@@ -70,6 +76,7 @@
                         android:layout_marginRight="@dimen/page_margin"
                         android:background="@drawable/sp_page_bg"
                         android:orientation="vertical"
+                        android:visibility="gone"
                         android:paddingLeft="@dimen/page_margin"
                         android:paddingRight="@dimen/page_margin">
 
