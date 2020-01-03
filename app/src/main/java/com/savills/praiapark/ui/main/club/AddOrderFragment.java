@@ -70,10 +70,24 @@ public class AddOrderFragment extends BaseFragment<FragmentAddOrderBinding> impl
             fromTime = bundle.getInt(FROM_TIME);
             toTime = bundle.getInt(TO_TIME);
             dataBinding.setDevice(devicesBean);
-            dataBinding.setPrice(getString(R.string.text_add_order_submit_price, devicesBean.getPrice().getPrice()));
+            StringBuffer buffer = new StringBuffer();
+            for (int i=0;i<devicesBean.getPrice().getPrices().size();i++ ) {
+                DevicesBean.Prices.PriceInfo info=devicesBean.getPrice().getPrices().get(i);
+                if(i!=0){
+                    buffer.append("\n");
+                }
+                buffer.append(info.getFromTime()+":00");
+                buffer.append(" - ");
+                buffer.append(info.getToTime()+":00");
+                buffer.append(" ");
+                buffer.append(info.getPrice());
+                buffer.append("/");
+                buffer.append((devicesBean.getHour() > 1 ? devicesBean.getHour() + getString(R.string.text_add_order_hour) : getString(R.string.text_add_order_hour)));
+            }
+            dataBinding.setPrice(buffer.toString());
             dataBinding.setSelectDate(selectDate);
             dataBinding.setSelectTime(fromTime + ":00 ~ " + toTime + ":00");
-            amount = String.valueOf(multiply(Double.parseDouble(devicesBean.getPrice().getPrice()), (toTime - fromTime))).replace(".0", "");
+            amount = devicesBean.getAmount();
             dataBinding.setAmount("MOP$" + amount);
         }
 

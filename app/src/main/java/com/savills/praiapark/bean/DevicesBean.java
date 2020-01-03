@@ -1,6 +1,7 @@
 package com.savills.praiapark.bean;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class DevicesBean implements Serializable {
     private int fromTime;
@@ -8,7 +9,7 @@ public class DevicesBean implements Serializable {
     private String id;
     private String name;
     private int order;
-    private PriceInfo price;
+    private Prices price;
     private int toTime;
     private int type;
     private String workday;
@@ -18,6 +19,15 @@ public class DevicesBean implements Serializable {
     private int facilityType;
     private String householderCode;
     private String username;
+    private String amount;
+
+    public String getAmount() {
+        return amount;
+    }
+
+    public void setAmount(String amount) {
+        this.amount = amount;
+    }
 
     public String getAddress() {
         return address;
@@ -67,16 +77,47 @@ public class DevicesBean implements Serializable {
         this.username = username;
     }
 
-    public class PriceInfo implements Serializable {
-        private String price;
+    public class Prices implements Serializable {
+        private List<PriceInfo> prices;
         private String type;
 
-        public String getPrice() {
-            return price;
+
+        public class PriceInfo implements Serializable {
+            private String fromTime;
+            private String price;
+            private String toTime;
+
+            public String getFromTime() {
+                return fromTime;
+            }
+
+            public void setFromTime(String fromTime) {
+                this.fromTime = fromTime;
+            }
+
+            public String getPrice() {
+                return price;
+            }
+
+            public void setPrice(String price) {
+                this.price = price;
+            }
+
+            public String getToTime() {
+                return toTime;
+            }
+
+            public void setToTime(String toTime) {
+                this.toTime = toTime;
+            }
         }
 
-        public void setPrice(String price) {
-            this.price = price;
+        public List<PriceInfo> getPrices() {
+            return prices;
+        }
+
+        public void setPrices(List<PriceInfo> prices) {
+            this.prices = prices;
         }
 
         public String getType() {
@@ -85,14 +126,6 @@ public class DevicesBean implements Serializable {
 
         public void setType(String type) {
             this.type = type;
-        }
-
-        @Override
-        public String toString() {
-            return "PriceInfo{" +
-                    "price='" + price + '\'' +
-                    ", type='" + type + '\'' +
-                    '}';
         }
     }
 
@@ -136,11 +169,11 @@ public class DevicesBean implements Serializable {
         this.order = order;
     }
 
-    public PriceInfo getPrice() {
+    public Prices getPrice() {
         return price;
     }
 
-    public void setPrice(PriceInfo price) {
+    public void setPrice(Prices price) {
         this.price = price;
     }
 

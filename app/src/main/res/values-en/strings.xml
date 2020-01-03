@@ -234,7 +234,7 @@
     <string name="text_add_order_apply_date">Application time</string>
     <string name="text_add_order_selected">selected</string>
     <string name="text_add_order_selected_period">selection period</string>
-    <string name="text_add_order_submit_price">每小時%1$s元</string>
     <string name="text_add_order_submit">Order</string>
+    <string name="text_add_order_hour">Hour</string>
     <!--第二個版本翻譯結束-->
 </resources>
