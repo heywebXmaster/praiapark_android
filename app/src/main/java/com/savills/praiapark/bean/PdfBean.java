@@ -5,6 +5,15 @@ public class PdfBean {
     private String pdf;
     private String title;
     private String updated_at;
+    private String managementFee;
+
+    public String getManagementFee() {
+        return managementFee;
+    }
+
+    public void setManagementFee(String managementFee) {
+        this.managementFee = managementFee;
+    }
 
     public int getOrder() {
         return order;
@@ -45,6 +54,7 @@ public class PdfBean {
                 ", pdf='" + pdf + '\'' +
                 ", title='" + title + '\'' +
                 ", updated_at='" + updated_at + '\'' +
+                ", managementFee='" + managementFee + '\'' +
                 '}';
     }
 }

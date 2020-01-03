@@ -13,6 +13,7 @@
     <string name="smart_refresh_nothing">No more data </string>
 
     <string name="title_nav_notice">Notice</string>
+    <string name="title_nav_fee">Fee</string>
     <string name="title_nav_service">Clubhouse</string>
     <string name="title_nav_apply">Download</string>
     <string name="title_nav_contact">Contact us</string>

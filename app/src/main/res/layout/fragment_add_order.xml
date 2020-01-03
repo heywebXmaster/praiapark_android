@@ -315,11 +315,10 @@
                             android:layout_alignParentRight="true"
                             android:gravity="right"
                             android:text="@{amount}"
-                            android:textColor="@color/colorText"
+                            android:textColor="@color/colorDrawable"
                             android:textSize="14sp" />
 
                     </RelativeLayout>
-
 
                 </LinearLayout>
 

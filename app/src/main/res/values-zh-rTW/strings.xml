@@ -13,6 +13,7 @@
     <string name="smart_refresh_nothing">沒有更多數據了</string>
 
     <string name="title_nav_notice">通告</string>
+    <string name="title_nav_fee">管理費</string>
     <string name="title_nav_service">會所</string>
     <string name="title_nav_apply">表格下載</string>
     <string name="title_nav_contact">聯絡我們</string>
@@ -112,9 +113,9 @@
     <string name="text_club_service_building">程序正在建設中..</string>
     <string name="text_add_order_apply">申請單位</string>
     <string name="text_add_order_name">住戶姓名</string>
-    <string name="text_add_order_input_name">輸入姓名</string>
+    <string name="text_add_order_input_name">請填寫姓名</string>
     <string name="text_add_order_mobile">聯系電話</string>
-    <string name="text_add_order_input_mobile">輸入手機號碼</string>
+    <string name="text_add_order_input_mobile">請填寫電話</string>
     <string name="text_add_order_devices">設備價錢</string>
     <string name="text_add_order_choose_devices">選擇設備</string>
     <string name="text_add_order_price">設備價錢</string>

@@ -1,55 +1,38 @@
 package com.savills.praiapark.ui.main;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.graphics.PointF;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.content.FileProvider;
 import android.view.View;
 
 import com.blankj.utilcode.util.FileUtils;
 import com.blankj.utilcode.util.StringUtils;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.SimpleTarget;
-import com.bumptech.glide.request.transition.Transition;
-import com.savills.praiapark.R;
-import com.savills.praiapark.base.BaseFragment;
-import com.savills.praiapark.base.ClickPresenter;
-import com.savills.praiapark.databinding.FragmentPdfViewBinding;
-import com.savills.praiapark.util.LogUtil;
 import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
 import com.github.barteksc.pdfviewer.listener.OnPageScrollListener;
 import com.liulishuo.filedownloader.BaseDownloadTask;
 import com.liulishuo.filedownloader.FileDownloadListener;
 import com.liulishuo.filedownloader.FileDownloader;
+import com.savills.praiapark.R;
+import com.savills.praiapark.base.BaseFragment;
+import com.savills.praiapark.base.ClickPresenter;
+import com.savills.praiapark.bean.PdfBean;
+import com.savills.praiapark.databinding.FragmentPdfViewBinding;
+import com.savills.praiapark.mvp.contract.SettingContract;
+import com.savills.praiapark.mvp.presenter.SettingPresenter;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.io.File;
+import java.util.List;
 
+public class ManagementFeeFragment extends BaseFragment<FragmentPdfViewBinding> implements ClickPresenter, SettingContract.SettingView {
 
-public class PdfFragment extends BaseFragment<FragmentPdfViewBinding> implements ClickPresenter {
-
-    private String title;
+    private SettingPresenter settingPresenter;
     private String url;
     private int pageCount = 0;
-
-    public static PdfFragment newInstant(String title, String url) {
-        Bundle bundle = new Bundle();
-        bundle.putString(COMMON_TITLE, title);
-        bundle.putString(COMMON_URL, url);
-        PdfFragment pdfFragment = new PdfFragment();
-        pdfFragment.setArguments(bundle);
-        return pdfFragment;
+    public static ManagementFeeFragment newInstant() {
+        return new ManagementFeeFragment();
     }
-
-    public static final String COMMON_URL = "common_url";
-    public static final String COMMON_TITLE = "common_title";
 
     @Override
     protected int setViewId() {
@@ -58,46 +41,16 @@ public class PdfFragment extends BaseFragment<FragmentPdfViewBinding> implements
 
     @Override
     protected void setTitle() {
-
+        dataBinding.layoutHeader.setTitle("管理費");
+        dataBinding.layoutHeader.ivRight.setVisibility(View.VISIBLE);
+        dataBinding.layoutHeader.ivRight.setImageResource(R.mipmap.icon_message);
+        dataBinding.layoutHeader.ivBack.setImageResource(R.mipmap.icon_menu);
     }
 
     @Override
     protected void initView() {
-        Bundle bundle = getArguments();
-        if (bundle != null) {
-            title = bundle.getString(COMMON_TITLE);
-            url = bundle.getString(COMMON_URL);
-            LogUtil.e(url);
-            if (!StringUtils.isEmpty(title)) {
-                dataBinding.layoutHeader.setTitle(title);
-            }
-        }
-        dataBinding.layoutHeader.tvright.setText(R.string.text_pdf_share);
-        dataBinding.layoutHeader.tvright.setVisibility(View.VISIBLE);
-    }
-
-    @SuppressLint("CheckResult")
-    @Override
-    public void onEnterAnimationEnd(Bundle savedInstanceState) {
-        super.onEnterAnimationEnd(savedInstanceState);
-        if (url.endsWith("pdf")) {
-            dataBinding.layoutContent.setVisibility(View.VISIBLE);
-            RxPermissions rxPermissions = new RxPermissions(this);
-            rxPermissions
-                    .request(Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                            Manifest.permission.READ_EXTERNAL_STORAGE)
-                    .subscribe(granted -> {
-                        if (granted) {
-                            downloadSource();
-                        } else {
-                            pop();
-                        }
-                    });
-        } else {
-            dataBinding.scaleImageView.setVisibility(View.VISIBLE);
-            Glide.with(mContext).load(url).into(dataBinding.scaleImageView);
-        }
-
+        settingPresenter = new SettingPresenter(this);
+        setSwipeBackEnable(false);
     }
 
     @Override
@@ -105,12 +58,57 @@ public class PdfFragment extends BaseFragment<FragmentPdfViewBinding> implements
         dataBinding.layoutHeader.setPresenter(this);
     }
 
+    @Override
+    public void onLazyInitView(@Nullable Bundle savedInstanceState) {
+        super.onLazyInitView(savedInstanceState);
+        settingPresenter.getFee();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.ivBack:
+                ((MainFragment) getParentFragment()).onOpenDrawer();
+                break;
+            case R.id.ivRight:
+                ((MainFragment) getParentFragment()).startBrotherFragment(NoticeFragment.newInstant());
+                break;
+        }
+    }
+
+    @Override
+    public void contactUsSuccess() {
+
+    }
+
+    @Override
+    public void showPdfs(List<PdfBean> list) {
+
+    }
+
+    @Override
+    public void showFee(PdfBean pdfBean) {
+        if(!StringUtils.isEmpty(pdfBean.getManagementFee())){
+            url=pdfBean.getManagementFee();
+            RxPermissions rxPermissions = new RxPermissions(this);
+            rxPermissions
+                    .request(Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                            Manifest.permission.READ_EXTERNAL_STORAGE)
+                    .subscribe(granted -> {
+                        if (granted) {
+                            downloadSource();
+                        }
+                    });
+        }
+    }
+
     private void downloadSource() {
-        String dirPath = mContext.getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).getPath() + "/";
+        String dirPath = mContext.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS).getPath() + "/";
         File file = new File(dirPath);
         if (file.exists()) {
             FileUtils.deleteAllInDir(file);
         }
+
         String filePath = dirPath + System.currentTimeMillis() + ".pdf";
         FileDownloader.getImpl().create(url)
                 .setPath(filePath, false)
@@ -182,29 +180,4 @@ public class PdfFragment extends BaseFragment<FragmentPdfViewBinding> implements
 
         }
     };
-
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ivBack:
-                pop();
-                break;
-            case R.id.tvright:
-                share();
-                break;
-        }
-    }
-
-    private void share() {
-        try {
-            Intent intent = new Intent();
-            intent.setAction(Intent.ACTION_SEND);
-            intent.putExtra(Intent.EXTRA_TEXT, title +"\n"+ url);
-            intent.setType("text/plain");
-            startActivity(intent);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }

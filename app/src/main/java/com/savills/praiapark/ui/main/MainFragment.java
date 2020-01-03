@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+
 import com.blankj.utilcode.util.ScreenUtils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -42,9 +43,10 @@ import me.yokeyword.fragmentation.anim.FragmentAnimator;
 
 public class MainFragment extends BaseFragment<FragmentMainBinding> implements View.OnClickListener {
 
-    private SupportFragment[] fragmentList = new SupportFragment[6];
+    private SupportFragment[] fragmentList = new SupportFragment[7];
     private int preIndex = 0;
     private FrameLayout layoutNotice;
+    private FrameLayout layoutFee;
     private FrameLayout layoutService;
     private FrameLayout layoutApply;
     private FrameLayout layoutContact;
@@ -56,13 +58,15 @@ public class MainFragment extends BaseFragment<FragmentMainBinding> implements V
 
     public enum FragmentEnum {
         HomeFragment(0),
-        ClubServiceFragment(1),
-        DownTableFragment(2),
-        ContactUsFragment(3),
-        InfomationFragment(4),
-        SettingFragment(5);
+        ManagementFeeFragment(1),
+        ClubServiceFragment(2),
+        DownTableFragment(3),
+        ContactUsFragment(4),
+        InfomationFragment(5),
+        SettingFragment(6);
 
         private int value;
+
         private FragmentEnum(int value) {    //    必须是private的，否则编译错误
             this.value = value;
         }
@@ -89,6 +93,7 @@ public class MainFragment extends BaseFragment<FragmentMainBinding> implements V
         SupportFragment firstFragment = findChildFragment(HomeFragment.class);
         if (firstFragment == null) {
             fragmentList[FragmentEnum.HomeFragment.value] = HomeFragment.newInstant();
+            fragmentList[FragmentEnum.ManagementFeeFragment.value] = ManagementFeeFragment.newInstant();
             fragmentList[FragmentEnum.ClubServiceFragment.value] = ClubServiceFragment.newInstant();
             fragmentList[FragmentEnum.DownTableFragment.value] = DownTableFragment.newInstant();
             fragmentList[FragmentEnum.ContactUsFragment.value] = ContactUsFragment.newInstant();
@@ -96,6 +101,7 @@ public class MainFragment extends BaseFragment<FragmentMainBinding> implements V
             fragmentList[FragmentEnum.SettingFragment.value] = SettingFragment.newInstant();
             loadMultipleRootFragment(R.id.frameLayout, 0,
                     fragmentList[FragmentEnum.HomeFragment.value],
+                    fragmentList[FragmentEnum.ManagementFeeFragment.value],
                     fragmentList[FragmentEnum.ClubServiceFragment.value],
                     fragmentList[FragmentEnum.DownTableFragment.value],
                     fragmentList[FragmentEnum.ContactUsFragment.value],
@@ -103,6 +109,7 @@ public class MainFragment extends BaseFragment<FragmentMainBinding> implements V
                     fragmentList[FragmentEnum.SettingFragment.value]);
         } else {
             fragmentList[FragmentEnum.HomeFragment.value] = firstFragment;
+            fragmentList[FragmentEnum.ManagementFeeFragment.value] = findChildFragment(ManagementFeeFragment.class);
             fragmentList[FragmentEnum.ClubServiceFragment.value] = findChildFragment(ClubServiceFragment.class);
             fragmentList[FragmentEnum.DownTableFragment.value] = findChildFragment(DownTableFragment.class);
             fragmentList[FragmentEnum.ContactUsFragment.value] = findChildFragment(ContactUsFragment.class);
@@ -114,8 +121,9 @@ public class MainFragment extends BaseFragment<FragmentMainBinding> implements V
         toggle.syncState();
         dataBinding.navView.setItemIconTintList(null);
         ConstraintLayout header = (ConstraintLayout) dataBinding.navView.getHeaderView(0);
-        ll_nav_header = (LinearLayout)header.findViewById(R.id.ll_nav_header);
+        ll_nav_header = (LinearLayout) header.findViewById(R.id.ll_nav_header);
         layoutNotice = header.findViewById(R.id.layoutNotice);
+        layoutFee = header.findViewById(R.id.layoutFee);
         layoutService = header.findViewById(R.id.layoutService);
         layoutApply = header.findViewById(R.id.layoutApply);
         layoutContact = header.findViewById(R.id.layoutContact);
@@ -143,6 +151,7 @@ public class MainFragment extends BaseFragment<FragmentMainBinding> implements V
     @Override
     protected void setListener() {
         layoutNotice.setOnClickListener(this);
+        layoutFee.setOnClickListener(this);
         layoutService.setOnClickListener(this);
         layoutApply.setOnClickListener(this);
         layoutContact.setOnClickListener(this);
@@ -157,6 +166,9 @@ public class MainFragment extends BaseFragment<FragmentMainBinding> implements V
         switch (view.getId()) {
             case R.id.layoutNotice:
                 setShowFragmentAndSetPreIndex(FragmentEnum.HomeFragment.value);
+                break;
+            case R.id.layoutFee:
+                setShowFragmentAndSetPreIndex(FragmentEnum.ManagementFeeFragment.value);
                 break;
             case R.id.layoutService:
                 setShowFragmentAndSetPreIndex(FragmentEnum.ClubServiceFragment.value);

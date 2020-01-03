@@ -95,4 +95,30 @@ public class SettingPresenter extends BasePresenter implements SettingContract.S
                 });
     }
 
+    @Override
+    public void getFee() {
+        settingView.showLoading();
+        RetrofitFactory.getInstence().API().getFee(
+                LocalSaveData.getInstance().getUserName())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new BaseObserver<PdfBean>() {
+
+                    @Override
+                    protected void onSuccees(BaseEntity<PdfBean> t) {
+                        settingView.showFee(t.getResult());
+                    }
+
+                    @Override
+                    protected void onFailure(Throwable e) {
+
+                    }
+
+                    @Override
+                    protected void onFinish() {
+                        settingView.hideLoading();
+                    }
+                });
+    }
+
 }

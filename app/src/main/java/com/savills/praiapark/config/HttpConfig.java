@@ -76,4 +76,8 @@ public class HttpConfig {
 
     //獲取會所價目表
     public static final String CLUB_PRICE = "/api/getClubhousePrice";
+
+    //獲取管理費
+    public static final String GET_FEE = "/api/getManagementFee";
+
 }

@@ -159,4 +159,8 @@ public interface APIFunction {
                                                  @Field("date") String date,
                                                  @Field("fromTime") int fromTime,
                                                  @Field("toTime") int toTime);
+
+    @FormUrlEncoded
+    @POST(HttpConfig.GET_FEE)
+    Observable<BaseEntity<PdfBean>> getFee(@Field("username") String username);
 }
