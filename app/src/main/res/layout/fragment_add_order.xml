@@ -5,6 +5,23 @@
     <data>
 
         <variable
+            name="selectDate"
+            type="String" />
+
+        <variable
+            name="selectTime"
+            type="String" />
+
+        <variable
+            name="device"
+            type="com.savills.praiapark.bean.DevicesBean" />
+        <variable
+            name="price"
+            type="String" />
+        <variable
+            name="amount"
+            type="String" />
+        <variable
             name="presenter"
             type="com.savills.praiapark.base.ClickPresenter" />
     </data>
@@ -27,31 +44,31 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:padding="@dimen/page_margin"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="@dimen/page_margin">
 
                 <FrameLayout
-                    android:background="@drawable/sp_page_bg"
                     android:layout_width="match_parent"
-                    android:paddingLeft="@dimen/page_margin"
-                    android:layout_height="50dp">
+                    android:layout_height="50dp"
+                    android:background="@drawable/sp_page_bg"
+                    android:paddingLeft="@dimen/page_margin">
 
                     <android.support.v7.widget.AppCompatTextView
                         android:layout_width="wrap_content"
-                        android:layout_gravity="center_vertical"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:text="@string/text_add_order_apply"
-                        android:textColor="@color/colorText"/>
+                        android:layout_gravity="center_vertical"
+                        android:text="@{device.facilityName}"
+                        android:textColor="@color/colorText" />
 
                 </FrameLayout>
 
 
                 <LinearLayout
-                    android:layout_marginTop="@dimen/page_margin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/page_margin"
                     android:background="@drawable/sp_page_bg"
                     android:orientation="vertical">
 
@@ -75,6 +92,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
+                            android:text="@{device.address}"
                             android:textColor="@color/colorText"
                             android:textSize="14sp" />
 
@@ -108,7 +126,6 @@
                         <android.support.v7.widget.AppCompatEditText
                             android:id="@+id/etName"
                             android:layout_width="0dp"
-                            android:singleLine="true"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
@@ -116,6 +133,7 @@
                             android:background="@color/white"
                             android:gravity="right"
                             android:hint="@string/text_add_order_input_name"
+                            android:singleLine="true"
                             android:textColor="@color/colorText"
                             android:textColorHint="@color/colorHint"
                             android:textSize="14sp" />
@@ -149,16 +167,16 @@
                         <android.support.v7.widget.AppCompatEditText
                             android:id="@+id/etMobile"
                             android:layout_width="0dp"
-                            android:singleLine="true"
-                            android:digits="0123456789"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
                             android:layout_weight="1"
-                            android:inputType="phone"
                             android:background="@color/white"
+                            android:digits="0123456789"
                             android:gravity="right"
                             android:hint="@string/text_add_order_input_mobile"
+                            android:inputType="phone"
+                            android:singleLine="true"
                             android:textColor="@color/colorText"
                             android:textColorHint="@color/colorHint"
                             android:textSize="14sp" />
@@ -194,6 +212,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:gravity="right"
+                            android:text="@{price}"
                             android:textColor="@color/colorText"
                             android:textSize="14sp" />
 
@@ -227,9 +246,9 @@
                             android:id="@+id/tvStartTime"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="right"
-                            android:text=""
                             android:layout_marginRight="10dp"
+                            android:gravity="right"
+                            android:text="@{selectDate}"
                             android:textColor="@color/colorText"
                             android:textSize="14sp" />
 
@@ -257,6 +276,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
                             android:gravity="right"
+                            android:text="@{selectTime}"
                             android:textColor="@color/colorText"
                             android:textSize="14sp" />
 
@@ -290,6 +310,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:gravity="right"
+                            android:text="@{amount}"
                             android:textColor="@color/colorText"
                             android:textSize="14sp" />
 

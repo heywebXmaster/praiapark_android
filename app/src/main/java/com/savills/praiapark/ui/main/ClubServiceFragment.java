@@ -12,6 +12,8 @@ import com.savills.praiapark.base.BaseFragment;
 import com.savills.praiapark.base.ClickPresenter;
 import com.savills.praiapark.databinding.FragmentClubServiceBinding;
 import com.savills.praiapark.ui.main.club.BookingDevicesFragment;
+import com.savills.praiapark.ui.main.club.ClubPriceFragment;
+import com.savills.praiapark.ui.main.club.ClubRuleFragment;
 import com.savills.praiapark.ui.main.info.AroundInfoFragment;
 import com.savills.praiapark.ui.main.info.TrafficInfoFragment;
 import java.util.ArrayList;
@@ -61,8 +63,8 @@ public class ClubServiceFragment extends BaseFragment<FragmentClubServiceBinding
                     public void accept(@NonNull Long aLong) throws Exception {
                         List<Fragment> fragmentList = new ArrayList<>();
                         fragmentList.add(BookingDevicesFragment.newInstant());
-                        fragmentList.add(TrafficInfoFragment.newInstant());
-                        fragmentList.add(AroundInfoFragment.newInstant());
+                        fragmentList.add(ClubRuleFragment.newInstant());
+                        fragmentList.add(ClubPriceFragment.newInstant());
                         MyPagerAdapter pagerAdapter = new MyPagerAdapter(mContext, getChildFragmentManager(), fragmentList, titles);
                         dataBinding.viewpager.setOffscreenPageLimit(3);
                         dataBinding.viewpager.setAdapter(pagerAdapter);

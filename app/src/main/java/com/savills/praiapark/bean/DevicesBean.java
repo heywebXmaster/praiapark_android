@@ -1,6 +1,8 @@
 package com.savills.praiapark.bean;
 
-public class DevicesBean {
+import java.io.Serializable;
+
+public class DevicesBean implements Serializable {
     private int fromTime;
     private int hour;
     private String id;
@@ -10,8 +12,62 @@ public class DevicesBean {
     private int toTime;
     private int type;
     private String workday;
+    private String address;
+    private String facilityId;
+    private String facilityName;
+    private int facilityType;
+    private String householderCode;
+    private String username;
 
-    public class PriceInfo {
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getFacilityId() {
+        return facilityId;
+    }
+
+    public void setFacilityId(String facilityId) {
+        this.facilityId = facilityId;
+    }
+
+    public String getFacilityName() {
+        return facilityName;
+    }
+
+    public void setFacilityName(String facilityName) {
+        this.facilityName = facilityName;
+    }
+
+    public int getFacilityType() {
+        return facilityType;
+    }
+
+    public void setFacilityType(int facilityType) {
+        this.facilityType = facilityType;
+    }
+
+    public String getHouseholderCode() {
+        return householderCode;
+    }
+
+    public void setHouseholderCode(String householderCode) {
+        this.householderCode = householderCode;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public class PriceInfo implements Serializable {
         private String price;
         private String type;
 

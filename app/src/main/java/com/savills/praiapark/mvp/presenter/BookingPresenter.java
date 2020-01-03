@@ -12,8 +12,10 @@ import com.savills.praiapark.net.BaseObserver;
 import com.savills.praiapark.net.RetrofitFactory;
 import com.savills.praiapark.util.EnhancedCall;
 import com.savills.praiapark.util.EnhancedCallback;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import retrofit2.Call;
@@ -59,16 +61,17 @@ public class BookingPresenter extends BasePresenter implements BookingContract.B
     }
 
     @Override
-    public void checkBookingTime(int facilityId, String date, int fromTime, int toTime) {
+    public void checkBookingTime(String facilityId, String date, int fromTime, int toTime) {
         orderView.showLoading();
         RetrofitFactory.getInstence().API().checkBookingTime(LocalSaveData.getInstance().getUserName(),
-                facilityId,date,fromTime,toTime)
-                .observeOn(Schedulers.io())
-                .subscribeOn(AndroidSchedulers.mainThread())
-                .subscribe(new BaseObserver<String>() {
+                facilityId, date, fromTime, toTime)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new BaseObserver<DevicesBean>() {
                     @Override
-                    protected void onSuccees(BaseEntity<String> t) {
+                    protected void onSuccees(BaseEntity<DevicesBean> t) {
                         orderView.showToast(t.getErrorMsg());
+                        orderView.checkBookingTimeSuccess(t.getResult());
                     }
 
                     @Override
@@ -86,7 +89,7 @@ public class BookingPresenter extends BasePresenter implements BookingContract.B
     @Override
     public void uploadBooking(String nickname,
                               String phoneNumber,
-                              int facilityId,
+                              String facilityId,
                               String date,
                               int fromTime,
                               int toTime,
@@ -101,8 +104,8 @@ public class BookingPresenter extends BasePresenter implements BookingContract.B
                 fromTime,
                 toTime,
                 amount)
-                .observeOn(Schedulers.io())
-                .subscribeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new BaseObserver<String>() {
 
                     @Override
@@ -121,13 +124,13 @@ public class BookingPresenter extends BasePresenter implements BookingContract.B
                         orderView.hideLoading();
                     }
                 });
-
     }
 
     @Override
-    public void getBookingByDate(int facilityId, String date) {
+    public void getBookingByDate(String facilityId, String date) {
+        orderView.showLoading();
         APIFunction service = getApiService();
-        Call<BaseEntity<List<BookingBean>>> call = service.getBookingByDate(LocalSaveData.getInstance().getUserName(),facilityId,date);
+        Call<BaseEntity<List<BookingBean>>> call = service.getBookingByDate(LocalSaveData.getInstance().getUserName(), facilityId, date);
         EnhancedCall<BaseEntity<List<BookingBean>>> enhancedCall = new EnhancedCall<>(call);
         enhancedCall.dataClassName(BaseEntity.class)
                 .enqueue(new EnhancedCallback<BaseEntity<List<BookingBean>>>() {
@@ -137,10 +140,12 @@ public class BookingPresenter extends BasePresenter implements BookingContract.B
                         if (isSuccess(entity)) {
                             orderView.showBookingList(entity.getResult());
                         }
+                        orderView.hideLoading();
                     }
 
                     @Override
                     public void onFailure(Call<BaseEntity<List<BookingBean>>> call, Throwable t) {
+                        orderView.hideLoading();
                         orderView.showLoadError();
                     }
 
@@ -151,11 +156,10 @@ public class BookingPresenter extends BasePresenter implements BookingContract.B
                             list = new ArrayList<>();
                         }
                         orderView.showBookingList(list);
+                        orderView.hideLoading();
                     }
                 });
     }
-
-
 
 
 }

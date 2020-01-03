@@ -11,20 +11,20 @@ public interface BookingContract {
     interface BookingPresenter {
         void getDevicesList();
 
-        void checkBookingTime(int facilityId,
+        void checkBookingTime(String facilityId,
                               String date,
                               int fromTime,
                               int toTime);
 
         void uploadBooking(String nickname,
                            String phoneNumber,
-                           int facilityId,
+                           String facilityId,
                            String date,
                            int fromTime,
                            int toTime,
                            String amount);
 
-        void getBookingByDate(int facilityId,String date);
+        void getBookingByDate(String facilityId,String date);
 
     }
 
@@ -34,5 +34,7 @@ public interface BookingContract {
         void uploadBookingSuccess();
 
         void showBookingList(List<BookingBean> list);
+
+        void checkBookingTimeSuccess(DevicesBean result);
     }
 }

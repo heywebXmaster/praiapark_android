@@ -53,8 +53,8 @@ public abstract class BaseFragment<V extends ViewDataBinding> extends SwipeBackF
         mContext = getActivity();
         MainActivity mainActivity = (MainActivity) getActivity();
         mainActivity.initLang();
-        setTitle();
         initView();
+        setTitle();
         setListener();
     }
 

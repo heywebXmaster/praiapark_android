@@ -6,6 +6,8 @@ import com.savills.praiapark.bean.AroundInfoBean;
 import com.savills.praiapark.bean.BaseEntity;
 import com.savills.praiapark.bean.BookingBean;
 import com.savills.praiapark.bean.ClauseBean;
+import com.savills.praiapark.bean.ClubPriceBean;
+import com.savills.praiapark.bean.ClubRuleBean;
 import com.savills.praiapark.bean.DevicesBean;
 import com.savills.praiapark.bean.NoticeBean;
 import com.savills.praiapark.bean.PdfBean;
@@ -126,11 +128,19 @@ public interface APIFunction {
     Call<BaseEntity<List<DevicesBean>>> getDevicesList(@Field("username") String username);
 
     @FormUrlEncoded
+    @POST(HttpConfig.CLUB_RULE)
+    Call<BaseEntity<List<UnitInfoBean>>> getClubRuleList(@Field("username") String username);
+
+    @FormUrlEncoded
+    @POST(HttpConfig.CLUB_PRICE)
+    Call<BaseEntity<List<UnitInfoBean>>> getClubPriceList(@Field("username") String username);
+
+    @FormUrlEncoded
     @POST(HttpConfig.UPLOAD_BOOKING)
     Observable<BaseEntity<String>> uploadBooking(@Field("username") String username,
                                                  @Field("nickname") String nickname,
                                                  @Field("phoneNumber") String phoneNumber,
-                                                 @Field("facilityId") int facilityId,
+                                                 @Field("facilityId") String facilityId,
                                                  @Field("date") String date,
                                                  @Field("fromTime") int fromTime,
                                                  @Field("toTime") int toTime,
@@ -139,13 +149,13 @@ public interface APIFunction {
     @FormUrlEncoded
     @POST(HttpConfig.GET_BOOKING)
     Call<BaseEntity<List<BookingBean>>> getBookingByDate(@Field("username") String username,
-                                                         @Field("facilityId") int facilityId,
+                                                         @Field("facilityId") String facilityId,
                                                          @Field("date") String date);
 
     @FormUrlEncoded
     @POST(HttpConfig.CHECK_BOOKING_TIME)
-    Observable<BaseEntity<String>> checkBookingTime(@Field("username") String username,
-                                                 @Field("facilityId") int facilityId,
+    Observable<BaseEntity<DevicesBean>> checkBookingTime(@Field("username") String username,
+                                                 @Field("facilityId") String facilityId,
                                                  @Field("date") String date,
                                                  @Field("fromTime") int fromTime,
                                                  @Field("toTime") int toTime);

@@ -5,33 +5,30 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import com.savills.praiapark.R;
 import com.savills.praiapark.adapter.ItemClickListener;
-import com.savills.praiapark.adapter.DevicesAdapter;
+import com.savills.praiapark.adapter.UnitInfoAdapter;
 import com.savills.praiapark.base.BaseFragment;
-import com.savills.praiapark.bean.BookingBean;
-import com.savills.praiapark.bean.ClubPriceBean;
-import com.savills.praiapark.bean.ClubRuleBean;
 import com.savills.praiapark.bean.DevicesBean;
 import com.savills.praiapark.bean.UnitInfoBean;
 import com.savills.praiapark.databinding.FragmentListBinding;
-import com.savills.praiapark.mvp.contract.BookingContract;
 import com.savills.praiapark.mvp.contract.ClubInfoContract;
-import com.savills.praiapark.mvp.presenter.BookingPresenter;
 import com.savills.praiapark.mvp.presenter.ClubInfoPresenter;
 import com.savills.praiapark.ui.main.ClubServiceFragment;
+import com.savills.praiapark.ui.main.PdfFragment;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookingDevicesFragment extends BaseFragment<FragmentListBinding> implements ClubInfoContract.ClubInfoView {
+public class ClubPriceFragment extends BaseFragment<FragmentListBinding> implements ClubInfoContract.ClubInfoView {
 
-    private DevicesAdapter devicesAdapter;
-    private ClubInfoPresenter infoPresenter;
-    List<DevicesBean> list;
+    private UnitInfoAdapter unitInfoAdapter;
 
-    public static BookingDevicesFragment newInstant() {
-        return new BookingDevicesFragment();
+    public static ClubPriceFragment newInstant() {
+        return new ClubPriceFragment();
     }
+
+    private ClubInfoPresenter infoPresenter;
+    List<UnitInfoBean> list;
 
     @Override
     protected int setViewId() {
@@ -47,17 +44,18 @@ public class BookingDevicesFragment extends BaseFragment<FragmentListBinding> im
     protected void initView() {
         setSwipeBackEnable(false);
         infoPresenter = new ClubInfoPresenter(this);
-        devicesAdapter = new DevicesAdapter();
-        dataBinding.recyclerView.setAdapter(devicesAdapter);
+        unitInfoAdapter = new UnitInfoAdapter();
+        dataBinding.recyclerView.setAdapter(unitInfoAdapter);
     }
 
     @Override
     protected void setListener() {
-        devicesAdapter.setItemClickListener(new ItemClickListener() {
+        unitInfoAdapter.setItemClickListener(new ItemClickListener() {
             @Override
             public void onClick(int position) {
-                ((ClubServiceFragment) getParentFragment())
-                        .startBrotherFragment(BookingCalendarFragment.newInstant(list.get(position)));
+                UnitInfoBean infoBean = list.get(position);
+                ((ClubServiceFragment) getParentFragment()).startBrotherFragment(PdfFragment.newInstant(infoBean.getTitle(),
+                        infoBean.getPdf()));
             }
         });
         dataBinding.refreshLayout.setOnRefreshListener(new OnRefreshListener() {
@@ -66,8 +64,8 @@ public class BookingDevicesFragment extends BaseFragment<FragmentListBinding> im
                 if (list != null) {
                     list.clear();
                 }
-                devicesAdapter.clearDatas();
-                infoPresenter.getDevicesList();
+                unitInfoAdapter.clearDatas();
+                infoPresenter.getClubPriceList();
             }
         });
         dataBinding.refreshLayout.setEnableLoadMore(false);
@@ -83,13 +81,7 @@ public class BookingDevicesFragment extends BaseFragment<FragmentListBinding> im
 
     @Override
     public void showDevicesList(List<DevicesBean> list) {
-        if (this.list == null) {
-            this.list = new ArrayList<>();
-        }
-        this.list.addAll(list);
-        devicesAdapter.addItems(list);
-        devicesAdapter.notifyDataSetChanged();
-        dataBinding.refreshLayout.finishRefresh();
+
     }
 
     @Override
@@ -99,7 +91,13 @@ public class BookingDevicesFragment extends BaseFragment<FragmentListBinding> im
 
     @Override
     public void showClubPriceList(List<UnitInfoBean> list) {
-
+        if (this.list == null) {
+            this.list = new ArrayList<>();
+        }
+        this.list.addAll(list);
+        unitInfoAdapter.addItems(list);
+        unitInfoAdapter.notifyDataSetChanged();
+        dataBinding.refreshLayout.finishRefresh();
     }
 
 
