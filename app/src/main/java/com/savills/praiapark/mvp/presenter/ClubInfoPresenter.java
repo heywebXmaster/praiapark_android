@@ -2,6 +2,7 @@ package com.savills.praiapark.mvp.presenter;
 
 import com.alibaba.fastjson.JSON;
 import com.savills.praiapark.bean.BaseEntity;
+import com.savills.praiapark.bean.PdfBean;
 import com.savills.praiapark.bean. UnitInfoBean;
 import com.savills.praiapark.bean. UnitInfoBean;
 import com.savills.praiapark.bean.DevicesBean;
@@ -9,12 +10,16 @@ import com.savills.praiapark.config.LocalSaveData;
 import com.savills.praiapark.mvp.BasePresenter;
 import com.savills.praiapark.mvp.contract.ClubInfoContract;
 import com.savills.praiapark.net.APIFunction;
+import com.savills.praiapark.net.BaseObserver;
+import com.savills.praiapark.net.RetrofitFactory;
 import com.savills.praiapark.util.EnhancedCall;
 import com.savills.praiapark.util.EnhancedCallback;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import retrofit2.Call;
 import retrofit2.Response;
 
@@ -89,32 +94,25 @@ public class ClubInfoPresenter extends BasePresenter implements ClubInfoContract
     }
 
     @Override
-    public void getClubPriceList() {
-        APIFunction service = getApiService();
-        Call<BaseEntity<List< UnitInfoBean>>> call = service.getClubPriceList(LocalSaveData.getInstance().getUserName());
-        EnhancedCall<BaseEntity<List< UnitInfoBean>>> enhancedCall = new EnhancedCall<>(call);
-        enhancedCall.dataClassName(BaseEntity.class)
-                .enqueue(new EnhancedCallback<BaseEntity<List< UnitInfoBean>>>() {
+    public void getClubPrice() {
+        clubInfoView.showLoading();
+        RetrofitFactory.getInstence().API().getClubPrice(LocalSaveData.getInstance().getUserName())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new BaseObserver<PdfBean>() {
                     @Override
-                    public void onResponse(Call<BaseEntity<List< UnitInfoBean>>> call, Response<BaseEntity<List< UnitInfoBean>>> response) {
-                        BaseEntity<List< UnitInfoBean>> entity = response.body();
-                        if (isSuccess(entity)) {
-                            clubInfoView.showClubPriceList(entity.getResult());
-                        }
+                    protected void onSuccees(BaseEntity<PdfBean> t) {
+                        clubInfoView.showClubPrice(t.getResult());
                     }
 
                     @Override
-                    public void onFailure(Call<BaseEntity<List< UnitInfoBean>>> call, Throwable t) {
-                        clubInfoView.showLoadError();
+                    protected void onFailure(Throwable e) {
+
                     }
 
                     @Override
-                    public void onGetCache(BaseEntity<List< UnitInfoBean>> listBaseEntity) {
-                        List< UnitInfoBean> list = JSON.parseArray(listBaseEntity.getResult() + "",  UnitInfoBean.class);
-                        if (list == null) {
-                            list = new ArrayList<>();
-                        }
-                        clubInfoView.showClubPriceList(list);
+                    protected void onFinish() {
+                        clubInfoView.hideLoading();
                     }
                 });
     }

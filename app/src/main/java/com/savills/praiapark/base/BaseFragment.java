@@ -1,5 +1,6 @@
 package com.savills.praiapark.base;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -30,6 +31,7 @@ import com.savills.praiapark.util.NetWorkUtil;
 import com.savills.praiapark.util.ToastUtil;
 import com.gyf.immersionbar.ImmersionBar;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import org.greenrobot.eventbus.EventBus;
 
