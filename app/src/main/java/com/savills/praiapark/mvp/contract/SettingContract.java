@@ -9,15 +9,16 @@ public interface SettingContract {
     interface SettingPresenter {
         void contactUs(String title, String content, String nickname, String phoneNumber);
 
-
         void getPdfs();
+
+        void getFee();
     }
 
     interface SettingView extends BaseView {
         void contactUsSuccess();
 
-
-
         void showPdfs(List<PdfBean> list);
+
+        void showFee(PdfBean pdfBean);
     }
 }

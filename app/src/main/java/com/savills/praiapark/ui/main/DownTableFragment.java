@@ -114,4 +114,9 @@ public class DownTableFragment extends BaseFragment<FragmentDownloadTableBinding
         pdfAdapter.notifyDataSetChanged();
         dataBinding.refreshLayout.finishRefresh();
     }
+
+    @Override
+    public void showFee(PdfBean pdfBean) {
+
+    }
 }

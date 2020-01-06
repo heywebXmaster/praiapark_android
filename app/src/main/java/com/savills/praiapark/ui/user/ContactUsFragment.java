@@ -143,4 +143,9 @@ public class ContactUsFragment extends BaseFragment<FragmentContactUsBinding> im
 
     }
 
+    @Override
+    public void showFee(PdfBean pdfBean) {
+
+    }
+
 }

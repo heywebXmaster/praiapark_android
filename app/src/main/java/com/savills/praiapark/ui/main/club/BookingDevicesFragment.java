@@ -11,6 +11,7 @@ import com.savills.praiapark.bean.BookingBean;
 import com.savills.praiapark.bean.ClubPriceBean;
 import com.savills.praiapark.bean.ClubRuleBean;
 import com.savills.praiapark.bean.DevicesBean;
+import com.savills.praiapark.bean.PdfBean;
 import com.savills.praiapark.bean.UnitInfoBean;
 import com.savills.praiapark.databinding.FragmentListBinding;
 import com.savills.praiapark.mvp.contract.BookingContract;
@@ -98,9 +99,7 @@ public class BookingDevicesFragment extends BaseFragment<FragmentListBinding> im
     }
 
     @Override
-    public void showClubPriceList(List<UnitInfoBean> list) {
+    public void showClubPrice(PdfBean pdfBean) {
 
     }
-
-
 }

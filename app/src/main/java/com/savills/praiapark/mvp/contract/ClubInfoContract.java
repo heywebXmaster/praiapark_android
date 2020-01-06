@@ -3,6 +3,7 @@ package com.savills.praiapark.mvp.contract;
 import com.savills.praiapark.bean.ClubPriceBean;
 import com.savills.praiapark.bean.ClubRuleBean;
 import com.savills.praiapark.bean.DevicesBean;
+import com.savills.praiapark.bean.PdfBean;
 import com.savills.praiapark.bean.UnitInfoBean;
 import com.savills.praiapark.mvp.BaseView;
 
@@ -14,7 +15,7 @@ public interface ClubInfoContract {
 
         void getClubRuleList();
 
-        void getClubPriceList();
+        void getClubPrice();
 
     }
 
@@ -23,6 +24,6 @@ public interface ClubInfoContract {
 
         void showClubRuleList(List<UnitInfoBean> list);
 
-        void showClubPriceList(List<UnitInfoBean> list);
+        void showClubPrice(PdfBean pdfBean);
     }
 }

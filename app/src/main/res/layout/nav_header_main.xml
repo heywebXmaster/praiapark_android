@@ -67,6 +67,26 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/layoutFee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingTop="@dimen/muen_item_padding"
+            android:paddingBottom="@dimen/muen_item_padding">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_nav_notice"
+                android:drawablePadding="10dp"
+                android:text="@string/title_nav_fee"
+                android:textColor="@color/colorText"
+                android:textSize="14sp" />
+
+        </FrameLayout>
+
+
+        <FrameLayout
             android:id="@+id/layoutService"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

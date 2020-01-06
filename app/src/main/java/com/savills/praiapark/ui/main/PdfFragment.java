@@ -111,7 +111,6 @@ public class PdfFragment extends BaseFragment<FragmentPdfViewBinding> implements
         if (file.exists()) {
             FileUtils.deleteAllInDir(file);
         }
-
         String filePath = dirPath + System.currentTimeMillis() + ".pdf";
         FileDownloader.getImpl().create(url)
                 .setPath(filePath, false)

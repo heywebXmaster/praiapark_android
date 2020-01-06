@@ -1,10 +1,8 @@
-package com.savills.praiapark.ui.main.club;
+package com.savills.praiapark.ui.main;
 
 import android.Manifest;
-import android.opengl.Visibility;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.View;
 
@@ -16,78 +14,82 @@ import com.liulishuo.filedownloader.BaseDownloadTask;
 import com.liulishuo.filedownloader.FileDownloadListener;
 import com.liulishuo.filedownloader.FileDownloader;
 import com.savills.praiapark.R;
-import com.savills.praiapark.adapter.ItemClickListener;
-import com.savills.praiapark.adapter.UnitInfoAdapter;
 import com.savills.praiapark.base.BaseFragment;
-import com.savills.praiapark.bean.DevicesBean;
+import com.savills.praiapark.base.ClickPresenter;
 import com.savills.praiapark.bean.PdfBean;
-import com.savills.praiapark.bean.UnitInfoBean;
-import com.savills.praiapark.databinding.FragmentClubPriceBinding;
-import com.savills.praiapark.databinding.FragmentListBinding;
 import com.savills.praiapark.databinding.FragmentPdfViewBinding;
-import com.savills.praiapark.mvp.contract.ClubInfoContract;
-import com.savills.praiapark.mvp.presenter.ClubInfoPresenter;
-import com.savills.praiapark.ui.main.ClubServiceFragment;
-import com.savills.praiapark.ui.main.PdfFragment;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+import com.savills.praiapark.mvp.contract.SettingContract;
+import com.savills.praiapark.mvp.presenter.SettingPresenter;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
-public class ClubPriceFragment extends BaseFragment<FragmentClubPriceBinding> implements ClubInfoContract.ClubInfoView {
+public class ManagementFeeFragment extends BaseFragment<FragmentPdfViewBinding> implements ClickPresenter, SettingContract.SettingView {
 
-    public static ClubPriceFragment newInstant() {
-        return new ClubPriceFragment();
-    }
-
-    private ClubInfoPresenter infoPresenter;
+    private SettingPresenter settingPresenter;
     private String url;
     private int pageCount = 0;
+    public static ManagementFeeFragment newInstant() {
+        return new ManagementFeeFragment();
+    }
 
     @Override
     protected int setViewId() {
-        return R.layout.fragment_club_price;
+        return R.layout.fragment_pdf_view;
     }
 
     @Override
     protected void setTitle() {
-
+        dataBinding.layoutHeader.setTitle("管理費");
+        dataBinding.layoutHeader.ivRight.setVisibility(View.VISIBLE);
+        dataBinding.layoutHeader.ivRight.setImageResource(R.mipmap.icon_message);
+        dataBinding.layoutHeader.ivBack.setImageResource(R.mipmap.icon_menu);
     }
 
     @Override
     protected void initView() {
+        settingPresenter = new SettingPresenter(this);
         setSwipeBackEnable(false);
-        infoPresenter = new ClubInfoPresenter(this);
     }
 
     @Override
     protected void setListener() {
-
+        dataBinding.layoutHeader.setPresenter(this);
     }
 
     @Override
     public void onLazyInitView(@Nullable Bundle savedInstanceState) {
         super.onLazyInitView(savedInstanceState);
-        infoPresenter.getClubPrice();
+        settingPresenter.getFee();
     }
 
     @Override
-    public void showDevicesList(List<DevicesBean> list) {
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.ivBack:
+                ((MainFragment) getParentFragment()).onOpenDrawer();
+                break;
+            case R.id.ivRight:
+                ((MainFragment) getParentFragment()).startBrotherFragment(NoticeFragment.newInstant());
+                break;
+        }
+    }
+
+    @Override
+    public void contactUsSuccess() {
 
     }
 
     @Override
-    public void showClubRuleList(List<UnitInfoBean> list) {
+    public void showPdfs(List<PdfBean> list) {
 
     }
 
     @Override
-    public void showClubPrice(PdfBean pdfBean) {
-        if(!StringUtils.isEmpty(pdfBean.getPdf())){
-            url=pdfBean.getPdf();
+    public void showFee(PdfBean pdfBean) {
+        if(!StringUtils.isEmpty(pdfBean.getManagementFee())){
+            url=pdfBean.getManagementFee();
             RxPermissions rxPermissions = new RxPermissions(this);
             rxPermissions
                     .request(Manifest.permission.WRITE_EXTERNAL_STORAGE,
@@ -101,7 +103,7 @@ public class ClubPriceFragment extends BaseFragment<FragmentClubPriceBinding> im
     }
 
     private void downloadSource() {
-        String dirPath = mContext.getExternalFilesDir(Environment.DIRECTORY_PICTURES).getPath() + "/";
+        String dirPath = mContext.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS).getPath() + "/";
         File file = new File(dirPath);
         if (file.exists()) {
             FileUtils.deleteAllInDir(file);

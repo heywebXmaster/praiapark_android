@@ -133,7 +133,7 @@ public interface APIFunction {
 
     @FormUrlEncoded
     @POST(HttpConfig.CLUB_PRICE)
-    Call<BaseEntity<List<UnitInfoBean>>> getClubPriceList(@Field("username") String username);
+    Observable<BaseEntity<PdfBean>> getClubPrice(@Field("username") String username);
 
     @FormUrlEncoded
     @POST(HttpConfig.UPLOAD_BOOKING)
@@ -159,4 +159,8 @@ public interface APIFunction {
                                                  @Field("date") String date,
                                                  @Field("fromTime") int fromTime,
                                                  @Field("toTime") int toTime);
+
+    @FormUrlEncoded
+    @POST(HttpConfig.GET_FEE)
+    Observable<BaseEntity<PdfBean>> getFee(@Field("username") String username);
 }
