@@ -12,5 +12,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     public void onNewToken(@NonNull String token) {
         super.onNewToken(token);
         LogUtil.e("fcm onNewToken:" + token);
+        PushTokenInitPresenter initPresenter = new PushTokenInitPresenter();
+        initPresenter.uploadPushToken(token);
     }
 }
