@@ -142,6 +142,7 @@ public class ManagementFeeFragment extends BaseFragment<FragmentPdfViewBinding> 
         protected void completed(BaseDownloadTask task) {
             hideLoading();
             File file = new File(task.getTargetFilePath());
+            dataBinding.layoutContent.setVisibility(View.VISIBLE);
             dataBinding.pdfView.fromFile(file)
                     .defaultPage(0)
                     .enableAnnotationRendering(true)

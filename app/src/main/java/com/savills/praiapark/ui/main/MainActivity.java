@@ -1,5 +1,6 @@
 package com.savills.praiapark.ui.main;
 
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.savills.praiapark.R;
 import com.savills.praiapark.base.BaseActivity;
 import com.savills.praiapark.config.LocalSaveData;
@@ -20,6 +21,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
         } else {
             loadRootFragment(R.id.frameLayout, LoginFragment.newInstant());
         }
+        FirebaseMessaging.getInstance().setAutoInitEnabled(true);
     }
 
     @Override
