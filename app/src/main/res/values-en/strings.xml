@@ -13,7 +13,7 @@
     <string name="smart_refresh_nothing">No more data </string>
 
     <string name="title_nav_notice">Notice</string>
-    <string name="title_nav_fee">Fee</string>
+    <string name="title_nav_fee">Management Fee</string>
     <string name="title_nav_service">Clubhouse</string>
     <string name="title_nav_apply">Download</string>
     <string name="title_nav_contact">Contact us</string>
@@ -164,14 +164,14 @@
     <string name="text_forget_confirm_pwd">Confirm new password</string>
 
         
-    <string name="text_club_service_title_order">会所预约</string>
-    <string name="text_club_service_title_rule">会所守则</string>
-    <string name="text_club_service_title_price_list">价目表</string>
+    <string name="text_club_service_title_order">Booking</string>
+    <string name="text_club_service_title_rule">Clubhouse Rules</string>
+    <string name="text_club_service_title_price_list">Price List</string>
 
     <string name="text_club_service_hope">Coming Soon</string>
     <string name="text_club_service_building">程序正在建设中..</string>
         
-    <string name="text_add_order_apply">Application unit </string>
+    <string name="text_add_order_apply">Address</string>
         
     <string name="text_add_order_name">Customer Name</string>
         
@@ -179,21 +179,21 @@
         
     <string name="text_add_order_mobile">Contact phone </string>
         
-    <string name="text_add_order_input_mobile">Enter mobile number </string>
+    <string name="text_add_order_input_mobile">Enter phone number </string>
         
     <string name="text_add_order_devices">Equipment price</string>
         
     <string name="text_add_order_choose_devices">Select device </string>
         
-    <string name="text_add_order_price">Device price </string>
+    <string name="text_add_order_price">Room price </string>
         
-    <string name="text_add_order_start_time">Reservation start time </string>
+    <string name="text_add_order_start_time">Booking time period </string>
         
     <string name="text_add_order_end_time">End time </string>
         
-    <string name="text_add_order_amount">Total price </string>
+    <string name="text_add_order_amount">Total </string>
         
-    <string name="text_add_order_remind">Note: All devices can only be reserved 7 days in advance </string>
+    <string name="text_add_order_remind">Note: All rooms can only be reserved 7 days in advance </string>
         
     <string name="text_add_order_add">Pre-array </string>
         
@@ -228,17 +228,17 @@
 
     <!--第一個版本翻譯結束-->
     <!--第二個版本翻譯開始-->
-    <string name="text_add_order_appoint_date">Appointment date</string>
-    <string name="text_add_order_appoint_date_period">Appointed time period</string>
-    <string name="text_add_order_period">Period</string>
-    <string name="text_add_order_payment_status">Payment status</string>
-    <string name="text_add_order_apply_date">Application time</string>
+    <string name="text_add_order_appoint_date">Booking date:</string>
+    <string name="text_add_order_appoint_date_period">Booking history:</string>
+    <string name="text_add_order_period">Time Period</string>
+    <string name="text_add_order_payment_status">Status</string>
+    <string name="text_add_order_apply_date">Application Time</string>
     <string name="text_add_order_selected">selected</string>
     <string name="text_add_order_selected_period">selection period</string>
     <string name="text_dialog_title_selected_period">Select time period</string>
     <string name="text_cancel">Cancel</string>
     <string name="text_confirm">Confirm</string>
-    <string name="text_add_order_submit">Order</string>
-    <string name="text_add_order_hour">Hour</string>
+    <string name="text_add_order_submit">Finish</string>
+    <string name="text_add_order_hour">h</string>
     <!--第二個版本翻譯結束-->
 </resources>

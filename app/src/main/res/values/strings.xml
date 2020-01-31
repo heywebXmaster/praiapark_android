@@ -111,17 +111,17 @@
     <string name="text_club_service_hope">敬请期待</string>
     <string name="text_club_service_building">程序正在建设中..</string>
     <string name="text_add_order_apply">申请单位</string>
-    <string name="text_add_order_name">住户姓名</string>
-    <string name="text_add_order_input_name">请填写姓名</string>
-    <string name="text_add_order_mobile">联系电话</string>
-    <string name="text_add_order_input_mobile">请填写电话</string>
-    <string name="text_add_order_devices">设备价钱</string>
-    <string name="text_add_order_choose_devices">选择设备</string>
-    <string name="text_add_order_price">设备价钱</string>
-    <string name="text_add_order_start_time">预约开始时间</string>
+    <string name="text_add_order_name">称呼</string>
+    <string name="text_add_order_input_name">输入称呼</string>
+    <string name="text_add_order_mobile">联络电话</string>
+    <string name="text_add_order_input_mobile">输入联络电话</string>
+    <string name="text_add_order_devices">设施价钱</string>
+    <string name="text_add_order_choose_devices">选择设施</string>
+    <string name="text_add_order_price">设施价钱</string>
+    <string name="text_add_order_start_time">预约时间</string>
     <string name="text_add_order_end_time">结束时间</string>
     <string name="text_add_order_amount">总价</string>
-    <string name="text_add_order_remind">注意：所有设备只可以提前7天预约</string>
+    <string name="text_add_order_remind">注意：所有设施只可以提前7天预约</string>
     <string name="text_add_order_add">预 约</string>
 
     <string name="text_info_title_unit">单位资讯</string>
@@ -142,17 +142,17 @@
     <string name="text_announcement_company">第一太平戴维斯</string>
     <!--第一個版本翻譯結束-->
     <!--第二個版本翻譯開始-->
-    <string name="text_add_order_appoint_date">预约日期</string>
-    <string name="text_add_order_appoint_date_period">已预约时间段</string>
-    <string name="text_add_order_period">时段</string>
+    <string name="text_add_order_appoint_date">预约日期：</string>
+    <string name="text_add_order_appoint_date_period">预约记录：</string>
+    <string name="text_add_order_period">时间</string>
     <string name="text_add_order_payment_status">支付状态</string>
     <string name="text_add_order_apply_date">申请时间</string>
     <string name="text_add_order_selected">已选</string>
     <string name="text_add_order_selected_period">选择时间</string>
     <string name="text_dialog_title_selected_period">选择时间</string>
-    <string name="text_add_order_submit">预约</string>
     <string name="text_cancel">取消</string>
     <string name="text_confirm">确定</string>
+    <string name="text_add_order_submit">完成</string>
     <string name="text_add_order_hour">小时</string>
 
     <!--第二個版本翻譯結束-->
