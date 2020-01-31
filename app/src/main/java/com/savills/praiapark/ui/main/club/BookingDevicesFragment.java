@@ -102,4 +102,11 @@ public class BookingDevicesFragment extends BaseFragment<FragmentListBinding> im
     public void showClubPrice(PdfBean pdfBean) {
 
     }
+
+    @Override
+    public void showLoadError() {
+        super.showLoadError();
+        dataBinding.refreshLayout.finishRefresh();
+        dataBinding.refreshLayout.finishLoadMore();
+    }
 }

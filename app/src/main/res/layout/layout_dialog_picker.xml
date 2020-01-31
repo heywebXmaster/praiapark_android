@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="選擇時間"
+        android:text="@string/text_dialog_title_selected_period"
         android:textColor="@color/colorText"
         android:textSize="14sp" />
 
@@ -60,7 +60,7 @@
             android:minWidth="50dp"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
-            android:text="取消"
+            android:text="@string/text_cancel"
             android:textColor="@drawable/st_lang_confirm_text"
             android:textSize="14sp" />
 
@@ -76,7 +76,7 @@
             android:minWidth="50dp"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
-            android:text="確定"
+            android:text="@string/text_confirm"
             android:textColor="@drawable/st_lang_confirm_text"
             android:textSize="14sp" />
     </LinearLayout>
