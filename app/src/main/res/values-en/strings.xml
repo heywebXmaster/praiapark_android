@@ -154,7 +154,7 @@
         
     <string name="text_register_confirm_scan">Scan QR Code</string>
         
-    <string name="text_register_pwd_not_same">Inconsistent passwords</string>
+    <string name="text_register_pwd_not_same">Passwords do not match</string>
 
         
     <string name="text_forget_pwd">Forget password</string>
