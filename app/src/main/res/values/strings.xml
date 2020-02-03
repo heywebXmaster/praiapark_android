@@ -149,8 +149,12 @@
     <string name="text_add_order_apply_date">申请时间</string>
     <string name="text_add_order_selected">已选</string>
     <string name="text_add_order_selected_period">选择时间</string>
+    <string name="text_dialog_title_selected_period">选择时间</string>
+    <string name="text_cancel">取消</string>
+    <string name="text_confirm">确定</string>
     <string name="text_add_order_submit">完成</string>
     <string name="text_add_order_hour">小时</string>
+
     <!--第二個版本翻譯結束-->
 
 </resources>

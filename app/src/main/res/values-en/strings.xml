@@ -207,9 +207,9 @@
         
     <string name="text_order_record_status">Reservation status </string>
         
-    <string name="text_order_record_status_prepay">Pending payment</string>
+    <string name="text_order_record_status_prepay">Unpaid</string>
         
-    <string name="text_order_record_status_paid">Paid </string>
+    <string name="text_order_record_status_paid">Paid</string>
         
     <string name="text_order_record_status_ready">Backup </string>
         
@@ -234,7 +234,10 @@
     <string name="text_add_order_payment_status">Status</string>
     <string name="text_add_order_apply_date">Application Time</string>
     <string name="text_add_order_selected">selected</string>
-    <string name="text_add_order_selected_period">Submit</string>
+    <string name="text_add_order_selected_period">selection period</string>
+    <string name="text_dialog_title_selected_period">Select time period</string>
+    <string name="text_cancel">Cancel</string>
+    <string name="text_confirm">Confirm</string>
     <string name="text_add_order_submit">Finish</string>
     <string name="text_add_order_hour">h</string>
     <!--第二個版本翻譯結束-->

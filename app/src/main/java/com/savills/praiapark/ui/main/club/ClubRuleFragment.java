@@ -107,4 +107,11 @@ public class ClubRuleFragment extends BaseFragment<FragmentListBinding> implemen
 
     }
 
+    @Override
+    public void showLoadError() {
+        super.showLoadError();
+        dataBinding.refreshLayout.finishRefresh();
+        dataBinding.refreshLayout.finishLoadMore();
+    }
+
 }

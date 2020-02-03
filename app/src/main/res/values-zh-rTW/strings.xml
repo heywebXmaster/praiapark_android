@@ -150,6 +150,9 @@
     <string name="text_add_order_apply_date">申請時間</string>
     <string name="text_add_order_selected">已選</string>
     <string name="text_add_order_selected_period">選擇時間</string>
+    <string name="text_dialog_title_selected_period">選擇時間</string>
+    <string name="text_cancel">取消</string>
+    <string name="text_confirm">確定</string>
     <string name="text_add_order_submit">完成</string>
     <string name="text_add_order_hour">小時</string>
     <!--第二個版本翻譯結束-->
