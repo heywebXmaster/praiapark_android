@@ -41,7 +41,7 @@ public class ManagementFeeFragment extends BaseFragment<FragmentPdfViewBinding> 
 
     @Override
     protected void setTitle() {
-        dataBinding.layoutHeader.setTitle("管理費");
+        dataBinding.layoutHeader.setTitle(getString(R.string.title_nav_fee));
         dataBinding.layoutHeader.ivRight.setVisibility(View.VISIBLE);
         dataBinding.layoutHeader.ivRight.setImageResource(R.mipmap.icon_message);
         dataBinding.layoutHeader.ivBack.setImageResource(R.mipmap.icon_menu);

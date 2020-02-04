@@ -5,6 +5,7 @@ import android.graphics.Color;
 
 import com.blankj.utilcode.util.ToastUtils;
 import com.savills.praiapark.R;
+import com.savills.praiapark.base.ActivityManager;
 import com.savills.praiapark.bean.BaseEntity;
 
 import io.reactivex.Observer;
@@ -75,7 +76,7 @@ public abstract class BaseObserver<T> implements Observer<BaseEntity<T>> {
     private void toast(int msg) {
         ToastUtils.setBgColor(Color.RED);
         ToastUtils.setMsgColor(Color.WHITE);
-        ToastUtils.showShort(msg);
+        ToastUtils.showShort(ActivityManager.getInstance().getCurrentActivity().getString(msg));
     }
 
 }

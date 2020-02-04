@@ -80,4 +80,6 @@ public class HttpConfig {
     //獲取管理費
     public static final String GET_FEE = "/api/getManagementFee";
 
+    //獲取管理費
+    public static final String GET_NOTE = "/api/getClubhouseNote";
 }

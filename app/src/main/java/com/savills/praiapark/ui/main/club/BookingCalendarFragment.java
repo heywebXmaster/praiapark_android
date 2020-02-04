@@ -89,6 +89,7 @@ public class BookingCalendarFragment extends BaseFragment<FragmentOrderCalendarB
         dataBinding.layoutCalendar.calendarView.setOnDateChangedListener(this);
         LocalDate calendar = LocalDate.now();
         dataBinding.layoutCalendar.calendarView.setSelectedDate(calendar);
+        bookingPresenter.getClubhouseNote();
         getBookingList();
     }
 
@@ -165,7 +166,12 @@ public class BookingCalendarFragment extends BaseFragment<FragmentOrderCalendarB
     @Override
     public void checkBookingTimeSuccess(DevicesBean devicesBean) {
         dialog.dismiss();
-        startForResult(AddOrderFragment.newInstant(devicesBean, selectDate, dialog.getFromTime(), dialog.getToTime()),REQUEST_CODE);
+        startForResult(AddOrderFragment.newInstant(devicesBean, selectDate, dialog.getFromTime(), dialog.getToTime()), REQUEST_CODE);
+    }
+
+    @Override
+    public void showClubhouseNote(String notes) {
+        dataBinding.layoutCalendar.setNotes(getString(R.string.text_add_order_remind) + notes);
     }
 
     private static class EnableOneToTenDecorator implements DayViewDecorator {

@@ -6,6 +6,7 @@
         <variable
             name="devicesName"
             type="String" />
+
     </data>
 
     <LinearLayout
@@ -91,7 +92,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2"
-                                android:gravity="left"
+                                android:gravity="center"
                                 android:text="@string/text_add_order_period"
                                 android:textColor="@color/colorContent"
                                 android:textSize="14sp" />
@@ -109,7 +110,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="2"
-                                android:gravity="left"
+                                android:gravity="center"
                                 android:text="@string/text_add_order_apply_date"
                                 android:textColor="@color/colorContent"
                                 android:textSize="14sp" />

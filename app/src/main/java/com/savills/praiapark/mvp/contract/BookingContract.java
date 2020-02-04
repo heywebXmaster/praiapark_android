@@ -26,6 +26,8 @@ public interface BookingContract {
 
         void getBookingByDate(String facilityId,String date);
 
+        void getClubhouseNote();
+
     }
 
     interface OrderView extends BaseView {
@@ -36,5 +38,7 @@ public interface BookingContract {
         void showBookingList(List<BookingBean> list);
 
         void checkBookingTimeSuccess(DevicesBean result);
+
+        void showClubhouseNote(String note);
     }
 }

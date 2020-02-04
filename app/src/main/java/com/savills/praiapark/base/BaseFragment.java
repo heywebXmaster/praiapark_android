@@ -1,6 +1,5 @@
 package com.savills.praiapark.base;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -240,7 +239,7 @@ public abstract class BaseFragment<V extends ViewDataBinding> extends SwipeBackF
     public void showLoadError() {
         ToastUtils.setBgColor(Color.RED);
         ToastUtils.setMsgColor(Color.WHITE);
-        ToastUtils.showShort(R.string.ConnectException);
+        ToastUtils.showShort(getString(R.string.ConnectException));
     }
 
     public void processRefreshLayoutError(int page, RefreshLayout refreshLayout){

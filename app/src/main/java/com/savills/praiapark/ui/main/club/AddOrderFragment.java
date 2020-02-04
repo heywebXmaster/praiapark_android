@@ -148,6 +148,11 @@ public class AddOrderFragment extends BaseFragment<FragmentAddOrderBinding> impl
     }
 
     @Override
+    public void showClubhouseNote(String note) {
+
+    }
+
+    @Override
     public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
     }
