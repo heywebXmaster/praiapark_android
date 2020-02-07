@@ -173,7 +173,7 @@
         
     <string name="text_add_order_apply">Address</string>
         
-    <string name="text_add_order_name">Customer Name</string>
+    <string name="text_add_order_name">Customer name</string>
         
     <string name="text_add_order_input_name">Enter name</string>
         
@@ -234,7 +234,7 @@
     <string name="text_add_order_payment_status">Status</string>
     <string name="text_add_order_apply_date">Application Time</string>
     <string name="text_add_order_selected">selected</string>
-    <string name="text_add_order_selected_period">selection period</string>
+    <string name="text_add_order_selected_period">Submit</string>
     <string name="text_dialog_title_selected_period">Select time period</string>
     <string name="text_cancel">Cancel</string>
     <string name="text_confirm">Confirm</string>
