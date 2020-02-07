@@ -1,5 +1,6 @@
 package com.savills.praiapark.ui.main;
 
+import android.content.Intent;
 import android.view.View;
 
 import com.savills.praiapark.R;
@@ -84,11 +85,13 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding> implements
 
     @Override
     public void loginSuccess() {
-        ImmersionBar.with(getActivity())
+        ImmersionBar.with(_mActivity)
                 .statusBarColor(R.color.black)
                 .fitsSystemWindows(true)
                 .init();
-        startWithPop(MainFragment.newInstant());
+        Intent intent=new Intent(_mActivity,MainActivity.class);
+        startActivity(intent);
+        _mActivity.finish();
     }
 
     @Override
