@@ -61,6 +61,7 @@ public class ManagementFeeFragment extends BaseFragment<FragmentPdfViewBinding> 
     @Override
     public void onLazyInitView(@Nullable Bundle savedInstanceState) {
         super.onLazyInitView(savedInstanceState);
+        dataBinding.layoutContent.setVisibility(View.VISIBLE);
         settingPresenter.getFee();
     }
 
@@ -142,7 +143,6 @@ public class ManagementFeeFragment extends BaseFragment<FragmentPdfViewBinding> 
         protected void completed(BaseDownloadTask task) {
             hideLoading();
             File file = new File(task.getTargetFilePath());
-            dataBinding.layoutContent.setVisibility(View.VISIBLE);
             dataBinding.pdfView.fromFile(file)
                     .defaultPage(0)
                     .enableAnnotationRendering(true)
