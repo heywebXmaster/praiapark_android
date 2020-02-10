@@ -123,7 +123,7 @@
     <string name="text_add_order_end_time">結束時間</string>
     <string name="text_add_order_amount">總價</string>
 
-    <string name="text_add_order_remind">註意：</string>
+    <string name="text_add_order_remind">註意：所有設施只可以提前7天預約</string>
 
     <string name="text_add_order_add">預 約</string>
 

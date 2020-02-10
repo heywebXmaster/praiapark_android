@@ -121,7 +121,7 @@
     <string name="text_add_order_start_time">预约时间</string>
     <string name="text_add_order_end_time">结束时间</string>
     <string name="text_add_order_amount">总价</string>
-    <string name="text_add_order_remind">注意：</string>
+    <string name="text_add_order_remind">注意：所有设施只可以提前7天预约</string>
     <string name="text_add_order_add">预 约</string>
 
     <string name="text_info_title_unit">单位资讯</string>

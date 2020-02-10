@@ -89,7 +89,7 @@ public class BookingCalendarFragment extends BaseFragment<FragmentOrderCalendarB
         dataBinding.layoutCalendar.calendarView.setOnDateChangedListener(this);
         LocalDate calendar = LocalDate.now();
         dataBinding.layoutCalendar.calendarView.setSelectedDate(calendar);
-        bookingPresenter.getClubhouseNote();
+//        bookingPresenter.getClubhouseNote();
         getBookingList();
     }
 
