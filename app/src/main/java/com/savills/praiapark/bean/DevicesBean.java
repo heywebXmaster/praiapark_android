@@ -20,6 +20,24 @@ public class DevicesBean implements Serializable {
     private String householderCode;
     private String username;
     private String amount;
+    private String key;
+    private int iconId;
+
+    public int getIconId() {
+        return iconId;
+    }
+
+    public void setIconId(int iconId) {
+        this.iconId = iconId;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     public String getAmount() {
         return amount;

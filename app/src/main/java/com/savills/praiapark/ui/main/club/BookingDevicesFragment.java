@@ -88,9 +88,7 @@ public class BookingDevicesFragment extends BaseFragment<FragmentListBinding> im
             this.list = new ArrayList<>();
         }
         this.list.addAll(list);
-        devicesAdapter.addItems(list);
-        devicesAdapter.notifyDataSetChanged();
-        dataBinding.refreshLayout.finishRefresh();
+        infoPresenter.parseListIcon(this.list);
     }
 
     @Override
@@ -101,6 +99,14 @@ public class BookingDevicesFragment extends BaseFragment<FragmentListBinding> im
     @Override
     public void showClubPrice(PdfBean pdfBean) {
 
+    }
+
+    @Override
+    public void showParseIconList(List<DevicesBean> list) {
+
+        devicesAdapter.addItems(list);
+        devicesAdapter.notifyDataSetChanged();
+        dataBinding.refreshLayout.finishRefresh();
     }
 
     @Override

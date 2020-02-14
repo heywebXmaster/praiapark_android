@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="devicesName"
             type="String" />
@@ -26,27 +27,42 @@
             android:descendantFocusability="blocksDescendants">
 
             <android.support.v4.widget.NestedScrollView
-                android:layout_width="match_parent"
                 android:id="@+id/layoutScroll"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:overScrollMode="never">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/page_margin"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/page_margin">
 
-                    <android.support.v7.widget.AppCompatTextView
-                        android:id="@+id/tvType"
-                        android:layout_margin="@dimen/page_margin"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/page_margin"
                         android:background="@drawable/sp_page_bg"
-                        android:padding="@dimen/page_margin"
-                        android:text="@{devicesName}"
-                        android:textColor="@color/colorText"
-                        android:textSize="16sp" />
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/page_margin">
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/ivIcon"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginRight="5dp" />
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/tvType"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@{devicesName}"
+                            android:textColor="@color/colorText"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
 
                     <android.support.v7.widget.AppCompatTextView
                         android:layout_width="match_parent"
@@ -77,9 +93,9 @@
                         android:layout_marginRight="@dimen/page_margin"
                         android:background="@drawable/sp_page_bg"
                         android:orientation="vertical"
-                        android:visibility="gone"
                         android:paddingLeft="@dimen/page_margin"
-                        android:paddingRight="@dimen/page_margin">
+                        android:paddingRight="@dimen/page_margin"
+                        android:visibility="gone">
 
                         <LinearLayout
                             android:layout_width="match_parent"

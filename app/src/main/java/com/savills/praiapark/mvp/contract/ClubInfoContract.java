@@ -17,6 +17,8 @@ public interface ClubInfoContract {
 
         void getClubPrice();
 
+        void parseListIcon(List<DevicesBean> list);
+
     }
 
     interface ClubInfoView extends BaseView {
@@ -25,5 +27,7 @@ public interface ClubInfoContract {
         void showClubRuleList(List<UnitInfoBean> list);
 
         void showClubPrice(PdfBean pdfBean);
+
+        void showParseIconList(List<DevicesBean> list);
     }
 }

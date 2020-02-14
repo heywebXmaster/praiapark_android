@@ -70,6 +70,9 @@ public class BookingCalendarFragment extends BaseFragment<FragmentOrderCalendarB
         if (bundle != null) {
             devicesBean = (DevicesBean) bundle.getSerializable(DEVICES_INFO);
             dataBinding.setDevicesName(devicesBean.getName());
+            if(devicesBean.getIconId()!=0){
+                dataBinding.ivIcon.setImageResource(devicesBean.getIconId());
+            }
         }
         bookingAdapter = new BookingAdapter();
         dataBinding.recyclerView.setAdapter(bookingAdapter);
