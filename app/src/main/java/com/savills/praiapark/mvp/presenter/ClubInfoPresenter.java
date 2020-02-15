@@ -155,7 +155,7 @@ public class ClubInfoPresenter extends BasePresenter implements ClubInfoContract
                     devicesBean.setIconId(R.mipmap.icon_bbq);
                     break;
                 case "bbq_area_2":
-                    devicesBean.setIconId(R.mipmap.icon_bbq);
+                    devicesBean.setIconId(R.mipmap.icon_bbq_2);
                     break;
                 default:
                     devicesBean.setIconId(0);

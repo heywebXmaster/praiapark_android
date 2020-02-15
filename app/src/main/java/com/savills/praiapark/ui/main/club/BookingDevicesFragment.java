@@ -103,7 +103,6 @@ public class BookingDevicesFragment extends BaseFragment<FragmentListBinding> im
 
     @Override
     public void showParseIconList(List<DevicesBean> list) {
-
         devicesAdapter.addItems(list);
         devicesAdapter.notifyDataSetChanged();
         dataBinding.refreshLayout.finishRefresh();
