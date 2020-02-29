@@ -3,7 +3,9 @@ package com.savills.praiapark.mvp.presenter;
 import com.alibaba.fastjson.JSON;
 import com.savills.praiapark.bean.BaseEntity;
 import com.savills.praiapark.bean.BookingBean;
+import com.savills.praiapark.bean.ClubhouseNoteBean;
 import com.savills.praiapark.bean.DevicesBean;
+import com.savills.praiapark.bean.NoticeBean;
 import com.savills.praiapark.config.LocalSaveData;
 import com.savills.praiapark.mvp.BasePresenter;
 import com.savills.praiapark.mvp.contract.BookingContract;
@@ -157,6 +159,29 @@ public class BookingPresenter extends BasePresenter implements BookingContract.B
                         }
                         orderView.showBookingList(list);
                         orderView.hideLoading();
+                    }
+                });
+    }
+
+    @Override
+    public void getClubhouseNote() {
+        RetrofitFactory.getInstence().API().getNote(
+                LocalSaveData.getInstance().getUserName())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new BaseObserver<ClubhouseNoteBean>() {
+
+                    @Override
+                    protected void onSuccees(BaseEntity<ClubhouseNoteBean> t) {
+                        orderView.showClubhouseNote(t.getResult().getContent());
+                    }
+
+                    @Override
+                    protected void onFailure(Throwable e) {
+                    }
+
+                    @Override
+                    protected void onFinish() {
                     }
                 });
     }

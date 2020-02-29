@@ -107,4 +107,16 @@ public class ClubRuleFragment extends BaseFragment<FragmentListBinding> implemen
 
     }
 
+    @Override
+    public void showParseIconList(List<DevicesBean> list) {
+
+    }
+
+    @Override
+    public void showLoadError() {
+        super.showLoadError();
+        dataBinding.refreshLayout.finishRefresh();
+        dataBinding.refreshLayout.finishLoadMore();
+    }
+
 }

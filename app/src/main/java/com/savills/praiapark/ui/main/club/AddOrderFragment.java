@@ -88,7 +88,7 @@ public class AddOrderFragment extends BaseFragment<FragmentAddOrderBinding> impl
             dataBinding.setSelectDate(selectDate);
             dataBinding.setSelectTime(fromTime + ":00 ~ " + toTime + ":00");
             amount = devicesBean.getAmount();
-            dataBinding.setAmount("MOP$" + amount);
+            dataBinding.setAmount("MOP " + amount);
         }
 
     }
@@ -144,6 +144,11 @@ public class AddOrderFragment extends BaseFragment<FragmentAddOrderBinding> impl
 
     @Override
     public void checkBookingTimeSuccess(DevicesBean devicesBean) {
+
+    }
+
+    @Override
+    public void showClubhouseNote(String note) {
 
     }
 

@@ -100,6 +100,11 @@ public class ClubPriceFragment extends BaseFragment<FragmentClubPriceBinding> im
         }
     }
 
+    @Override
+    public void showParseIconList(List<DevicesBean> list) {
+        
+    }
+
     private void downloadSource() {
         String dirPath = mContext.getExternalFilesDir(Environment.DIRECTORY_PICTURES).getPath() + "/";
         File file = new File(dirPath);

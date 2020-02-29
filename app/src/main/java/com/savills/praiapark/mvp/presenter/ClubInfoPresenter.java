@@ -1,6 +1,9 @@
 package com.savills.praiapark.mvp.presenter;
 
+import android.view.View;
+
 import com.alibaba.fastjson.JSON;
+import com.savills.praiapark.R;
 import com.savills.praiapark.bean.BaseEntity;
 import com.savills.praiapark.bean.PdfBean;
 import com.savills.praiapark.bean. UnitInfoBean;
@@ -115,5 +118,50 @@ public class ClubInfoPresenter extends BasePresenter implements ClubInfoContract
                         clubInfoView.hideLoading();
                     }
                 });
+    }
+
+    @Override
+    public void parseListIcon(List<DevicesBean> list) {
+        for(DevicesBean devicesBean:list){
+            switch (devicesBean.getKey()) {
+                case "entertainment_room":
+                    devicesBean.setIconId(R.mipmap.icon_media_play);
+                    break;
+                case "multi_function_room":
+                    devicesBean.setIconId(R.mipmap.icon_media);
+                    break;
+                case "yoga_and_dancing_room":
+                    devicesBean.setIconId(R.mipmap.icon_yuga);
+                    break;
+                case "karaoke_room_1":
+                    devicesBean.setIconId(R.mipmap.icon_kalaok_1);
+                    break;
+                case "karaoke_room_2":
+                    devicesBean.setIconId(R.mipmap.icon_kalaok_2);
+                    break;
+                case "mahjong_room_1":
+                    devicesBean.setIconId(R.mipmap.icon_majiang_2);
+                    break;
+                case "mahjong_room_2":
+                    devicesBean.setIconId(R.mipmap.icon_majiang);
+                    break;
+                case "panoranma_room":
+                    devicesBean.setIconId(R.mipmap.icon_pantry);
+                    break;
+                case "billard_room":
+                    devicesBean.setIconId(R.mipmap.icon_snooker);
+                    break;
+                case "bbq_area_1":
+                    devicesBean.setIconId(R.mipmap.icon_bbq);
+                    break;
+                case "bbq_area_2":
+                    devicesBean.setIconId(R.mipmap.icon_bbq_2);
+                    break;
+                default:
+                    devicesBean.setIconId(0);
+                    break;
+            }
+        }
+        clubInfoView.showParseIconList(list);
     }
 }
