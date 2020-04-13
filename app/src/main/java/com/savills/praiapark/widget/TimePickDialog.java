@@ -54,7 +54,7 @@ public class TimePickDialog extends DialogFragment {
     private void initView() {
         List<String> selectIndex = new ArrayList<>();
         for (int i = devicesBean.getFromTime(); i <= devicesBean.getToTime(); i++) {
-            selectIndex.add(i + "");
+            selectIndex.add(i + ":00");
         }
         fromTime=devicesBean.getFromTime();
         toTime=fromTime;
@@ -65,13 +65,15 @@ public class TimePickDialog extends DialogFragment {
         wvLeft.setOnWheelViewListener(new WheelView.OnWheelViewListener() {
             @Override
             public void onSelected(int selectedIndex, String item) {
-                fromTime=Integer.parseInt(item);
+                String parseItem=item.split(":")[0];
+                fromTime=Integer.parseInt(parseItem);
             }
         });
         wvRight.setOnWheelViewListener(new WheelView.OnWheelViewListener() {
             @Override
             public void onSelected(int selectedIndex, String item) {
-                toTime=Integer.parseInt(item);
+                String parseItem=item.split(":")[0];
+                toTime=Integer.parseInt(parseItem);
             }
         });
         tvCancel.setOnClickListener(cancel);

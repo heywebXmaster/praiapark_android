@@ -8,6 +8,7 @@ import com.savills.praiapark.bean.BookingBean;
 import com.savills.praiapark.bean.ClauseBean;
 import com.savills.praiapark.bean.ClubPriceBean;
 import com.savills.praiapark.bean.ClubRuleBean;
+import com.savills.praiapark.bean.ClubhouseNoteBean;
 import com.savills.praiapark.bean.DevicesBean;
 import com.savills.praiapark.bean.NoticeBean;
 import com.savills.praiapark.bean.PdfBean;
@@ -163,4 +164,8 @@ public interface APIFunction {
     @FormUrlEncoded
     @POST(HttpConfig.GET_FEE)
     Observable<BaseEntity<PdfBean>> getFee(@Field("username") String username);
+
+    @FormUrlEncoded
+    @POST(HttpConfig.GET_NOTE)
+    Observable<BaseEntity<ClubhouseNoteBean>> getNote(@Field("username") String username);
 }

@@ -12,21 +12,12 @@ import android.support.annotation.Nullable;
 import android.util.DisplayMetrics;
 
 import com.blankj.utilcode.util.StringUtils;
-import com.savills.praiapark.R;
 import com.savills.praiapark.config.LocalSaveData;
-import com.gyf.immersionbar.ImmersionBar;
 
 import org.greenrobot.eventbus.EventBus;
 
 import java.util.Locale;
 
-import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.Observer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
 import me.jessyan.autosize.AutoSizeCompat;
 import me.yokeyword.fragmentation.anim.DefaultHorizontalAnimator;
 import me.yokeyword.fragmentation.anim.FragmentAnimator;
@@ -102,7 +93,6 @@ public abstract class BaseActivity<V extends ViewDataBinding> extends SwipeBackA
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(newBase);
-
     }
 
     @Override

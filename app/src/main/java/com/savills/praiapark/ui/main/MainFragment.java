@@ -1,7 +1,6 @@
 package com.savills.praiapark.ui.main;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.view.GravityCompat;
@@ -10,32 +9,16 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-import com.blankj.utilcode.util.ScreenUtils;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.InstanceIdResult;
 import com.savills.praiapark.R;
 import com.savills.praiapark.aop.annotation.SingleClick;
-import com.savills.praiapark.base.App;
 import com.savills.praiapark.base.BaseFragment;
-import com.savills.praiapark.bean.ClauseBean;
-import com.savills.praiapark.bean.PushTokenEvent;
 import com.savills.praiapark.config.LocalSaveData;
 import com.savills.praiapark.databinding.FragmentMainBinding;
-import com.savills.praiapark.mvp.contract.ClauseContract;
-import com.savills.praiapark.mvp.contract.PushTokenInitContract;
-import com.savills.praiapark.mvp.presenter.ClausePresenter;
 import com.savills.praiapark.mvp.presenter.PushTokenInitPresenter;
 import com.savills.praiapark.ui.user.ContactUsFragment;
 import com.savills.praiapark.ui.user.SettingFragment;
 import com.savills.praiapark.util.LogUtil;
-import com.gyf.immersionbar.ImmersionBar;
-
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
-
-import java.util.List;
 
 import me.yokeyword.fragmentation.SupportFragment;
 import me.yokeyword.fragmentation.anim.DefaultVerticalAnimator;

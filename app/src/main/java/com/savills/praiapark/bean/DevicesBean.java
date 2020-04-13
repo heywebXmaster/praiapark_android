@@ -20,6 +20,42 @@ public class DevicesBean implements Serializable {
     private String householderCode;
     private String username;
     private String amount;
+    private String key;
+    private int iconId;
+    private String surchargeName;
+    private String surcharge;
+
+    public String getSurchargeName() {
+        return surchargeName;
+    }
+
+    public void setSurchargeName(String surchargeName) {
+        this.surchargeName = surchargeName;
+    }
+
+    public String getSurcharge() {
+        return surcharge;
+    }
+
+    public void setSurcharge(String surcharge) {
+        this.surcharge = surcharge;
+    }
+
+    public int getIconId() {
+        return iconId;
+    }
+
+    public void setIconId(int iconId) {
+        this.iconId = iconId;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     public String getAmount() {
         return amount;

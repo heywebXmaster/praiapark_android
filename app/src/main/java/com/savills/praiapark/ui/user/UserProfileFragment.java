@@ -66,29 +66,7 @@ public class UserProfileFragment extends BaseFragment<FragmentUserProfileBinding
         dataBinding.layoutHeader.tvright.setVisibility(View.VISIBLE);
         dataBinding.layoutHeader.setPresenter(this);
         dataBinding.setPresenter(this);
-        KeyboardStateObserver.getKeyboardStateObserver(getActivity()).setKeyboardVisibilityListener(new KeyboardStateObserver.OnKeyboardVisibilityListener() {
-            @Override
-            public void onKeyboardShow() {
-                dataBinding.stview.setVisibility(View.VISIBLE);
-                dataBinding.scrollview.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        dataBinding.scrollview.scrollTo(0, dataBinding.layoutContent.getBottom());
-                    }
-                });
-            }
 
-            @Override
-            public void onKeyboardHide() {
-                dataBinding.stview.setVisibility(View.GONE);
-                dataBinding.scrollview.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        dataBinding.scrollview.scrollTo(0, 0);
-                    }
-                });
-            }
-        });
     }
 
     @SingleClick

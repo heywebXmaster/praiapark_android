@@ -66,19 +66,24 @@ public class AddOrderFragment extends BaseFragment<FragmentAddOrderBinding> impl
         Bundle bundle = getArguments();
         if (bundle != null) {
             devicesBean = (DevicesBean) bundle.getSerializable(DEVICES_INFO);
+            if (Double.parseDouble(devicesBean.getSurcharge()) > 0) {
+                dataBinding.layoutSurcharge.setVisibility(View.VISIBLE);
+                dataBinding.setSurchargeName(devicesBean.getSurchargeName());
+                dataBinding.setSurCharge("MOP "+devicesBean.getSurcharge());
+            }
             selectDate = bundle.getString(SELECT_DATE);
             fromTime = bundle.getInt(FROM_TIME);
             toTime = bundle.getInt(TO_TIME);
             dataBinding.setDevice(devicesBean);
             StringBuffer buffer = new StringBuffer();
-            for (int i=0;i<devicesBean.getPrice().getPrices().size();i++ ) {
-                DevicesBean.Prices.PriceInfo info=devicesBean.getPrice().getPrices().get(i);
-                if(i!=0){
+            for (int i = 0; i < devicesBean.getPrice().getPrices().size(); i++) {
+                DevicesBean.Prices.PriceInfo info = devicesBean.getPrice().getPrices().get(i);
+                if (i != 0) {
                     buffer.append("\n");
                 }
-                buffer.append(info.getFromTime()+":00");
+                buffer.append(info.getFromTime() + ":00");
                 buffer.append(" - ");
-                buffer.append(info.getToTime()+":00");
+                buffer.append(info.getToTime() + ":00");
                 buffer.append(" ");
                 buffer.append(info.getPrice());
                 buffer.append("/");
@@ -88,7 +93,7 @@ public class AddOrderFragment extends BaseFragment<FragmentAddOrderBinding> impl
             dataBinding.setSelectDate(selectDate);
             dataBinding.setSelectTime(fromTime + ":00 ~ " + toTime + ":00");
             amount = devicesBean.getAmount();
-            dataBinding.setAmount("MOP$" + amount);
+            dataBinding.setAmount("MOP " + amount);
         }
 
     }
@@ -144,6 +149,11 @@ public class AddOrderFragment extends BaseFragment<FragmentAddOrderBinding> impl
 
     @Override
     public void checkBookingTimeSuccess(DevicesBean devicesBean) {
+
+    }
+
+    @Override
+    public void showClubhouseNote(String note) {
 
     }
 

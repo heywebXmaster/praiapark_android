@@ -1,10 +1,13 @@
 package com.savills.praiapark.ui.main;
 
+import android.Manifest;
+
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.savills.praiapark.R;
 import com.savills.praiapark.base.BaseActivity;
 import com.savills.praiapark.config.LocalSaveData;
 import com.savills.praiapark.databinding.ActivityMainBinding;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 
 public class MainActivity extends BaseActivity<ActivityMainBinding> {
 

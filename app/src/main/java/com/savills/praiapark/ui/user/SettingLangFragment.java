@@ -1,5 +1,6 @@
 package com.savills.praiapark.ui.user;
 
+import android.content.Intent;
 import android.view.View;
 
 import com.savills.praiapark.R;
@@ -63,7 +64,9 @@ public class SettingLangFragment extends BaseFragment<FragmentSettingLangBinding
                 LocalSaveData.getInstance().saveLang(lang);
                 MainActivity mainActivity = (MainActivity) getActivity();
                 mainActivity.setLang(lang);
-                startWithPopTo(MainFragment.newInstant(), MainFragment.class, true);
+                Intent intent=new Intent(_mActivity,MainActivity.class);
+                startActivity(intent);
+                _mActivity.finish();
                 break;
             case R.id.layoutLangCn:
                 clearCheck();
