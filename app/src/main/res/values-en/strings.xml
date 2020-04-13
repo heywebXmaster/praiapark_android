@@ -193,7 +193,7 @@
         
     <string name="text_add_order_amount">Total </string>
         
-    <string name="text_add_order_remind">Note: All facilities can only be reserved 7 days in advance. Booking is on “first-pay -first-served” basis. After booking, please pay the bill at the club reception within 24 hours. If it expires, the appointment will be cancelled. Thank you! </string>
+    <string name="text_add_order_remind">Note: All facilities can only be reserved seven days in advance. After making an appointment, please pay at the reception desk within 24 hours. The venue accepts reservations on the principle of \'pay first, get first\'. If the time is exceeded, the reservation will be cancelled. If you have any enquiry, please call (853) 28833230, thank you!</string>
         
     <string name="text_add_order_add">Pre-array </string>
         

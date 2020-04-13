@@ -1,9 +1,12 @@
 package com.savills.praiapark.ui.main.club;
 
 import android.annotation.SuppressLint;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
+import android.util.Log;
 import android.view.View;
 
 import com.prolificinteractive.materialcalendarview.CalendarDay;
@@ -31,7 +34,10 @@ import com.savills.praiapark.widget.TimePickDialog;
 import org.threeten.bp.LocalDate;
 import org.threeten.bp.format.DateTimeFormatter;
 
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class BookingCalendarFragment extends BaseFragment<FragmentOrderCalendarBinding> implements ClickPresenter, BookingContract.OrderView, OnDateSelectedListener {
@@ -78,6 +84,7 @@ public class BookingCalendarFragment extends BaseFragment<FragmentOrderCalendarB
         dataBinding.recyclerView.setAdapter(bookingAdapter);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @SuppressLint("CheckResult")
     @Override
     public void onLazyInitView(@Nullable Bundle savedInstanceState) {
@@ -90,8 +97,23 @@ public class BookingCalendarFragment extends BaseFragment<FragmentOrderCalendarB
                 new EnableOneToTenDecorator()
         );
         dataBinding.layoutCalendar.calendarView.setOnDateChangedListener(this);
-        LocalDate calendar = LocalDate.now();
-        dataBinding.layoutCalendar.calendarView.setSelectedDate(calendar);
+        LocalDate today = LocalDate.now();
+//        LocalDate tomorrow = today.plusDays(1);
+        dataBinding.layoutCalendar.calendarView.setSelectedDate(today);
+
+//        Date dt = new Date();
+//        Calendar c = Calendar.getInstance();
+//        c.setTime(dt);
+//        c.add(Calendar.DATE, 1);
+//        int year = c.get(Calendar.YEAR);
+//        int month = c.get(Calendar.MONTH)+1;
+//        int day = c.get(Calendar.DAY_OF_MONTH);
+//
+//        Log.e("xxx","year="+year);
+//        Log.e("xxx","month="+month);
+//        Log.e("xxx","day="+day);
+//        dataBinding.layoutCalendar.calendarView.state().edit().setMinimumDate(CalendarDay.from(year, month, day)).commit();
+
 //        bookingPresenter.getClubhouseNote();
         getBookingList();
     }
