@@ -171,7 +171,7 @@
     <string name="text_club_service_hope">Coming Soon</string>
     <string name="text_club_service_building">程序正在建设中..</string>
         
-    <string name="text_add_order_apply">Address</string>
+    <string name="text_add_order_apply">Unit</string>
         
     <string name="text_add_order_name">Customer name</string>
         
@@ -193,7 +193,7 @@
         
     <string name="text_add_order_amount">Total </string>
         
-    <string name="text_add_order_remind">Note: All facilities can only be reserved seven days in advance. After making an appointment, please pay at the reception desk within 24 hours. The venue accepts reservations on the principle of \'pay first, get first\'. If the time is exceeded, the reservation will be cancelled. If you have any enquiry, please call (853) 28833230, thank you!</string>
+    <string name="text_add_order_remind">Note: Advanced reservation for clubhouse facilities can be made 7 days in advance. Booking is on “first-pay -first-served” basis. Full payment must be paid within 24 hours after booking. If the time is exceeded, the reservation will be cancelled. If you have any reservation questions, please call (853) 28833230.Thank you!</string>
         
     <string name="text_add_order_add">Pre-array </string>
         

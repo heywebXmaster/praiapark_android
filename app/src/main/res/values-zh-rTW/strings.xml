@@ -123,7 +123,7 @@
     <string name="text_add_order_end_time">結束時間</string>
     <string name="text_add_order_amount">總價</string>
 
-    <string name="text_add_order_remind">注意:各項設施只可提前七天預約。預約後，請於24小時內到會所接待處繳交費用。場地是以“先付先得”原則接受預約，如逾時，預約將被取消。若有任何預約查詢請致電(853)28833230，謝謝!</string>
+    <string name="text_add_order_remind">注意:各項設施只可提前七天預訂。場地是以“先付先得”原則接受預訂，預訂後，請於24小時內到會所接待處繳交費用。如逾時，預訂將被取消。若有任何預訂查詢請致電(853)28833230，謝謝!</string>
 
     <string name="text_add_order_add">預 約</string>
 

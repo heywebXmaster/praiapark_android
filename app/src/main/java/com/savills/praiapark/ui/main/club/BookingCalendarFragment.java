@@ -192,7 +192,8 @@ public class BookingCalendarFragment extends BaseFragment<FragmentOrderCalendarB
     public void checkBookingTimeSuccess(DevicesBean devicesBean) {
         dialog.dismiss();
         devicesBean.setKey(this.devicesBean.getKey());
-        startForResult(AddOrderFragment.newInstant(devicesBean, selectDate, dialog.getFromTime(), dialog.getToTime()), REQUEST_CODE);
+        String title = dataBinding.layoutHeader.getTitle();
+        startForResult(AddOrderFragment.newInstant(devicesBean, selectDate, dialog.getFromTime(), dialog.getToTime(),title), REQUEST_CODE);
     }
 
     @Override

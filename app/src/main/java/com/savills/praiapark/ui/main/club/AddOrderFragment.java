@@ -26,6 +26,7 @@ public class AddOrderFragment extends BaseFragment<FragmentAddOrderBinding> impl
     public static final String FROM_TIME = "from_time";
     public static final String TO_TIME = "to_time";
     public static final String SELECT_DATE = "select_date";
+    public static final String TITLE = "title";
     private DevicesBean devicesBean;
     private int fromTime = 0;
     private int toTime = 0;
@@ -34,12 +35,13 @@ public class AddOrderFragment extends BaseFragment<FragmentAddOrderBinding> impl
     private String mobile;
     private String amount;
 
-    public static AddOrderFragment newInstant(DevicesBean devicesBean, String selectDate, int fromTime, int toTime) {
+    public static AddOrderFragment newInstant(DevicesBean devicesBean, String selectDate, int fromTime, int toTime,String title) {
         Bundle bundle = new Bundle();
         bundle.putSerializable(DEVICES_INFO, devicesBean);
         bundle.putInt(FROM_TIME, fromTime);
         bundle.putInt(TO_TIME, toTime);
         bundle.putString(SELECT_DATE, selectDate);
+        bundle.putString(TITLE, title);
         AddOrderFragment addOrderFragment = new AddOrderFragment();
         addOrderFragment.setArguments(bundle);
         return addOrderFragment;
@@ -54,7 +56,12 @@ public class AddOrderFragment extends BaseFragment<FragmentAddOrderBinding> impl
 
     @Override
     protected void setTitle() {
-        dataBinding.layoutHeader.setTitle(getString(R.string.title_add_order));
+        Bundle bundle = getArguments();
+        String title = "";
+        if (bundle != null) {
+            title = bundle.getString(TITLE);
+        }
+        dataBinding.layoutHeader.setTitle(title);
     }
 
     @Override

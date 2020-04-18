@@ -89,6 +89,7 @@
             android:layout_marginRight="@dimen/page_margin"
             android:text="@string/text_add_order_remind"
             android:textColor="@color/colorDrawable"
+            android:justificationMode="inter_word"
             android:textSize="14sp" />
 
     </LinearLayout>
