@@ -8,8 +8,8 @@ public class HttpConfig {
 
     public static final String APP_SECRET = "QWqw123!@#$";
 
-    //    public static final String BASE_URL = "https://praiapark-savills.com";
-    public static final String BASE_URL = "http://47.241.16.102";
+        public static final String BASE_URL = "https://praiapark-savills.com";
+//    public static final String BASE_URL = "http://47.241.16.102";
 
     //登录
     public static final String LOGIN = "/api/login";
