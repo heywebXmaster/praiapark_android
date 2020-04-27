@@ -64,7 +64,6 @@
 
         <activity
             android:name="com.savills.praiapark.ui.main.MainActivity"
-            android:screenOrientation="portrait"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

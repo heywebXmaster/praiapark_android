@@ -1,0 +1,160 @@
+<resources>
+    <!--不能更改的翻译-->
+    <string name="digits_pwd">0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="smart_refresh_pulling">上拉加载更多</string>
+    <string name="smart_refresh_release">释放立即加载</string>
+    <string name="smart_refresh_refreshing">正在刷新...</string>
+    <string name="smart_refresh_loading">正在加载...</string>
+    <string name="smart_refresh_finish">加载完成</string>
+    <string name="smart_refresh_failed">加载失败</string>
+    <string name="smart_refresh_nothing">没有更多数据了</string>
+
+    <string name="title_nav_notice">通告</string>
+    <string name="title_nav_fee">管理费查询</string>
+    <string name="title_nav_service">会所</string>
+    <string name="title_nav_apply">表格下载</string>
+    <string name="title_nav_contact">联络我们</string>
+    <string name="title_nav_info">资讯</string>
+    <string name="title_nav_setting">设置</string>
+    <!--不能更改的翻译-->
+
+    <string name="app_name">擎天汇</string>
+    <string name="OtherExpection">系统错误</string>
+    <string name="NoRouteToHostException">无法连接到服务器</string>
+    <string name="SocketTimeoutException">网络连接超时</string>
+    <string name="HttpException_500">连接失败，请稍后再试</string>
+    <string name="HttpException_504">请求失败，请检查网络连接</string>
+    <string name="UnknownHostException">无法连接到主机</string>
+    <string name="msg_quite_remind">再按一次退出</string>
+    <string name="msg_dialog_loading">加载中...</string>
+
+    <string name="ConnectException">网络连结不可用</string>
+
+    <string name="title_broadcast">通告</string>
+    <string name="title_edit_name">设置昵称</string>
+    <string name="title_download_table">表格下载</string>
+    <string name="title_notice">通知</string>
+    <string name="title_add_order">添加预约</string>
+
+    <string name="title_nav_exit">退出</string>
+    <string name="title_scan">扫描</string>
+    <string name="title_reset_pwd">修改密码</string>
+    <string name="title_profile">个人资料</string>
+    <string name="title_setting_lang">语言设定</string>
+    <string name="text_pdf_share">分享</string>
+
+    <string name="text_setting_profile">个人资料</string>
+    <string name="text_setting_lang">语言设定</string>
+    <string name="text_setting_about">关于我们</string>
+    <string name="text_setting_provision">一般条款与细则</string>
+    <string name="text_setting_declare">隐私政策与声明</string>
+    <string name="text_setting_version">App版本</string>
+
+    <string name="text_setting_lang_ch">简体</string>
+    <string name="text_setting_lang_tw">繁体</string>
+    <string name="text_setting_lang_en">English </string>
+    <string name="text_setting_lang_confitm">完成</string>
+
+    <string name="text_contact_us_title">标题：</string>
+    <string name="text_contact_us_content">内容：</string>
+    <string name="text_contact_us_name">单位及称呼：</string>
+    <string name="text_contact_us_mobile">电话：</string>
+    <string name="text_contact_us_title_hint"></string>
+    <string name="text_contact_us_content_hint"></string>
+    <string name="text_contact_us_desc">备注：</string>
+    <string name="text_contact_us_desc_detail">备注:
+        \n1.有关留言信息，客户服务中心将于办公时间或24小时内回复。
+        \n<u>擎天汇客户服务中心办公时间：</u>
+        \n•&#160;星期一至星期五09:00 – 13:00 / 14:00 – 17:30
+        \n•&#160;星期六09:00 – 13:00
+        \n•&#160;星期日及公众假期休息
+        \n2.如遇紧急事件，请即致电服务热线：(853)2883 3232
+    </string>
+
+    <string name="text_profile_account_hint">住户编号</string>
+    <string name="text_profile_address_hint">地址</string>
+    <string name="text_profile_header_hint">头像</string>
+    <string name="text_profile_useraccount_hint">账号</string>
+    <string name="text_profile_changepwd_hint">密码修改</string>
+    <string name="text_profile_name_hint">昵称</string>
+    <string name="text_profile_mobile_hint">电话</string>
+    <string name="text_profile_unset_hint">未设置</string>
+
+    <string name="text_download_car_stop">申请停车场出入PDF</string>
+    <string name="text_download_fixtures">申请装修PDF</string>
+
+    <string name="text_login_account_hint">输入账号</string>
+    <string name="text_login_pwd_hint">输入密码</string>
+    <string name="text_login_forget_pwd">忘记密码?</string>
+    <string name="text_login_confirm">登录</string>
+    <string name="text_login_register">注册</string>
+    <string name="text_login_declare">隐私政策</string>
+
+    <string name="text_register_user_account">住户编号：</string>
+    <string name="text_register_account_hint">输入账号</string>
+    <string name="text_register_repwd_hint">输入确认密码</string>
+    <string name="text_register_confirm">提 交</string>
+    <string name="text_register_confirm_scan">点击获取住户编号</string>
+    <string name="text_register_pwd_not_same">密码不一致</string>
+
+    <string name="text_forget_pwd">忘记密码</string>
+    <string name="text_forget_new_pwd">输入新密码</string>
+    <string name="text_forget_confirm_pwd">输入确认新密码</string>
+
+    <string name="text_club_service_title_order">会所预约</string>
+    <string name="text_club_service_title_rule">会所守则</string>
+    <string name="text_club_service_title_price_list">价目表</string>
+
+    <string name="text_club_service_hope">敬请期待</string>
+    <string name="text_club_service_building">程序正在建设中..</string>
+    <string name="text_add_order_apply">申请单位</string>
+    <string name="text_add_order_name">称呼</string>
+    <string name="text_add_order_input_name">输入称呼</string>
+    <string name="text_add_order_mobile">联络电话</string>
+    <string name="text_add_order_input_mobile">输入联络电话</string>
+    <string name="text_add_order_devices">设施价钱</string>
+    <string name="text_add_order_choose_devices">选择设施</string>
+    <string name="text_add_order_price">设施价钱</string>
+    <string name="text_add_order_start_time">预约时间</string>
+    <string name="text_add_order_end_time">结束时间</string>
+    <string name="text_add_order_amount">总价</string>
+    <string name="text_add_order_remind">注意：该设施仅可提前七天预订。场地以“先付先得”原则接受预订，预订后，请于24小时内到会所接待处处交费。如逾时，预订将被取消。若有任何预订查询请致电（853）28833230，谢谢！</string>
+    <string name="text_add_order_add">预 约</string>
+
+    <string name="text_info_title_unit">单位资讯</string>
+    <string name="text_info_title_traffic">交通资讯</string>
+    <string name="text_info_title_around">周边资讯</string>
+
+    <string name="text_order_record_time">预约时间</string>
+    <string name="text_order_record_status">预约状态</string>
+    <string name="text_order_record_status_prepay">待付款</string>
+    <string name="text_order_record_status_paid">已付款</string>
+    <string name="text_order_record_status_ready">后备中</string>
+    <string name="text_order_record_status_finish">已完成</string>
+
+    <string name="text_reset_pwd_old">旧密码：</string>
+    <string name="text_reset_pwd_new">新密码：</string>
+    <string name="text_reset_pwd_confirm">确认密码：</string>
+    <string name="text_reset_pwd_old_hint">输入旧密码</string>
+    <string name="text_announcement_company">第一太平戴维斯</string>
+    <!--第一個版本翻譯結束-->
+    <!--第二個版本翻譯開始-->
+    <string name="text_add_order_appoint_date">预约日期：</string>
+    <string name="text_add_order_appoint_date_period">预约记录：</string>
+    <string name="text_add_order_period">时间</string>
+    <string name="text_add_order_payment_status">支付状态</string>
+    <string name="text_add_order_apply_date">申请时间</string>
+    <string name="text_add_order_selected">已选</string>
+    <string name="text_add_order_selected_period">选择时间</string>
+    <string name="text_dialog_title_selected_period">选择时间</string>
+    <string name="text_cancel">取消</string>
+    <string name="text_confirm">确定</string>
+    <string name="text_add_order_submit">完成</string>
+    <string name="text_add_order_hour">小时</string>
+
+    <!--第二個版本翻譯結束-->
+
+</resources>

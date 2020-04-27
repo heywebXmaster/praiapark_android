@@ -90,7 +90,7 @@ public abstract class BaseFragment<V extends ViewDataBinding> extends SwipeBackF
         } else if (lang.equals(LocalSaveData.TAG.LANG_TW)) {
             config.locale = Locale.TAIWAN;
         } else {
-            config.locale = Locale.UK;
+            config.locale = Locale.US;
         }
         DisplayMetrics dm = resources.getDisplayMetrics();
         resources.updateConfiguration(config, dm);

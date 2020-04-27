@@ -2,6 +2,7 @@ package com.savills.praiapark.base;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.databinding.DataBindingUtil;
@@ -31,6 +32,7 @@ public abstract class BaseActivity<V extends ViewDataBinding> extends SwipeBackA
     public void onCreate(@Nullable Bundle savedInstanceState) {
         initLang();
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         dataBinding = DataBindingUtil.setContentView(this, setViewId());
         activity = this;
         setViewId();
@@ -84,7 +86,7 @@ public abstract class BaseActivity<V extends ViewDataBinding> extends SwipeBackA
         } else if (lang.equals(LocalSaveData.TAG.LANG_TW)) {
             config.locale = Locale.TAIWAN;
         } else {
-            config.locale = Locale.UK;
+            config.locale = Locale.US;
         }
         DisplayMetrics dm = resources.getDisplayMetrics();
         resources.updateConfiguration(config, dm);
