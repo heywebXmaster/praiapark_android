@@ -1,10 +1,12 @@
 package com.savills.praiapark.ui.main;
 
 import android.Manifest;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.webkit.WebSettings;
 
 import com.blankj.utilcode.util.FileUtils;
 import com.blankj.utilcode.util.StringUtils;
@@ -91,15 +93,23 @@ public class ManagementFeeFragment extends BaseFragment<FragmentPdfViewBinding> 
     public void showFee(PdfBean pdfBean) {
         if(!StringUtils.isEmpty(pdfBean.getManagementFee())){
             url=pdfBean.getManagementFee();
-            RxPermissions rxPermissions = new RxPermissions(this);
-            rxPermissions
-                    .request(Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                            Manifest.permission.READ_EXTERNAL_STORAGE)
-                    .subscribe(granted -> {
-                        if (granted) {
-                            downloadSource();
-                        }
-                    });
+            if(url.contains(".pdf")){
+                dataBinding.pdfView.setVisibility(View.VISIBLE);
+                dataBinding.webview.setVisibility(View.GONE);
+                RxPermissions rxPermissions = new RxPermissions(this);
+                rxPermissions
+                        .request(Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                                Manifest.permission.READ_EXTERNAL_STORAGE)
+                        .subscribe(granted -> {
+                            if (granted) {
+                                downloadSource();
+                            }
+                        });
+            }else{
+                dataBinding.pdfView.setVisibility(View.GONE);
+                dataBinding.webview.setVisibility(View.VISIBLE);
+                dataBinding.webview.loadUrl(url);
+            }
         }
     }
 
