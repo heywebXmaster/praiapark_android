@@ -9,6 +9,7 @@ import com.savills.praiapark.base.BaseFragment;
 import com.savills.praiapark.base.ClickPresenter;
 import com.savills.praiapark.databinding.FragmentInfomationBinding;
 import com.savills.praiapark.ui.main.info.AroundInfoFragment;
+import com.savills.praiapark.ui.main.info.DiscountInfoFragment;
 import com.savills.praiapark.ui.main.info.TrafficInfoFragment;
 import com.savills.praiapark.ui.main.info.UnitInfoFragment;
 
@@ -23,6 +24,7 @@ public class InfomationFragment extends BaseFragment<FragmentInfomationBinding> 
     }
 
     int[] titles = {
+            R.string.text_info_title_discount,
             R.string.text_info_title_unit,
             R.string.text_info_title_traffic,
             R.string.text_info_title_around};
@@ -44,6 +46,7 @@ public class InfomationFragment extends BaseFragment<FragmentInfomationBinding> 
         dataBinding.layoutHeader.ivRight.setVisibility(View.VISIBLE);
         dataBinding.layoutHeader.ivRight.setImageResource(R.mipmap.icon_message);
         List<Fragment> fragmentList = new ArrayList<>();
+        fragmentList.add(DiscountInfoFragment.newInstant());
         fragmentList.add(UnitInfoFragment.newInstant());
         fragmentList.add(TrafficInfoFragment.newInstant());
         fragmentList.add(AroundInfoFragment.newInstant());

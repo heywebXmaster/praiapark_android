@@ -1,6 +1,7 @@
 package com.savills.praiapark.mvp.contract;
 
 import com.savills.praiapark.bean.AroundInfoBean;
+import com.savills.praiapark.bean.DiscountInfoBean;
 import com.savills.praiapark.bean.TrafficInfoBean;
 import com.savills.praiapark.bean.UnitInfoBean;
 import com.savills.praiapark.mvp.BaseView;
@@ -12,6 +13,8 @@ public interface InfoContract {
     interface InfoPresenter {
         void getBusInfos();
 
+        void getDiscounts();
+
         void getInfos();
 
         void getTels();
@@ -19,6 +22,8 @@ public interface InfoContract {
 
     interface InfoView extends BaseView {
         void showBusInfos(List<TrafficInfoBean> list);
+
+        void showDiscounts(List<DiscountInfoBean> list);
 
         void showInfos(List<UnitInfoBean> list);
 

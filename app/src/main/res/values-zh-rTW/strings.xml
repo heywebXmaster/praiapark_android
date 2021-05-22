@@ -127,9 +127,10 @@
 
     <string name="text_add_order_add">預 約</string>
 
-    <string name="text_info_title_unit">單位資訊</string>
-    <string name="text_info_title_traffic">交通資訊</string>
-    <string name="text_info_title_around">周邊資訊</string>
+    <string name="text_info_title_discount">優惠/分享</string>
+    <string name="text_info_title_unit">單位</string>
+    <string name="text_info_title_traffic">交通</string>
+    <string name="text_info_title_around">周邊</string>
 
     <string name="text_order_record_time">預約時間</string>
     <string name="text_order_record_status">預約狀態</string>

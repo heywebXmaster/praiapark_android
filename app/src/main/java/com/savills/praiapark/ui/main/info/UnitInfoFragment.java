@@ -9,6 +9,7 @@ import com.savills.praiapark.adapter.ItemClickListener;
 import com.savills.praiapark.adapter.UnitInfoAdapter;
 import com.savills.praiapark.base.BaseFragment;
 import com.savills.praiapark.bean.AroundInfoBean;
+import com.savills.praiapark.bean.DiscountInfoBean;
 import com.savills.praiapark.bean.TrafficInfoBean;
 import com.savills.praiapark.bean.UnitInfoBean;
 import com.savills.praiapark.databinding.FragmentListBinding;
@@ -97,6 +98,11 @@ public class UnitInfoFragment extends BaseFragment<FragmentListBinding> implemen
 
     @Override
     public void showBusInfos(List<TrafficInfoBean> list) {
+
+    }
+
+    @Override
+    public void showDiscounts(List<DiscountInfoBean> list) {
 
     }
 

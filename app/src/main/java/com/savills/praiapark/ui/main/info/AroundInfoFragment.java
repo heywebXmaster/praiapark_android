@@ -13,6 +13,7 @@ import com.savills.praiapark.adapter.AroundInfoAdapter;
 import com.savills.praiapark.adapter.ItemClickListener;
 import com.savills.praiapark.base.BaseFragment;
 import com.savills.praiapark.bean.AroundInfoBean;
+import com.savills.praiapark.bean.DiscountInfoBean;
 import com.savills.praiapark.bean.TrafficInfoBean;
 import com.savills.praiapark.bean.UnitInfoBean;
 import com.savills.praiapark.databinding.FragmentListBinding;
@@ -116,6 +117,11 @@ public class AroundInfoFragment extends BaseFragment<FragmentListBinding> implem
 
     @Override
     public void showBusInfos(List<TrafficInfoBean> list) {
+
+    }
+
+    @Override
+    public void showDiscounts(List<DiscountInfoBean> list) {
 
     }
 

@@ -124,9 +124,10 @@
     <string name="text_add_order_remind">注意：各项设施必须提前七天预订。预订方式可透过APP、电话预约及现场预订；会所是以「预约时间先后」为预约原则，经APP预订设施后，会所人员将致电客户确定预订设施是否成功。经会所人员致电预订确定成功后，客户请于24小时内莅临会所接待处缴交费用。如逾时，有关预订将被取消。若有任何查询请致电(853)28833232，谢谢！</string>
     <string name="text_add_order_add">预 约</string>
 
-    <string name="text_info_title_unit">单位资讯</string>
-    <string name="text_info_title_traffic">交通资讯</string>
-    <string name="text_info_title_around">周边资讯</string>
+    <string name="text_info_title_discount">优惠/分享</string>
+    <string name="text_info_title_unit">单位</string>
+    <string name="text_info_title_traffic">交通</string>
+    <string name="text_info_title_around">周边</string>
 
     <string name="text_order_record_time">预约时间</string>
     <string name="text_order_record_status">预约状态</string>

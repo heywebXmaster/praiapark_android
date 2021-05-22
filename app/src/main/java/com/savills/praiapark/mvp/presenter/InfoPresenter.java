@@ -3,6 +3,7 @@ package com.savills.praiapark.mvp.presenter;
 import com.alibaba.fastjson.JSON;
 import com.savills.praiapark.bean.AroundInfoBean;
 import com.savills.praiapark.bean.BaseEntity;
+import com.savills.praiapark.bean.DiscountInfoBean;
 import com.savills.praiapark.bean.TrafficInfoBean;
 import com.savills.praiapark.bean.UnitInfoBean;
 import com.savills.praiapark.config.LocalSaveData;
@@ -74,6 +75,56 @@ public class InfoPresenter extends BasePresenter implements InfoContract.InfoPre
                             list = new ArrayList<>();
                         }
                         infoView.showBusInfos(list);
+                    }
+                });
+    }
+
+    @Override
+    public void getDiscounts() {
+//        RetrofitFactory.getInstence().API().getInfo(LocalSaveData.getInstance().getUserName())
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(new BaseObserver<List<UnitInfoBean>>() {
+//
+//                    @Override
+//                    protected void onSuccees(BaseEntity<List<UnitInfoBean>> t) {
+//                        infoView.showInfos(t.getResult());
+//                    }
+//
+//                    @Override
+//                    protected void onFailure(Throwable e) {
+//
+//                    }
+//
+//                    @Override
+//                    protected void onFinish() {
+//                    }
+//                });
+        APIFunction service = getApiService();
+        Call<BaseEntity<List<DiscountInfoBean>>> call = service.getDiscount(LocalSaveData.getInstance().getUserName());
+        EnhancedCall<BaseEntity<List<DiscountInfoBean>>> enhancedCall = new EnhancedCall<>(call);
+        enhancedCall.dataClassName(BaseEntity.class)
+                .enqueue(new EnhancedCallback<BaseEntity<List<DiscountInfoBean>>>() {
+                    @Override
+                    public void onResponse(Call<BaseEntity<List<DiscountInfoBean>>> call, Response<BaseEntity<List<DiscountInfoBean>>> response) {
+                        BaseEntity<List<DiscountInfoBean>> entity = response.body();
+                        if (isSuccess(entity)) {
+                            infoView.showDiscounts(entity.getResult());
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<BaseEntity<List<DiscountInfoBean>>> call, Throwable t) {
+                        infoView.showLoadError();
+                    }
+
+                    @Override
+                    public void onGetCache(BaseEntity<List<DiscountInfoBean>> entity) {
+                        List<DiscountInfoBean> list = JSON.parseArray(entity.getResult() + "", DiscountInfoBean.class);
+                        if (list == null) {
+                            list = new ArrayList<>();
+                        }
+                        infoView.showDiscounts(list);
                     }
                 });
     }

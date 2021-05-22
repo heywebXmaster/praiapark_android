@@ -197,6 +197,8 @@
         
     <string name="text_add_order_add">Pre-array </string>
         
+    <string name="text_info_title_discount">Promotion</string>
+
     <string name="text_info_title_unit">Unit</string>
         
     <string name="text_info_title_traffic">Traffic</string>

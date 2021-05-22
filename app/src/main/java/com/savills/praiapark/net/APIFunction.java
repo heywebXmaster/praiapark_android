@@ -10,6 +10,7 @@ import com.savills.praiapark.bean.ClubPriceBean;
 import com.savills.praiapark.bean.ClubRuleBean;
 import com.savills.praiapark.bean.ClubhouseNoteBean;
 import com.savills.praiapark.bean.DevicesBean;
+import com.savills.praiapark.bean.DiscountInfoBean;
 import com.savills.praiapark.bean.NoticeBean;
 import com.savills.praiapark.bean.PdfBean;
 import com.savills.praiapark.bean.ProfileBean;
@@ -105,6 +106,10 @@ public interface APIFunction {
     Call<BaseEntity<AnnouncementBean>> getAnnouncements(@Field("username") String username,
                                                         @Field("page") int page,
                                                         @Field("limit") int limit);
+
+    @FormUrlEncoded
+    @POST(HttpConfig.GET_DISCOUNT)
+    Call<BaseEntity<List<DiscountInfoBean>>> getDiscount(@Field("username") String username);
 
     @FormUrlEncoded
     @POST(HttpConfig.GET_INFO)

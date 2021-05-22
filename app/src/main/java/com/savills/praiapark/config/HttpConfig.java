@@ -8,8 +8,8 @@ public class HttpConfig {
 
     public static final String APP_SECRET = "QWqw123!@#$";
 
-        public static final String BASE_URL = "https://praiapark-savills.com";
-//    public static final String BASE_URL = "http://47.241.16.102";
+    public static final String BASE_URL = "https://praiapark-savills.com";
+//    public static final String BASE_URL = "http://47.107.159.20";
 
     //登录
     public static final String LOGIN = "/api/login";
@@ -46,6 +46,9 @@ public class HttpConfig {
 
     //获取通知
     public static final String GET_MESSAGES = "/api/getMessages";
+
+    //優惠资讯
+    public static final String GET_DISCOUNT = "/api/getDiscounts";
 
     //单位资讯
     public static final String GET_INFO = "/api/getInfos";

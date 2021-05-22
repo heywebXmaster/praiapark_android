@@ -5,8 +5,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import com.savills.praiapark.R;
+import com.savills.praiapark.adapter.DiscountInfoAdapter;
 import com.savills.praiapark.adapter.ItemClickListener;
-import com.savills.praiapark.adapter.TrafficInfoAdapter;
 import com.savills.praiapark.base.BaseFragment;
 import com.savills.praiapark.bean.AroundInfoBean;
 import com.savills.praiapark.bean.DiscountInfoBean;
@@ -23,15 +23,16 @@ import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TrafficInfoFragment extends BaseFragment<FragmentListBinding> implements InfoContract.InfoView {
+public class DiscountInfoFragment extends BaseFragment<FragmentListBinding> implements InfoContract.InfoView {
 
     private InfoPresenter infoPresenter;
-    List<TrafficInfoBean> list;
-    private TrafficInfoAdapter infoAdapter;
+    private DiscountInfoAdapter infoAdapter;
+    List<DiscountInfoBean> list;
 
-    public static TrafficInfoFragment newInstant() {
-        return new TrafficInfoFragment();
+    public static DiscountInfoFragment newInstant() {
+        return new DiscountInfoFragment();
     }
+
 
     @Override
     protected int setViewId() {
@@ -46,7 +47,7 @@ public class TrafficInfoFragment extends BaseFragment<FragmentListBinding> imple
     @Override
     protected void initView() {
         setSwipeBackEnable(false);
-        infoAdapter = new TrafficInfoAdapter();
+        infoAdapter = new DiscountInfoAdapter();
         dataBinding.recyclerView.setAdapter(infoAdapter);
         infoPresenter = new InfoPresenter(this);
     }
@@ -64,9 +65,9 @@ public class TrafficInfoFragment extends BaseFragment<FragmentListBinding> imple
         infoAdapter.setItemClickListener(new ItemClickListener() {
             @Override
             public void onClick(int position) {
-                TrafficInfoBean trafficInfoBean = list.get(position);
-                ((InfomationFragment) getParentFragment()).startBrotherFragment(PdfFragment.newInstant(trafficInfoBean.getTitle(),
-                        trafficInfoBean.getImage()));
+                DiscountInfoBean infoBean = list.get(position);
+                ((InfomationFragment) getParentFragment()).startBrotherFragment(PdfFragment.newInstant(infoBean.getTitle(),
+                        infoBean.getPdf()));
             }
         });
         dataBinding.refreshLayout.setOnRefreshListener(new OnRefreshListener() {
@@ -76,7 +77,7 @@ public class TrafficInfoFragment extends BaseFragment<FragmentListBinding> imple
                     list.clear();
                 }
                 infoAdapter.clearDatas();
-                infoPresenter.getBusInfos();
+                infoPresenter.getDiscounts();
             }
         });
         dataBinding.refreshLayout.setEnableLoadMore(false);
@@ -86,7 +87,6 @@ public class TrafficInfoFragment extends BaseFragment<FragmentListBinding> imple
 //
 //            }
 //        });
-
     }
 
     @Override
@@ -98,6 +98,15 @@ public class TrafficInfoFragment extends BaseFragment<FragmentListBinding> imple
 
     @Override
     public void showBusInfos(List<TrafficInfoBean> list) {
+
+    }
+
+    @Override
+    public void showInfos(List<UnitInfoBean> list) {
+    }
+
+    @Override
+    public void showDiscounts(List<DiscountInfoBean> list) {
         if (this.list == null) {
             this.list = new ArrayList<>();
         }
@@ -105,16 +114,6 @@ public class TrafficInfoFragment extends BaseFragment<FragmentListBinding> imple
         infoAdapter.addItems(list);
         infoAdapter.notifyDataSetChanged();
         dataBinding.refreshLayout.finishRefresh();
-    }
-
-    @Override
-    public void showDiscounts(List<DiscountInfoBean> list) {
-
-    }
-
-    @Override
-    public void showInfos(List<UnitInfoBean> list) {
-
     }
 
     @Override
