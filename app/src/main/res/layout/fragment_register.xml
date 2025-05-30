@@ -25,7 +25,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -55,11 +55,10 @@
                 android:layout_weight="2.25"
                 android:orientation="vertical">
 
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                     android:id="@+id/cardView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:layout_marginLeft="38dp"
                     android:layout_marginRight="38dp"
                     android:background="@color/white"
@@ -76,10 +75,9 @@
                         android:paddingRight="24dp"
                         android:paddingBottom="40dp">
 
-                        <android.support.v7.widget.AppCompatTextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
                             android:layout_gravity="center_horizontal"
                             android:text="@string/text_login_register"
                             android:textColor="@color/colorText"
@@ -110,21 +108,19 @@
                                 android:onClick="@{(v)->presenter.onClick(v)}"
                                 android:orientation="horizontal">
 
-                                <android.support.v7.widget.AppCompatTextView
+                                <androidx.appcompat.widget.AppCompatTextView
                                     android:id="@+id/tvAccountNumHint"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_centerVertical="true"
                                     android:gravity="center"
                                     android:text="@string/text_register_confirm_scan"
                                     android:textColor="@color/colorText"
                                     android:textSize="16sp" />
 
-                                <android.support.v7.widget.AppCompatTextView
+                                <androidx.appcompat.widget.AppCompatTextView
                                     android:id="@+id/tvAccuntNum"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_centerVertical="true"
                                     android:text="@{userCode}"
                                     android:textColor="@color/colorText"
                                     android:textSize="16sp"
@@ -141,16 +137,16 @@
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
-                            <android.support.v7.widget.AppCompatImageView
+                            <androidx.appcompat.widget.AppCompatImageView
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
                                 android:src="@mipmap/icon_logon_account" />
 
-                            <android.support.v7.widget.AppCompatEditText
+                            <androidx.appcompat.widget.AppCompatEditText
                                 android:id="@+id/etAccount"
                                 android:layout_width="match_parent"
                                 android:layout_height="24dp"
-                                android:layout_marginLeft="5dp"
+                                android:layout_marginStart="5dp"
                                 android:background="@color/white"
                                 android:gravity="center_vertical"
                                 android:hint="@string/text_register_account_hint"
@@ -173,16 +169,16 @@
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
-                            <android.support.v7.widget.AppCompatImageView
+                            <androidx.appcompat.widget.AppCompatImageView
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
                                 android:src="@mipmap/icon_logon_pwd" />
 
-                            <android.support.v7.widget.AppCompatEditText
+                            <androidx.appcompat.widget.AppCompatEditText
                                 android:id="@+id/etPwd"
                                 android:layout_width="match_parent"
                                 android:layout_height="24dp"
-                                android:layout_marginLeft="5dp"
+                                android:layout_marginStart="5dp"
                                 android:background="@color/white"
                                 android:gravity="center_vertical"
                                 android:hint="@string/text_login_pwd_hint"
@@ -206,16 +202,16 @@
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
-                            <android.support.v7.widget.AppCompatImageView
+                            <androidx.appcompat.widget.AppCompatImageView
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
                                 android:src="@mipmap/icon_logon_pwd" />
 
-                            <android.support.v7.widget.AppCompatEditText
+                            <androidx.appcompat.widget.AppCompatEditText
                                 android:id="@+id/etConfirmPwd"
                                 android:layout_width="match_parent"
                                 android:layout_height="24dp"
-                                android:layout_marginLeft="5dp"
+                                android:layout_marginStart="5dp"
                                 android:background="@color/white"
                                 android:gravity="center_vertical"
                                 android:hint="@string/text_register_repwd_hint"
@@ -235,14 +231,12 @@
                     </LinearLayout>
 
 
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvSubmit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/cardView"
-                    android:layout_centerHorizontal="true"
                     android:layout_marginLeft="67dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="67dp"
@@ -256,11 +250,11 @@
             </LinearLayout>
         </LinearLayout>
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="36dp"
             android:onClick="@{(v)->presenter.onClick(v)}"
             android:src="@drawable/icon_back_white" />

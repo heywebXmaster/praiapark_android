@@ -41,7 +41,7 @@
             tl:tl_textUnselectColor="@color/colorText"
             tl:tl_textsize="14sp" />
 
-        <android.support.v4.view.ViewPager
+        <androidx.core.view.ViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -58,13 +58,13 @@
         <!--android:onClick="@{(v)->presenter.onClick(v)}"-->
         <!--android:orientation="vertical">-->
 
-        <!--<android.support.v7.widget.AppCompatImageView-->
+        <!--<androidx.appcompat.widget.AppCompatImageView-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
         <!--android:layout_marginTop="105dp"-->
         <!--android:src="@mipmap/bg_service_empty" />-->
 
-        <!--<android.support.v7.widget.AppCompatTextView-->
+        <!--<androidx.appcompat.widget.AppCompatTextView-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
         <!--android:layout_marginTop="25dp"-->

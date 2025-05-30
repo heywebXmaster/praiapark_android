@@ -35,7 +35,7 @@
                 android:paddingLeft="@dimen/page_margin"
                 android:paddingRight="@dimen/page_margin">
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -43,7 +43,7 @@
                     android:textColor="@color/colorText"
                     android:textSize="14sp" />
 
-                <android.support.v7.widget.AppCompatImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -65,7 +65,7 @@
                 android:paddingLeft="@dimen/page_margin"
                 android:paddingRight="@dimen/page_margin">
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -73,7 +73,7 @@
                     android:textColor="@color/colorText"
                     android:textSize="14sp" />
 
-                <android.support.v7.widget.AppCompatImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -95,7 +95,7 @@
                 android:paddingLeft="@dimen/page_margin"
                 android:paddingRight="@dimen/page_margin">
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -103,7 +103,7 @@
                     android:textColor="@color/colorText"
                     android:textSize="14sp" />
 
-                <android.support.v7.widget.AppCompatImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -125,7 +125,7 @@
                 android:paddingLeft="@dimen/page_margin"
                 android:paddingRight="@dimen/page_margin">
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -133,7 +133,7 @@
                     android:textColor="@color/colorText"
                     android:textSize="14sp" />
 
-                <android.support.v7.widget.AppCompatImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -155,7 +155,7 @@
                 android:paddingLeft="@dimen/page_margin"
                 android:paddingRight="@dimen/page_margin">
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -163,7 +163,7 @@
                     android:textColor="@color/colorText"
                     android:textSize="14sp" />
 
-                <android.support.v7.widget.AppCompatImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -185,7 +185,7 @@
                 android:paddingLeft="@dimen/page_margin"
                 android:paddingRight="@dimen/page_margin">
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -193,7 +193,7 @@
                     android:textColor="@color/colorText"
                     android:textSize="14sp" />
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:textSize="14sp"
                     android:text="@{version}"
                     android:textColor="@color/colorHint"

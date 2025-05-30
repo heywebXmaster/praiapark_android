@@ -15,12 +15,12 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@mipmap/icon_movie_default" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
@@ -31,7 +31,7 @@
             android:textColor="@color/colorText"
             android:textSize="16sp" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
             android:textColor="@color/colorHint"
             android:textSize="12sp" />
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
             android:layout_height="15dp"
             android:src="@mipmap/icon_right" />
@@ -59,14 +59,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp">
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/text_order_record_time"
             android:textColor="@color/colorHint"
             android:textSize="14sp" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -82,14 +82,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp">
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/text_order_record_status"
             android:textColor="@color/colorHint"
             android:textSize="14sp" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"

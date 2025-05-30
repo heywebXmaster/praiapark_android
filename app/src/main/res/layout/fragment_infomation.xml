@@ -37,7 +37,7 @@
             tl:tl_textUnselectColor="@color/colorText"
             tl:tl_textsize="14sp" />
 
-        <android.support.v4.view.ViewPager
+        <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"
             android:background="@color/transparent"
             android:layout_width="match_parent"

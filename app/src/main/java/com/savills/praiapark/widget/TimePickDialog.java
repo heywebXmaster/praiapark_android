@@ -2,24 +2,21 @@ package com.savills.praiapark.widget;
 
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
-import android.support.v7.widget.AppCompatTextView;
-import android.util.Log;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatTextView;
+import androidx.fragment.app.DialogFragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.view.WindowManager;
 
-import com.github.chrisbanes.photoview.PhotoView;
 import com.savills.praiapark.R;
 import com.savills.praiapark.bean.DevicesBean;
 import com.savills.praiapark.ui.main.club.BookingCalendarFragment;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class TimePickDialog extends DialogFragment {

@@ -1,19 +1,17 @@
 package com.savills.praiapark.widget;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.bumptech.glide.Glide;
 import com.savills.praiapark.R;
 import com.github.chrisbanes.photoview.PhotoView;
 

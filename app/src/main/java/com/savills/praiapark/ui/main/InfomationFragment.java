@@ -1,7 +1,9 @@
 package com.savills.praiapark.ui.main;
 
-import android.support.v4.app.Fragment;
+
 import android.view.View;
+
+import androidx.fragment.app.Fragment;
 
 import com.savills.praiapark.R;
 import com.savills.praiapark.adapter.MyPagerAdapter;

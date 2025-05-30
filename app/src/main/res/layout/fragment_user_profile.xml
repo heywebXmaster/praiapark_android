@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
 
     <data>
@@ -48,7 +49,7 @@
                         android:paddingLeft="@dimen/page_margin"
                         android:paddingRight="@dimen/page_margin">
 
-                        <android.support.v7.widget.AppCompatTextView
+                        <androidx.appcompat.widget.AppCompatImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
@@ -56,15 +57,16 @@
                             android:textColor="@color/colorHint"
                             android:textSize="14sp" />
 
-                        <android.support.v7.widget.AppCompatTextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/tvAccuntNum"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
                             android:text="@{profile.householderCode}"
                             android:textColor="@color/colorText"
-                            android:textSize="14sp" />
+                            android:textSize="14sp"
+                            tools:ignore="RelativeOverlap" />
 
                         <View
                             android:layout_width="match_parent"
@@ -80,7 +82,7 @@
                         android:paddingLeft="@dimen/page_margin"
                         android:paddingRight="@dimen/page_margin">
 
-                        <android.support.v7.widget.AppCompatTextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
@@ -88,7 +90,7 @@
                             android:textColor="@color/colorHint"
                             android:textSize="14sp" />
 
-                        <android.support.v7.widget.AppCompatTextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/tvAddress"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -119,7 +121,7 @@
                         android:paddingLeft="@dimen/page_margin"
                         android:paddingRight="10dp">
 
-                        <android.support.v7.widget.AppCompatTextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
@@ -138,7 +140,7 @@
                             android:src="@mipmap/icon_profile_header" />
 
 
-                        <android.support.v7.widget.AppCompatImageView
+                        <androidx.appcompat.widget.AppCompatImageView
                             android:id="@+id/ivHeaderRight"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -162,7 +164,7 @@
                         android:paddingLeft="@dimen/page_margin"
                         android:paddingRight="10dp">
 
-                        <android.support.v7.widget.AppCompatTextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
@@ -170,7 +172,7 @@
                             android:textColor="@color/colorHint"
                             android:textSize="14sp" />
 
-                        <android.support.v7.widget.AppCompatTextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/tvUserAccount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -180,7 +182,7 @@
                             android:textColor="@color/colorText"
                             android:textSize="14sp" />
 
-                        <android.support.v7.widget.AppCompatImageView
+                        <androidx.appcompat.widget.AppCompatImageView
                             android:id="@+id/ivUserAccountRight"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -204,7 +206,7 @@
                         android:paddingLeft="@dimen/page_margin"
                         android:paddingRight="10dp">
 
-                        <android.support.v7.widget.AppCompatTextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
@@ -213,7 +215,7 @@
                             android:textSize="14sp" />
 
 
-                        <android.support.v7.widget.AppCompatImageView
+                        <androidx.appcompat.widget.AppCompatImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
@@ -238,7 +240,7 @@
                         android:paddingLeft="@dimen/page_margin"
                         android:paddingRight="10dp">
 
-                        <android.support.v7.widget.AppCompatTextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
@@ -286,7 +288,7 @@
                         android:paddingLeft="@dimen/page_margin"
                         android:paddingRight="10dp">
 
-                        <android.support.v7.widget.AppCompatTextView
+                        <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"

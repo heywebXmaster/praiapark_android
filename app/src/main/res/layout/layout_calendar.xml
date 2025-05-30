@@ -43,7 +43,7 @@
             android:layout_marginLeft="@dimen/page_margin"
             android:layout_marginRight="@dimen/page_margin">
 
-            <android.support.v7.widget.AppCompatTextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -53,7 +53,7 @@
                 android:textColor="@color/colorDrawable"
                 android:textSize="14sp" />
 
-            <android.support.v7.widget.AppCompatTextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvSelectTime"
                 android:layout_width="wrap_content"
                 android:layout_height="36dp"
@@ -80,7 +80,7 @@
             android:layout_marginRight="@dimen/page_margin"
             android:background="@color/colorDivider" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"

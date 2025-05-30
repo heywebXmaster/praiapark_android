@@ -25,16 +25,12 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <android.support.v7.widget.AppCompatImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:scaleType="fitXY"
                 android:src="@mipmap/bg_login_banner" />
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="2" />
         </LinearLayout>
 
         <LinearLayout
@@ -54,11 +50,10 @@
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
-                <android.support.v7.widget.CardView
+                <androidx.cardview.widget.CardView
                     android:id="@+id/cardView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:layout_marginLeft="37dp"
                     android:layout_marginRight="37dp"
                     android:background="@color/white"
@@ -81,16 +76,16 @@
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
-                            <android.support.v7.widget.AppCompatImageView
+                            <androidx.appcompat.widget.AppCompatImageView
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
                                 android:src="@mipmap/icon_logon_account" />
 
-                            <android.support.v7.widget.AppCompatEditText
+                            <androidx.appcompat.widget.AppCompatEditText
                                 android:id="@+id/etAccount"
                                 android:layout_width="match_parent"
-                                android:layout_height="24dp"
-                                android:layout_marginLeft="5dp"
+                                android:layout_height="48dp"
+                                android:layout_marginStart="5dp"
                                 android:background="@color/white"
                                 android:gravity="center_vertical"
                                 android:hint="@string/text_login_account_hint"
@@ -114,16 +109,16 @@
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
-                            <android.support.v7.widget.AppCompatImageView
+                            <androidx.appcompat.widget.AppCompatImageView
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
                                 android:src="@mipmap/icon_logon_pwd" />
 
-                            <android.support.v7.widget.AppCompatEditText
+                            <androidx.appcompat.widget.AppCompatEditText
                                 android:id="@+id/etPwd"
                                 android:layout_width="match_parent"
-                                android:layout_height="24dp"
-                                android:layout_marginLeft="5dp"
+                                android:layout_height="48dp"
+                                android:layout_marginStart="5dp"
                                 android:background="@color/white"
                                 android:gravity="center_vertical"
                                 android:hint="@string/text_login_pwd_hint"
@@ -145,11 +140,11 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="14dp">
 
-                            <android.support.v7.widget.AppCompatTextView
+                            <androidx.appcompat.widget.AppCompatTextView
                                 android:id="@+id/tvForgetPwd"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
+                                android:layout_alignParentEnd="true"
                                 android:onClick="@{(v)->presenter.onClick(v)}"
                                 android:text="@string/text_login_forget_pwd"
                                 android:textColor="@color/colorText"
@@ -159,36 +154,32 @@
 
                     </LinearLayout>
 
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
 
                 <LinearLayout
                     android:id="@+id/layoutImg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/cardView"
-                    android:layout_centerHorizontal="true"
                     android:layout_marginTop="28dp">
 
-                    <android.support.v7.widget.AppCompatImageView
+                    <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@mipmap/bg_logon_support" />
 
-                    <android.support.v7.widget.AppCompatImageView
+                    <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="32dp"
+                        android:layout_marginStart="32dp"
                         android:src="@mipmap/bg_login_logo" />
 
                 </LinearLayout>
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvLogin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/layoutImg"
-                    android:layout_centerHorizontal="true"
                     android:layout_marginLeft="68dp"
                     android:layout_marginTop="37dp"
                     android:layout_marginRight="68dp"
@@ -200,12 +191,10 @@
                     android:textColor="@color/white"
                     android:textSize="18sp" />
 
-                <android.support.v7.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvRegister"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvLogin"
-                    android:layout_centerHorizontal="true"
                     android:layout_marginLeft="67dp"
                     android:layout_marginTop="12dp"
                     android:layout_marginRight="67dp"
@@ -222,13 +211,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:visibility="invisible">
-                    <android.support.v7.widget.AppCompatTextView
+                    <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tvDeclare"
                         android:layout_gravity="center_horizontal|bottom"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true"
                         android:onClick="@{(v)->presenter.onClick(v)}"
                         android:text="@string/text_login_declare"
                         android:textColor="@color/colorText"

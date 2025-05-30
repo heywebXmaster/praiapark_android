@@ -1,8 +1,8 @@
 package com.savills.praiapark.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.AppCompatTextView;
-import android.support.v7.widget.RecyclerView;
+import androidx.appcompat.widget.AppCompatTextView;
+import androidx.appcompat.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;

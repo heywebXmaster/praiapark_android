@@ -2,8 +2,8 @@ package com.savills.praiapark.ui.main;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
-import android.support.v4.view.GravityCompat;
+import androidx.constraintlayout.ConstraintLayout;
+import androidx.core.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.View;
 import android.widget.FrameLayout;

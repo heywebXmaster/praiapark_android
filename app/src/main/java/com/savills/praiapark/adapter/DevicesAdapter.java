@@ -1,9 +1,9 @@
 package com.savills.praiapark.adapter;
 
 import android.content.Context;
-import android.support.v7.widget.AppCompatImageView;
-import android.support.v7.widget.AppCompatTextView;
-import android.support.v7.widget.RecyclerView;
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatTextView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -44,7 +44,7 @@ public class DevicesAdapter extends BaseRecyclerAdapter<DevicesBean> {
 
         @Override
         public void bindData(DevicesBean devicesBean) {
-            int position = getAdapterPosition();
+            int position = getAbsoluteAdapterPosition();
             int margin = ConvertUtils.dp2px(15f);
             if (devicesBean.getIconId() != 0) {
                 ivIcon.setImageResource(devicesBean.getIconId());

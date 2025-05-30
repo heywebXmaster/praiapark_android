@@ -16,7 +16,7 @@
         android:paddingBottom="@dimen/page_margin">
 
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
             android:textColor="@color/colorText"
             android:textSize="14sp" />
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivRight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -14,7 +14,7 @@
     android:paddingBottom="15dp">
 
 
-    <android.support.v7.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
         android:textColor="@color/colorText"
         android:textSize="14sp" />
 
-    <android.support.v7.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
         android:textColor="@color/colorContent"
         android:textSize="14sp" />
 
-    <android.support.v7.widget.AppCompatTextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

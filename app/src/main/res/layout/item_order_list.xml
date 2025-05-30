@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layoutContent"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -7,27 +8,28 @@
 
     <LinearLayout
         android:orientation="horizontal"
-        android:paddingLeft="@dimen/page_margin"
+        android:paddingStart="@dimen/page_margin"
         android:layout_gravity="center_vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        tools:ignore="RtlSymmetry">
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="25dp"
             android:id="@+id/ivIcon"
-            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:layout_gravity="center_vertical"
             android:layout_height="25dp"/>
 
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvDeviceName"
             android:layout_gravity="center_vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableRight="@drawable/ic_next_gray"
+            android:drawableEnd="@drawable/ic_next_gray"
             android:paddingTop="@dimen/page_margin"
-            android:paddingRight="10dp"
+            android:paddingEnd="10dp"
             android:paddingBottom="@dimen/page_margin"
             android:textColor="@color/colorText"
             android:textSize="16sp" />
